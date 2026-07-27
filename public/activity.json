@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-07-27T14:36:01.164Z",
+  "generatedAt": "2026-07-27T19:27:54.091Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: progress report — análisis de FlexibarNET 10 (2026-07-27)",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/9bd77c04b72d1d31fb1f1cab88f114ccadab34cf",
+      "pushCount": 1,
+      "latestAt": "2026-07-27T16:16:31Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
