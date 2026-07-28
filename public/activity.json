@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-07-28T08:34:33.377Z",
+  "generatedAt": "2026-07-28T14:08:03.529Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/batch-reactor-reprocess-classifier",
+      "repoShort": "batch-reactor-reprocess-classifier",
+      "repoUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier",
+      "latestMessage": "docs: preparar Fase T4 con notas de deploy y .env.example",
+      "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/5b2a8f5941a44e33a6a67ab1fbaedbc77a443d45",
+      "pushCount": 1,
+      "latestAt": "2026-07-28T10:22:03Z"
+    },
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: cierra el informe de progreso con la fusión y la v0.1.6",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/a9853952aa4615ad428c2554535598bc3baca0ca",
+      "pushCount": 5,
+      "latestAt": "2026-07-28T10:19:40Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -37,24 +55,6 @@
       "latestCommitUrl": "https://github.com/Tecnomedia/flexibar-store/commit/414f2791b2c858582cca02b87046c266984edfbf",
       "pushCount": 3,
       "latestAt": "2026-07-20T08:45:26Z"
-    },
-    {
-      "repo": "Tecnomedia/flexibar-store",
-      "repoShort": "flexibar-store",
-      "repoUrl": "https://github.com/Tecnomedia/flexibar-store",
-      "latestMessage": "Revert \"publica escaneo-simple-pdf v2 (prueba del flujo Actualizar, se revierte tras el smoke)\"",
-      "latestCommitUrl": "https://github.com/Tecnomedia/flexibar-store/commit/72db15d523a7169a1fe73fe5676320ac6e08798c",
-      "pushCount": 2,
-      "latestAt": "2026-07-17T09:00:48Z"
-    },
-    {
-      "repo": "Tecnomedia/flexibar-store",
-      "repoShort": "flexibar-store",
-      "repoUrl": "https://github.com/Tecnomedia/flexibar-store",
-      "latestMessage": "fix: tildes en category y changelog del catalogo",
-      "latestCommitUrl": "https://github.com/Tecnomedia/flexibar-store/commit/d458e44bf816c26d6873d9db0b4fc8816ffffad7",
-      "pushCount": 1,
-      "latestAt": "2026-07-16T16:24:44Z"
     }
   ]
 }
