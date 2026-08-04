@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-04T08:37:42.869Z",
+  "generatedAt": "2026-08-04T14:13:01.749Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/batch-reactor-reprocess-classifier",
+      "repoShort": "batch-reactor-reprocess-classifier",
+      "repoUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier",
+      "latestMessage": "docs: eliminar línea duplicada de Fase T5 en el CHANGELOG",
+      "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/f7dbdffc4e92716fbab221edf1012d7c278686c1",
+      "pushCount": 1,
+      "latestAt": "2026-08-04T14:10:45Z"
+    },
     {
       "repo": "ferreret/batch-reactor-reprocess-classifier",
       "repoShort": "batch-reactor-reprocess-classifier",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/4b91f97d149a441734eeb03f9565d34bcd94ebe4",
       "pushCount": 8,
       "latestAt": "2026-07-22T11:57:57Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: cierra progreso 2026-07-21 — v0.1.3 publicada + bug portabilidad 3.13",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/81451bedf82620ddd093c72294ff8a1388dbf901",
-      "pushCount": 7,
-      "latestAt": "2026-07-21T21:06:45Z"
     }
   ]
 }
