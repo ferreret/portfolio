@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-05T08:36:30.544Z",
+  "generatedAt": "2026-08-05T14:10:11.436Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "fix: las migraciones ya no borran datos en SQLite + entorno Windows",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/82eeeb40ab736632485354822aeae9c944949846",
+      "pushCount": 1,
+      "latestAt": "2026-08-05T11:22:29Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/a9853952aa4615ad428c2554535598bc3baca0ca",
       "pushCount": 5,
       "latestAt": "2026-07-28T10:19:40Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report — análisis de FlexibarNET 10 (2026-07-27)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/9bd77c04b72d1d31fb1f1cab88f114ccadab34cf",
-      "pushCount": 1,
-      "latestAt": "2026-07-27T16:16:31Z"
     }
   ]
 }
