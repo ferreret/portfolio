@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-08-05T14:10:11.436Z",
+  "generatedAt": "2026-08-05T19:35:44.828Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
       "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "fix: las migraciones ya no borran datos en SQLite + entorno Windows",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/82eeeb40ab736632485354822aeae9c944949846",
-      "pushCount": 1,
-      "latestAt": "2026-08-05T11:22:29Z"
+      "latestMessage": "chore(claude): registra el bug de migraciones destructivas y el entorno Windows",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/376bc7aca3d7df3561520566754783df87e6b2fe",
+      "pushCount": 2,
+      "latestAt": "2026-08-05T15:45:39Z"
     },
     {
       "repo": "ferreret/docscan",
