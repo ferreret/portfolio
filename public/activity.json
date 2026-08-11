@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-11T07:08:25.739Z",
+  "generatedAt": "2026-08-11T13:06:24.124Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/cavernas",
+      "repoShort": "cavernas",
+      "repoUrl": "https://github.com/ferreret/cavernas",
+      "latestMessage": "First commit",
+      "latestCommitUrl": "https://github.com/ferreret/cavernas/commit/a682723a5384e08289b5d4ccc82c056e684e98c7",
+      "pushCount": 1,
+      "latestAt": "2026-08-11T10:57:41Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/Tecnomedia/flexibar-store/commit/0d24658a64334cf1facc59992e1fc6ab461a63cf",
       "pushCount": 2,
       "latestAt": "2026-07-28T14:18:42Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: cierra el informe de progreso con la fusión y la v0.1.6",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/a9853952aa4615ad428c2554535598bc3baca0ca",
-      "pushCount": 5,
-      "latestAt": "2026-07-28T10:19:40Z"
     }
   ]
 }
