@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-12T13:10:35.196Z",
+  "generatedAt": "2026-08-12T19:02:11.001Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/cavernas",
+      "repoShort": "cavernas",
+      "repoUrl": "https://github.com/ferreret/cavernas",
+      "latestMessage": "Validador de specs: las 6 validaciones sin LLM, fixtures y tests",
+      "latestCommitUrl": "https://github.com/ferreret/cavernas/commit/335b74b51e4c14043cd3a591e7294319a30c03b1",
+      "pushCount": 1,
+      "latestAt": "2026-08-12T14:15:49Z"
+    },
     {
       "repo": "ferreret/cavernas",
       "repoShort": "cavernas",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/17c5deecb2d3765c419b6b08c840e81ca87f1d14",
       "pushCount": 2,
       "latestAt": "2026-07-28T15:27:18Z"
-    },
-    {
-      "repo": "Tecnomedia/flexibar-store",
-      "repoShort": "flexibar-store",
-      "repoUrl": "https://github.com/Tecnomedia/flexibar-store",
-      "latestMessage": "publica pdf-compresor v1",
-      "latestCommitUrl": "https://github.com/Tecnomedia/flexibar-store/commit/0d24658a64334cf1facc59992e1fc6ab461a63cf",
-      "pushCount": 2,
-      "latestAt": "2026-07-28T14:18:42Z"
     }
   ]
 }
