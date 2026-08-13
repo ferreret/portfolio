@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-13T13:12:04.165Z",
+  "generatedAt": "2026-08-13T19:03:13.293Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/cavernas",
+      "repoShort": "cavernas",
+      "repoUrl": "https://github.com/ferreret/cavernas",
+      "latestMessage": "Formato v0: documentar las decisiones bendecidas del validador",
+      "latestCommitUrl": "https://github.com/ferreret/cavernas/commit/ebb2190d95231f23a1ad9ae7fa2d71142ed7579f",
+      "pushCount": 2,
+      "latestAt": "2026-08-13T13:52:47Z"
+    },
     {
       "repo": "ferreret/cavernas",
       "repoShort": "cavernas",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/f7dbdffc4e92716fbab221edf1012d7c278686c1",
       "pushCount": 1,
       "latestAt": "2026-08-04T14:10:45Z"
-    },
-    {
-      "repo": "ferreret/batch-reactor-reprocess-classifier",
-      "repoShort": "batch-reactor-reprocess-classifier",
-      "repoUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier",
-      "latestMessage": "docs: corregir DEPLOY.md para Cloudflare Tunnel y anotar punto de retomada",
-      "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/17c5deecb2d3765c419b6b08c840e81ca87f1d14",
-      "pushCount": 2,
-      "latestAt": "2026-07-28T15:27:18Z"
     }
   ]
 }
