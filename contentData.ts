@@ -2,10 +2,12 @@ import { AppContent } from './types';
 
 // Projects
 import { docscanStudio } from './data/projects/docscan-studio';
+import { batchReactorReprocessClassifier } from './data/projects/batch-reactor-reprocess-classifier';
 
 // Articles
 import { aboutMe } from './data/articles/about-me';
 import { claudioPersonalAssistant } from './data/articles/claudio-personal-assistant';
+import { predictingBatchReactorReprocessing } from './data/articles/predicting-batch-reactor-reprocessing';
 
 const enContent: AppContent = {
   ui: {
@@ -168,9 +170,11 @@ const enContent: AppContent = {
     { value: "2023", label: "Master in AI — IEBS" }
   ],
   projects: [
-    docscanStudio.en
+    docscanStudio.en,
+    batchReactorReprocessClassifier.en
   ],
   blog: [
+    predictingBatchReactorReprocessing.en,
     claudioPersonalAssistant.en,
     aboutMe.en
   ]
@@ -337,9 +341,11 @@ const esContent: AppContent = {
     { value: "2023", label: "Máster en IA — IEBS" }
   ],
   projects: [
-    docscanStudio.es
+    docscanStudio.es,
+    batchReactorReprocessClassifier.es
   ],
   blog: [
+    predictingBatchReactorReprocessing.es,
     claudioPersonalAssistant.es,
     aboutMe.es
   ]
