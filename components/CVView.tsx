@@ -77,7 +77,7 @@ export const CVView: React.FC<CVViewProps> = ({ language, data }) => {
         <section className="cv-section">
           <div className="cv-summary text-[10.5pt] leading-[1.5] text-warm-700 space-y-1.5">
             {cv.summary.map((p, i) => (
-              <p key={i} className={i === 0 ? 'italic' : 'italic'}>
+              <p key={i} className="italic">
                 {p}
               </p>
             ))}

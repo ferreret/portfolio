@@ -1,8 +1,9 @@
 import React from 'react';
-import { Navigate, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { ArrowLeftIcon } from './Icons';
 import { usePageMeta } from '@/hooks/usePageMeta';
+import { NotFound } from './NotFound';
 
 interface BlogPostDetailProps {
   data: AppContent;
@@ -12,10 +13,10 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ data }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const post = data.blog.find(p => p.id === id);
-  usePageMeta(post?.title, post?.excerpt);
+  usePageMeta(post?.title, post?.excerpt, { skip: !post });
 
   if (!post) {
-    return <Navigate to="/blog" replace />;
+    return <NotFound data={data} />;
   }
 
   return (

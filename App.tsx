@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { content } from './contentData';
 import { AppContent } from './types';
@@ -83,10 +83,15 @@ const App: React.FC = () => {
   const toggleLanguage = useCallback(() => setLanguage(prev => prev === 'en' ? 'es' : 'en'), []);
   const toggleMobileMenu = useCallback(() => setMobileMenuOpen(prev => !prev), []);
 
+  const copyEmailTimeout = useRef<number | undefined>(undefined);
   const copyEmail = useCallback(() => {
-    navigator.clipboard.writeText(data.profile.email);
-    setEmailCopied(true);
-    setTimeout(() => setEmailCopied(false), 2000);
+    navigator.clipboard.writeText(data.profile.email)
+      .then(() => {
+        setEmailCopied(true);
+        window.clearTimeout(copyEmailTimeout.current);
+        copyEmailTimeout.current = window.setTimeout(() => setEmailCopied(false), 2000);
+      })
+      .catch(() => { /* clipboard unavailable (permissions, insecure context) */ });
   }, [data.profile.email]);
 
   const isCV = location.pathname.startsWith('/cv');

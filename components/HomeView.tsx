@@ -136,7 +136,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       <ActivityTicker ui={data.ui} language={language} />
 
       {/* GitHub Stats */}
-      <GitHubStats />
+      <GitHubStats githubUrl={data.profile.github} />
 
       {/* Experience */}
       <section ref={experienceRef} data-reveal className="py-20 bg-white dark:bg-warm-900 transition-colors duration-300">

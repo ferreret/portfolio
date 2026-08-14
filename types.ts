@@ -145,7 +145,6 @@ export interface AppContent {
     heroTitleHighlight: string;
     heroTitleSuffix: string;
     experienceTitle: string;
-    technicalProficiency: string;
     coreTechTitle: string;
     journeyTitle: string;
     educationTitle: string;
@@ -157,7 +156,6 @@ export interface AppContent {
     backToBlog: string;
     backToProjects: string;
     readArticle: string;
-    viewDetails: string;
     available: string;
     copyright: string;
     footerTagline: string;
@@ -167,15 +165,11 @@ export interface AppContent {
     activityCommitSingular: string;
     activityCommitPlural: string;
     activityViewCommit: string;
-    scrollIndicator: string;
     allTags: string;
     noProjectsFound: string;
     noPostsFound: string;
-    noProjectsFoundPrefix: string;
     clearFilter: string;
     builtWith: string;
-    underConstruction: string;
-    underConstructionDesc: string;
     contactTitle: string;
     contactSubtitle: string;
     contactEmailTitle: string;

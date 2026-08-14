@@ -2,9 +2,11 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   darkMode: 'class',
+  // Scoped: a bare './**/*' glob would sweep node_modules on every build.
   content: [
     './index.html',
-    './**/*.{ts,tsx}',
+    './*.{ts,tsx}',
+    './{components,data,hooks}/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
@@ -50,9 +52,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  // Typography is registered once via @plugin in styles.css.
+  plugins: [],
 };
 
 export default config;
