@@ -26,3 +26,6 @@ dist-ssr
 # Playwright MCP cache and ad-hoc screenshots (project images live in public/)
 .playwright-mcp/
 /*.png
+
+# Local Claude Code preview config
+.claude/launch.json
