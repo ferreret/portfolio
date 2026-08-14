@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = resolve(__dirname, '..', 'public', 'activity.json');
 
 const USER = process.env.GITHUB_USER ?? 'ferreret';
-const EXCLUDED_REPOS = new Set([`${USER}/portolio`, `${USER}/${USER}`]);
+const EXCLUDED_REPOS = new Set([`${USER}/portfolio`, `${USER}/${USER}`]);
 const MAX_ITEMS = 6;
 
 const headers = { Accept: 'application/vnd.github+json' };
