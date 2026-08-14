@@ -1,18 +1,20 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, Suspense } from 'react';
 import { Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { content } from './contentData';
 import { AppContent } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomeView } from './components/HomeView';
-import { ProjectsView } from './components/ProjectsView';
-import { ProjectDetail } from './components/ProjectDetail';
-import { BlogView } from './components/BlogView';
-import { BlogPostDetail } from './components/BlogPostDetail';
-import { ContactSection } from './components/ContactSection';
 import { ScrollProgress } from './components/ScrollProgress';
-import { CVView } from './components/CVView';
 import { NotFound } from './components/NotFound';
+
+// Route-level code splitting: only the landing view ships in the main chunk.
+const ProjectsView = React.lazy(() => import('./components/ProjectsView').then(m => ({ default: m.ProjectsView })));
+const ProjectDetail = React.lazy(() => import('./components/ProjectDetail').then(m => ({ default: m.ProjectDetail })));
+const BlogView = React.lazy(() => import('./components/BlogView').then(m => ({ default: m.BlogView })));
+const BlogPostDetail = React.lazy(() => import('./components/BlogPostDetail').then(m => ({ default: m.BlogPostDetail })));
+const ContactSection = React.lazy(() => import('./components/ContactSection').then(m => ({ default: m.ContactSection })));
+const CVView = React.lazy(() => import('./components/CVView').then(m => ({ default: m.CVView })));
 
 type Language = 'en' | 'es';
 type Theme = 'light' | 'dark';
@@ -127,16 +129,18 @@ const App: React.FC = () => {
         />
       )}
       <main id="main-content" tabIndex={-1} className="focus:outline-none">
-        <Routes>
-          <Route path="/" element={<HomeView data={data} language={language} />} />
-          <Route path="/projects" element={<ProjectsView data={data} />} />
-          <Route path="/projects/:id" element={<ProjectDetail data={data} />} />
-          <Route path="/blog" element={<BlogView data={data} />} />
-          <Route path="/blog/:id" element={<BlogPostDetail data={data} />} />
-          <Route path="/contact" element={<ContactSection data={data} />} />
-          <Route path="/cv" element={<CVView data={data} language={language} />} />
-          <Route path="*" element={<NotFound data={data} />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<HomeView data={data} language={language} />} />
+            <Route path="/projects" element={<ProjectsView data={data} />} />
+            <Route path="/projects/:id" element={<ProjectDetail data={data} />} />
+            <Route path="/blog" element={<BlogView data={data} />} />
+            <Route path="/blog/:id" element={<BlogPostDetail data={data} />} />
+            <Route path="/contact" element={<ContactSection data={data} />} />
+            <Route path="/cv" element={<CVView data={data} language={language} />} />
+            <Route path="*" element={<NotFound data={data} />} />
+          </Routes>
+        </Suspense>
       </main>
       {!isCV && <Footer data={data} emailCopied={emailCopied} onCopyEmail={copyEmail} />}
     </div>

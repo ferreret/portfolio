@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
+import { ActivityFeed, LanguageStat } from '@/types';
 import { GitHubIcon } from './Icons';
-
-interface GitHubRepo { stargazers_count: number; language: string | null; fork: boolean; }
-interface LangData { name: string; count: number; pct: number; }
 
 const LANG_COLORS: Record<string, string> = {
   Python: '#3572A5', 'C#': '#178600', 'Jupyter Notebook': '#DA5B0B',
@@ -17,35 +15,26 @@ interface GitHubStatsProps {
 
 export const GitHubStats: React.FC<GitHubStatsProps> = ({ githubUrl }) => {
   const githubRef = useFadeInOnScroll();
-  const [languages, setLanguages] = useState<LangData[] | null>(null);
+  const [languages, setLanguages] = useState<LanguageStat[] | null>(null);
   const username = githubUrl.split('/').filter(Boolean).pop() ?? '';
 
+  // Language stats are precomputed by the activity workflow into activity.json —
+  // the visitor's browser never hits api.github.com (rate limit: 60 req/h/IP).
   useEffect(() => {
-    if (!username) return;
     const controller = new AbortController();
     const fetchData = async () => {
       try {
-        const res = await fetch(
-          `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
-          { signal: controller.signal }
-        );
-        if (!res.ok) throw new Error(`GitHub API ${res.status}`);
-        const repos: GitHubRepo[] = await res.json();
-        const langMap: Record<string, number> = {};
-        repos.filter(r => !r.fork).forEach(r => { if (r.language) langMap[r.language] = (langMap[r.language] || 0) + 1; });
-        const total = Object.values(langMap).reduce((a, b) => a + b, 0);
-        if (total === 0) return;
-        setLanguages(
-          Object.entries(langMap)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 6)
-            .map(([name, count]) => ({ name, count, pct: Math.round((count / total) * 100) }))
-        );
+        const res = await fetch('/activity.json', { signal: controller.signal });
+        if (!res.ok) throw new Error(`activity.json ${res.status}`);
+        const feed: ActivityFeed = await res.json();
+        if (feed.languages && feed.languages.length > 0) {
+          setLanguages(feed.languages);
+        }
       } catch { /* section renders without languages */ }
     };
     fetchData();
     return () => controller.abort();
-  }, [username]);
+  }, []);
 
   return (
     <section ref={githubRef} data-reveal className="py-20 bg-white dark:bg-warm-900 transition-colors duration-300">

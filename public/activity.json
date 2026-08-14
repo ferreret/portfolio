@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T13:07:11.335Z",
+  "generatedAt": "2026-08-14T13:52:16.090Z",
   "user": "ferreret",
   "items": [
     {
@@ -55,6 +55,38 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/f36264f903682a5ac3ae1419e8e89ea628a70100",
       "pushCount": 3,
       "latestAt": "2026-08-04T14:27:27Z"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Python",
+      "count": 36,
+      "pct": 47
+    },
+    {
+      "name": "C#",
+      "count": 22,
+      "pct": 29
+    },
+    {
+      "name": "Jupyter Notebook",
+      "count": 12,
+      "pct": 16
+    },
+    {
+      "name": "Dart",
+      "count": 3,
+      "pct": 4
+    },
+    {
+      "name": "TypeScript",
+      "count": 2,
+      "pct": 3
+    },
+    {
+      "name": "Lua",
+      "count": 1,
+      "pct": 1
     }
   ]
 }

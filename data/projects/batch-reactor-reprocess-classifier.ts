@@ -41,13 +41,13 @@ const techStackEs = [
 const contentEn = `
       <h3>Demo & code</h3>
       <p>The public demo is live at <a href="https://reactor-classifier.nicolasbarcelo.dev" target="_blank" rel="noopener noreferrer">reactor-classifier.nicolasbarcelo.dev</a> — no login, real model, real (anonymized) data. Pick a product code, a reactor and a batch quantity, and it returns the reprocess probability for each compatible reactor. The source code, the training notebook and the anonymized dataset are public on <a href="https://github.com/ferreret/batch-reactor-reprocess-classifier" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-      <img src="/reactor-classifier/03-eda.png" alt="EDA page of the live demo: pie chart with the target distribution (67.1% correct vs 32.9% incorrect viscosity) next to the statistical summary of the 490 production orders" class="w-full rounded-lg my-6" />
+      <img src="/reactor-classifier/03-eda.webp" alt="EDA page of the live demo: pie chart with the target distribution (67.1% correct vs 32.9% incorrect viscosity) next to the statistical summary of the 490 production orders" width="1440" height="900" loading="lazy" class="w-full rounded-lg my-6" />
 `;
 
 const contentEs = `
       <h3>Demo y código</h3>
       <p>La demo pública está viva en <a href="https://reactor-classifier.nicolasbarcelo.dev" target="_blank" rel="noopener noreferrer">reactor-classifier.nicolasbarcelo.dev</a> — sin login, con el modelo real y datos reales (anonimizados). Elige un código de producto, un reactor y una cantidad de lote, y devuelve la probabilidad de reprocesado para cada reactor compatible. El código fuente, el notebook de entrenamiento y el dataset anonimizado son públicos en <a href="https://github.com/ferreret/batch-reactor-reprocess-classifier" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-      <img src="/reactor-classifier/03-eda.png" alt="Página de EDA de la demo viva: gráfico de tarta con la distribución del objetivo (67,1% de viscosidad correcta frente a 32,9% incorrecta) junto al resumen estadístico de las 490 órdenes de producción" class="w-full rounded-lg my-6" />
+      <img src="/reactor-classifier/03-eda.webp" alt="Página de EDA de la demo viva: gráfico de tarta con la distribución del objetivo (67,1% de viscosidad correcta frente a 32,9% incorrecta) junto al resumen estadístico de las 490 órdenes de producción" width="1440" height="900" loading="lazy" class="w-full rounded-lg my-6" />
 `;
 
 export const batchReactorReprocessClassifier: { en: ProjectItem; es: ProjectItem } = {
@@ -56,7 +56,7 @@ export const batchReactorReprocessClassifier: { en: ProjectItem; es: ProjectItem
     title: "Batch Reactor Reprocess Classifier",
     description: "Machine-learning classifier that predicts, before a batch is run, the probability that an industrial reactor production order will end out of spec and need reprocessing. Born as my Master's Thesis (IEBS, 2023) and rescued in 2026 as a live, dockerized demo.",
     tags: ["Python", "XGBoost", "Machine Learning", "Streamlit"],
-    imageUrl: "/batch-reactor-reprocess-classifier.png",
+    imageUrl: "/batch-reactor-reprocess-classifier.webp",
     link: "https://reactor-classifier.nicolasbarcelo.dev",
     status: 'production',
     role: 'Data scientist & developer',
@@ -80,7 +80,7 @@ export const batchReactorReprocessClassifier: { en: ProjectItem; es: ProjectItem
     title: "Batch Reactor Reprocess Classifier",
     description: "Clasificador de machine learning que predice, antes de lanzar un lote, la probabilidad de que una orden de producción de un reactor industrial acabe fuera de especificación y necesite reprocesado. Nació como mi Trabajo Final de Máster (IEBS, 2023) y fue rescatado en 2026 como demo viva y dockerizada.",
     tags: ["Python", "XGBoost", "Machine Learning", "Streamlit"],
-    imageUrl: "/batch-reactor-reprocess-classifier.png",
+    imageUrl: "/batch-reactor-reprocess-classifier.webp",
     link: "https://reactor-classifier.nicolasbarcelo.dev",
     status: 'production',
     role: 'Científico de datos y desarrollador',

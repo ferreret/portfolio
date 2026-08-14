@@ -75,6 +75,23 @@ async function enrich(group) {
   };
 }
 
+// Top languages across non-fork repos, precomputed here so the visitor's
+// browser never calls api.github.com (unauthenticated: 60 req/h per IP).
+async function fetchLanguages() {
+  const repos = await ghJson(`https://api.github.com/users/${USER}/repos?per_page=100&sort=updated`);
+  const langMap = {};
+  for (const r of repos) {
+    if (r.fork || !r.language) continue;
+    langMap[r.language] = (langMap[r.language] || 0) + 1;
+  }
+  const total = Object.values(langMap).reduce((a, b) => a + b, 0);
+  if (total === 0) return [];
+  return Object.entries(langMap)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6)
+    .map(([name, count]) => ({ name, count, pct: Math.round((count / total) * 100) }));
+}
+
 async function main() {
   const events = await ghJson(`https://api.github.com/users/${USER}/events/public?per_page=100`);
   const groups = buildGroups(events);
@@ -87,10 +104,18 @@ async function main() {
     }
   }
 
+  let languages = [];
+  try {
+    languages = await fetchLanguages();
+  } catch (err) {
+    console.warn(`Language stats failed (ticker still written): ${err.message}`);
+  }
+
   const payload = {
     generatedAt: new Date().toISOString(),
     user: USER,
     items,
+    languages,
   };
   mkdirSync(dirname(OUT_PATH), { recursive: true });
   writeFileSync(OUT_PATH, JSON.stringify(payload, null, 2) + '\n');

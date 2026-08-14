@@ -9,7 +9,7 @@ export const aboutMe: { en: BlogPost; es: BlogPost } = {
     tags: ["Personal", "Career", "AI Agents", "Introduction"],
     excerpt: "From Mallorca to AI agents: a 25-year path through Physics, software, and life beyond the screen.",
     content: `
-      <img src="/about-me.png" alt="Mediterranean coastline at dusk transitioning into mathematical equations and neural network nodes" class="w-full rounded-lg mb-6" />
+      <img src="/about-me.webp" alt="Mediterranean coastline at dusk transitioning into mathematical equations and neural network nodes" width="1024" height="572" loading="lazy" class="w-full rounded-lg mb-6" />
       <p class="mb-4">I was born in Mallorca, where I spent all of primary and secondary school. When it came time to choose a university path, I was torn between Telecommunications Engineering —which meant moving to Barcelona— and staying on the island. I ended up choosing Physics. Twenty-five years later, I build AI agents for a living. Between those two points lies a story of adaptation, self-learning, and a few unexpected turns.</p>
       <h3 class="text-xl font-bold mb-2 mt-6">From Mallorca to Physics</h3>
       <p class="mb-4">I chose Physics for two reasons. The first: I've always wanted to understand the <em>why</em> of things, and Physics is the scientific answer to that question. The second, more honest one: Star Trek has always been my favorite show, and I used to picture myself crossing space as a science officer on the bridge.</p>
@@ -32,7 +32,7 @@ export const aboutMe: { en: BlogPost; es: BlogPost } = {
     tags: ["Personal", "Trayectoria", "Agentes IA", "Presentación"],
     excerpt: "De Mallorca a los agentes de IA: 25 años entre la Física, el software y la vida fuera de la pantalla.",
     content: `
-      <img src="/about-me.png" alt="Costa mediterránea al anochecer transformándose en ecuaciones matemáticas y nodos de red neuronal" class="w-full rounded-lg mb-6" />
+      <img src="/about-me.webp" alt="Costa mediterránea al anochecer transformándose en ecuaciones matemáticas y nodos de red neuronal" width="1024" height="572" loading="lazy" class="w-full rounded-lg mb-6" />
       <p class="mb-4">Nací en Mallorca y allí pasé toda mi primaria y secundaria. Cuando llegó la selectividad dudé entre Ingeniería de Telecomunicaciones —que me obligaba a mudarme a Barcelona— y quedarme estudiando en la isla. Al final me decidí por Física. Veinticinco años después me dedico a construir agentes de IA. Entre medio hay una historia de adaptación, autoaprendizaje y algunos giros inesperados.</p>
       <h3 class="text-xl font-bold mb-2 mt-6">De Mallorca a la Física</h3>
       <p class="mb-4">Elegí Física por dos razones. La primera, porque siempre me ha gustado saber el porqué de las cosas, y la Física es la respuesta científica a esa pregunta. La segunda, más honesta: Star Trek siempre ha sido mi serie favorita, y me imaginaba cruzando el espacio como oficial científico del puente.</p>

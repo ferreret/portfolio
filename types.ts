@@ -83,10 +83,19 @@ export interface ActivityItem {
   latestAt: string;
 }
 
+export interface LanguageStat {
+  name: string;
+  count: number;
+  pct: number;
+}
+
 export interface ActivityFeed {
   generatedAt: string;
   user: string;
   items: ActivityItem[];
+  // Precomputed by scripts/fetch-activity.mjs; absent in feeds generated
+  // before the field existed, so consumers must treat it as optional.
+  languages?: LanguageStat[];
 }
 
 // CV content structure — richer than portfolio experience (categorized bullets).
