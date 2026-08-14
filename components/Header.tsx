@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { MenuIcon, XIcon, SunIcon, MoonIcon } from './Icons';
 
@@ -34,13 +34,6 @@ export const Header: React.FC<HeaderProps> = ({
   data, language, theme, mobileMenuOpen,
   onToggleLanguage, onToggleTheme, onToggleMobileMenu,
 }) => {
-  const navigate = useNavigate();
-
-  const handleMobileNav = (to: string) => {
-    onToggleMobileMenu();
-    navigate(to, { viewTransition: true });
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="absolute inset-0 bg-warm-50/90 dark:bg-warm-950/90 backdrop-blur-lg border-b border-warm-200/60 dark:border-warm-800/60" />
@@ -111,10 +104,10 @@ export const Header: React.FC<HeaderProps> = ({
 
       {mobileMenuOpen && (
         <nav className="md:hidden absolute top-full left-0 right-0 bg-warm-50/95 dark:bg-warm-950/95 backdrop-blur-xl border-b border-warm-200 dark:border-warm-800 p-4 flex flex-col gap-1 animate-fade-in" aria-label="Mobile navigation">
-          <NavLink to="/" end viewTransition className={mobileNavLinkClass} onClick={() => handleMobileNav('/')}>{data.ui.home}</NavLink>
-          <NavLink to="/projects" viewTransition className={mobileNavLinkClass} onClick={() => handleMobileNav('/projects')}>{data.ui.projects}</NavLink>
-          <NavLink to="/blog" viewTransition className={mobileNavLinkClass} onClick={() => handleMobileNav('/blog')}>{data.ui.blog}</NavLink>
-          <NavLink to="/contact" viewTransition className="text-center p-3 rounded-lg bg-warm-900 dark:bg-warm-100 text-white dark:text-warm-900 text-sm font-medium mt-1" onClick={() => handleMobileNav('/contact')}>
+          <NavLink to="/" end viewTransition className={mobileNavLinkClass}>{data.ui.home}</NavLink>
+          <NavLink to="/projects" viewTransition className={mobileNavLinkClass}>{data.ui.projects}</NavLink>
+          <NavLink to="/blog" viewTransition className={mobileNavLinkClass}>{data.ui.blog}</NavLink>
+          <NavLink to="/contact" viewTransition className="text-center p-3 rounded-lg bg-warm-900 dark:bg-warm-100 text-white dark:text-warm-900 text-sm font-medium mt-1">
             {data.ui.contact}
           </NavLink>
         </nav>

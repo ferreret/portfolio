@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { content } from './contentData';
 import { AppContent } from './types';
 import { Header } from './components/Header';
@@ -22,6 +22,13 @@ const getSystemTheme = (): Theme =>
     ? 'dark'
     : 'light';
 
+const getStoredTheme = (): Theme => {
+  if (typeof window === 'undefined') return 'light';
+  const stored = window.localStorage?.getItem('theme');
+  if (stored === 'light' || stored === 'dark') return stored;
+  return getSystemTheme();
+};
+
 const getStoredLanguage = (): Language => {
   if (typeof window === 'undefined') return 'en';
   const stored = window.localStorage?.getItem('lang');
@@ -32,27 +39,32 @@ const getStoredLanguage = (): Language => {
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
+  const navigationType = useNavigationType();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [pathname]);
+    // On POP (Back/Forward) let the browser restore the previous scroll position.
+    if (navigationType !== 'POP') {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }, [pathname, navigationType]);
   return null;
 };
 
 const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<Language>(getStoredLanguage);
-  const [theme, setTheme] = useState<Theme>(getSystemTheme);
+  const [theme, setTheme] = useState<Theme>(getStoredTheme);
   const [emailCopied, setEmailCopied] = useState(false);
 
   const data: AppContent = content[language];
 
-  // Sync theme to DOM
+  // Sync theme to DOM + persist (the inline script in index.html applies it pre-paint)
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
+    window.localStorage?.setItem('theme', theme);
   }, [theme]);
 
   // Sync language to html lang attribute + persist
