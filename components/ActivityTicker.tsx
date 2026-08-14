@@ -69,11 +69,11 @@ export const ActivityTicker: React.FC<ActivityTickerProps> = ({ ui, language }) 
                       href={item.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-semibold text-warm-900 dark:text-warm-50 hover:text-accent-600 dark:hover:text-accent-400 transition-colors text-sm truncate"
+                      className="font-semibold text-warm-900 dark:text-warm-50 hover:text-accent-700 dark:hover:text-accent-400 transition-colors text-sm truncate"
                     >
                       {item.repoShort}
                     </a>
-                    <span className="text-xs text-warm-400 dark:text-warm-500">
+                    <span className="text-xs text-warm-500 dark:text-warm-400">
                       {item.pushCount}{' '}
                       {item.pushCount === 1 ? ui.activityCommitSingular : ui.activityCommitPlural}
                       {' · '}

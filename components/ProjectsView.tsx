@@ -69,7 +69,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
                   <img src={project.imageUrl} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
-                  <h3 className="font-serif text-lg font-semibold text-warm-900 dark:text-warm-50 mb-2 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
+                  <h2 className="font-serif text-lg font-semibold text-warm-900 dark:text-warm-50 mb-2 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
                     <Link
                       to={`/projects/${project.id}`}
                       viewTransition
@@ -77,7 +77,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
                     >
                       {project.title}
                     </Link>
-                  </h3>
+                  </h2>
                   <p className="text-warm-500 dark:text-warm-400 mb-4 flex-1 line-clamp-3 text-sm leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5 mt-auto">
                     {project.tags.map(tag => (
@@ -86,7 +86,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
                         onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
                         className={`relative z-10 text-xs px-2.5 py-1 rounded-full transition-colors ${
                           selectedTag === tag
-                            ? 'bg-accent-600 text-white'
+                            ? 'bg-accent-700 text-white'
                             : 'bg-warm-100 dark:bg-warm-700 text-warm-500 dark:text-warm-400 hover:bg-accent-100 dark:hover:bg-accent-900/30 hover:text-accent-700 dark:hover:text-accent-400'
                         }`}
                       >
@@ -101,11 +101,11 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
         ) : (
           <div className="text-center py-16">
             <p className="text-warm-500 dark:text-warm-400 mb-4">
-              {data.ui.noProjectsFound} <strong className="text-accent-600 dark:text-accent-400">{selectedTag}</strong>
+              {data.ui.noProjectsFound} <strong className="text-accent-700 dark:text-accent-400">{selectedTag}</strong>
             </p>
             <button
               onClick={() => setSelectedTag(null)}
-              className="text-accent-600 dark:text-accent-400 font-medium hover:underline"
+              className="text-accent-700 dark:text-accent-400 font-medium hover:underline"
             >
               {data.ui.clearFilter}
             </button>

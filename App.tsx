@@ -40,10 +40,19 @@ const getStoredLanguage = (): Language => {
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
   const navigationType = useNavigationType();
+  const firstRender = useRef(true);
   useEffect(() => {
+    // Skip the initial load: focus must stay at the document start so the
+    // first Tab reaches the skip link.
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
     // On POP (Back/Forward) let the browser restore the previous scroll position.
     if (navigationType !== 'POP') {
       window.scrollTo({ top: 0, behavior: 'instant' });
+      // Land keyboard/screen-reader users on the new page's content.
+      document.getElementById('main-content')?.focus({ preventScroll: true });
     }
   }, [pathname, navigationType]);
   return null;
@@ -98,6 +107,12 @@ const App: React.FC = () => {
 
   return (
     <div className={`${isCV ? 'cv-route min-h-screen' : 'min-h-screen bg-warm-50 dark:bg-warm-950 transition-colors duration-300'} font-sans selection:bg-accent-100 selection:text-accent-900 dark:selection:bg-accent-900/50 dark:selection:text-accent-100`}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-warm-900 focus:text-white dark:focus:bg-warm-50 dark:focus:text-warm-900 text-sm font-medium"
+      >
+        {data.ui.skipToContent}
+      </a>
       <ScrollToTop />
       {!isCV && <ScrollProgress />}
       {!isCV && (
@@ -111,7 +126,7 @@ const App: React.FC = () => {
           onToggleMobileMenu={toggleMobileMenu}
         />
       )}
-      <main>
+      <main id="main-content" tabIndex={-1} className="focus:outline-none">
         <Routes>
           <Route path="/" element={<HomeView data={data} language={language} />} />
           <Route path="/projects" element={<ProjectsView data={data} />} />

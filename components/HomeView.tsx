@@ -118,7 +118,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {data.skillCategories.map((cat, idx) => (
               <div key={idx} className="p-5 rounded-xl bg-white dark:bg-warm-900 border border-warm-200 dark:border-warm-800 hover:border-accent-300 dark:hover:border-accent-700 transition-colors">
-                <h4 className="text-sm font-semibold text-warm-900 dark:text-warm-50 uppercase tracking-wider mb-4">{cat.category}</h4>
+                <h3 className="text-sm font-semibold text-warm-900 dark:text-warm-50 uppercase tracking-wider mb-4">{cat.category}</h3>
                 <div className="flex flex-wrap gap-1.5">
                   {cat.skills.map(skill => (
                     <span key={skill} className="px-2.5 py-1 bg-warm-50 dark:bg-warm-800 text-warm-600 dark:text-warm-300 rounded text-xs">
@@ -155,8 +155,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
 
                 <div>
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-                    <span className="text-sm font-semibold text-accent-600 dark:text-accent-400 tabular-nums">{job.period}</span>
-                    <span className="text-sm text-warm-400 dark:text-warm-500">{job.location}</span>
+                    <span className="text-sm font-semibold text-accent-700 dark:text-accent-400 tabular-nums">{job.period}</span>
+                    <span className="text-sm text-warm-500 dark:text-warm-400">{job.location}</span>
                   </div>
                   <h3 className="text-xl font-bold text-warm-900 dark:text-warm-50 mb-0.5">{job.role}</h3>
                   <div className="text-warm-500 dark:text-warm-400 font-medium mb-4">{job.company}</div>

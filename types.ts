@@ -185,6 +185,13 @@ export interface AppContent {
     notFoundTitle: string;
     notFoundDescription: string;
     notFoundCta: string;
+    skipToContent: string;
+    emailCopiedLabel: string;
+    ariaLangToggle: string;
+    ariaThemeToDark: string;
+    ariaThemeToLight: string;
+    ariaOpenMenu: string;
+    ariaCloseMenu: string;
     caseStudy: {
       statusLabel: string;
       statusProduction: string;

@@ -57,14 +57,14 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={onToggleLanguage}
-            aria-label={`Switch language to ${language === 'en' ? 'Spanish' : 'English'}`}
+            aria-label={data.ui.ariaLangToggle}
             className="text-xs font-semibold text-warm-500 dark:text-warm-400 hover:text-warm-900 dark:hover:text-warm-100 w-8 h-8 flex items-center justify-center rounded-md hover:bg-warm-100 dark:hover:bg-warm-800 transition-colors"
           >
             {language.toUpperCase()}
           </button>
           <button
             onClick={onToggleTheme}
-            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            aria-label={theme === 'light' ? data.ui.ariaThemeToDark : data.ui.ariaThemeToLight}
             className="text-warm-500 dark:text-warm-400 hover:text-warm-900 dark:hover:text-warm-100 w-8 h-8 flex items-center justify-center rounded-md hover:bg-warm-100 dark:hover:bg-warm-800 transition-colors"
           >
             {theme === 'light' ? <MoonIcon /> : <SunIcon />}
@@ -79,14 +79,14 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-2 md:hidden">
           <button
             onClick={onToggleLanguage}
-            aria-label={`Switch language to ${language === 'en' ? 'Spanish' : 'English'}`}
+            aria-label={data.ui.ariaLangToggle}
             className="text-xs font-semibold text-warm-600 dark:text-warm-300 px-2 py-1 rounded border border-warm-300 dark:border-warm-700"
           >
             {language.toUpperCase()}
           </button>
           <button
             onClick={onToggleTheme}
-            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            aria-label={theme === 'light' ? data.ui.ariaThemeToDark : data.ui.ariaThemeToLight}
             className="text-warm-600 dark:text-warm-300 p-1.5"
           >
             {theme === 'light' ? <MoonIcon /> : <SunIcon />}
@@ -94,7 +94,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             className="text-warm-600 dark:text-warm-300 p-1.5"
             onClick={onToggleMobileMenu}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={mobileMenuOpen ? data.ui.ariaCloseMenu : data.ui.ariaOpenMenu}
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <XIcon /> : <MenuIcon />}

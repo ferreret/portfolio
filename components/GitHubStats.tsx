@@ -55,7 +55,7 @@ export const GitHubStats: React.FC<GitHubStatsProps> = ({ githubUrl }) => {
             <span className="text-warm-900 dark:text-warm-50"><GitHubIcon /></span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50">GitHub</h2>
           </div>
-          <a href={githubUrl} target="_blank" rel="noreferrer" className="text-sm text-accent-600 dark:text-accent-400 hover:underline">@{username}</a>
+          <a href={githubUrl} target="_blank" rel="noreferrer" className="text-sm text-accent-700 dark:text-accent-400 hover:underline">@{username}</a>
         </div>
         {/* Contribution graph */}
         <div className="mb-6 p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-200 dark:border-warm-700">
@@ -69,7 +69,7 @@ export const GitHubStats: React.FC<GitHubStatsProps> = ({ githubUrl }) => {
         {/* Languages */}
         {languages && (
           <div className="p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-200 dark:border-warm-700">
-            <h4 className="text-sm font-semibold text-warm-900 dark:text-warm-50 uppercase tracking-wider mb-5">Top Languages</h4>
+            <h3 className="text-sm font-semibold text-warm-900 dark:text-warm-50 uppercase tracking-wider mb-5">Top Languages</h3>
             <div className="h-3 rounded-full overflow-hidden flex mb-4">
               {languages.map(l => (
                 <div key={l.name} style={{ width: `${l.pct}%`, backgroundColor: LANG_COLORS[l.name] || '#8b8680' }} title={`${l.name} ${l.pct}%`} />
@@ -79,7 +79,7 @@ export const GitHubStats: React.FC<GitHubStatsProps> = ({ githubUrl }) => {
               {languages.map(l => (
                 <div key={l.name} className="flex items-center gap-1.5 text-xs text-warm-600 dark:text-warm-300">
                   <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: LANG_COLORS[l.name] || '#8b8680' }} />
-                  {l.name} <span className="text-warm-400 dark:text-warm-500">{l.pct}%</span>
+                  {l.name} <span className="text-warm-500 dark:text-warm-400">{l.pct}%</span>
                 </div>
               ))}
             </div>

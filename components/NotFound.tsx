@@ -23,7 +23,7 @@ export const NotFound: React.FC<NotFoundProps> = ({ data }) => {
         </p>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent-600 hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-400 text-white font-medium transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent-700 hover:bg-accent-800 dark:bg-accent-700 dark:hover:bg-accent-800 text-white font-medium transition-colors"
         >
           {data.ui.notFoundCta}
         </Link>

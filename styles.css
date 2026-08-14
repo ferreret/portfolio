@@ -119,6 +119,19 @@
   ::view-transition-new(root) {
     animation: none;
   }
+
+  /* Decorative animations off; scroll-reveal content stays visible */
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-bar,
+  .animate-soft-ping {
+    animation: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* CV route: section heading */

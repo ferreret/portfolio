@@ -41,7 +41,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
   return (
     <div className="pt-24 pb-20 animate-fade-in min-h-screen bg-white dark:bg-warm-900 transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        <button onClick={() => navigate('/projects', { viewTransition: true })} className="mt-8 mb-8 flex items-center gap-2 text-warm-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors text-sm">
+        <button onClick={() => navigate('/projects', { viewTransition: true })} className="mt-8 mb-8 flex items-center gap-2 text-warm-500 dark:text-warm-400 hover:text-accent-700 dark:hover:text-accent-400 transition-colors text-sm">
           <ArrowLeftIcon />
           {data.ui.backToProjects}
         </button>
@@ -55,7 +55,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
         <header className="mb-10">
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tags.map(tag => (
-              <span key={tag} className="text-xs font-semibold tracking-wider uppercase text-accent-600 dark:text-accent-400">{tag}</span>
+              <span key={tag} className="text-xs font-semibold tracking-wider uppercase text-accent-700 dark:text-accent-400">{tag}</span>
             ))}
           </div>
           <h1 className="font-serif text-3xl md:text-5xl font-bold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{project.title}</h1>
@@ -65,7 +65,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
             <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-warm-100 dark:border-warm-800 pt-6">
               {project.status && statusLabel && (
                 <div>
-                  <dt className="text-xs uppercase tracking-wider text-warm-400 mb-1">{cs.statusLabel}</dt>
+                  <dt className="text-xs uppercase tracking-wider text-warm-500 dark:text-warm-400 mb-1">{cs.statusLabel}</dt>
                   <dd>
                     <span className={`inline-block text-xs font-semibold px-2 py-1 rounded ${statusStyles[project.status]}`}>
                       {statusLabel}
@@ -75,13 +75,13 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
               )}
               {project.role && (
                 <div>
-                  <dt className="text-xs uppercase tracking-wider text-warm-400 mb-1">{cs.roleLabel}</dt>
+                  <dt className="text-xs uppercase tracking-wider text-warm-500 dark:text-warm-400 mb-1">{cs.roleLabel}</dt>
                   <dd className="text-sm text-warm-700 dark:text-warm-200">{project.role}</dd>
                 </div>
               )}
               {project.timeline && (
                 <div>
-                  <dt className="text-xs uppercase tracking-wider text-warm-400 mb-1">{cs.timelineLabel}</dt>
+                  <dt className="text-xs uppercase tracking-wider text-warm-500 dark:text-warm-400 mb-1">{cs.timelineLabel}</dt>
                   <dd className="text-sm text-warm-700 dark:text-warm-200">{project.timeline}</dd>
                 </div>
               )}
@@ -132,7 +132,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {project.techStack.map(group => (
                 <div key={group.category} className="rounded-lg border border-warm-200 dark:border-warm-800 p-4">
-                  <div className="text-xs uppercase tracking-wider text-warm-400 mb-2">{group.category}</div>
+                  <div className="text-xs uppercase tracking-wider text-warm-500 dark:text-warm-400 mb-2">{group.category}</div>
                   <div className="flex flex-wrap gap-2">
                     {group.items.map(it => (
                       <span key={it} className="text-xs font-medium px-2 py-1 rounded bg-warm-100 dark:bg-warm-800 text-warm-700 dark:text-warm-200">{it}</span>
@@ -157,7 +157,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
 
         {project.content && (
           <div
-            className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-a:text-accent-600 dark:prose-a:text-accent-400 prose-custom"
+            className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-a:text-accent-700 dark:prose-a:text-accent-400 prose-custom"
             dangerouslySetInnerHTML={{ __html: project.content }}
           />
         )}
