@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-ssr
+.git
+docs
+*.md
+.claude
+.github
+scripts
+*.log
+.env
+.env.*
