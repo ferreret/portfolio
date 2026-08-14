@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-14T07:25:04.798Z",
+  "generatedAt": "2026-08-14T13:07:11.335Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/batch-reactor-reprocess-classifier",
+      "repoShort": "batch-reactor-reprocess-classifier",
+      "repoUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier",
+      "latestMessage": "docs: README de portfolio renovado y LICENSE MIT",
+      "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/2388d75a5aef9dae93809db97dfc436d8fe43bda",
+      "pushCount": 5,
+      "latestAt": "2026-08-14T10:58:41Z"
+    },
     {
       "repo": "ferreret/cavernas",
       "repoShort": "cavernas",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/f36264f903682a5ac3ae1419e8e89ea628a70100",
       "pushCount": 3,
       "latestAt": "2026-08-04T14:27:27Z"
-    },
-    {
-      "repo": "ferreret/batch-reactor-reprocess-classifier",
-      "repoShort": "batch-reactor-reprocess-classifier",
-      "repoUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier",
-      "latestMessage": "docs: eliminar línea duplicada de Fase T5 en el CHANGELOG",
-      "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/f7dbdffc4e92716fbab221edf1012d7c278686c1",
-      "pushCount": 1,
-      "latestAt": "2026-08-04T14:10:45Z"
     }
   ]
 }
