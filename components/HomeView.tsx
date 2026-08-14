@@ -1,7 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
+import { usePageMeta } from '@/hooks/usePageMeta';
 import { ArrowRightIcon, DownloadIcon } from './Icons';
 import { GitHubStats } from './GitHubStats';
 import { ActivityTicker } from './ActivityTicker';
@@ -13,6 +14,7 @@ interface HomeViewProps {
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
+  usePageMeta();
   const navigate = useNavigate();
   const aboutRef = useFadeInOnScroll();
   const skillsRef = useFadeInOnScroll();
@@ -67,8 +69,11 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
               <div className="relative">
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-warm-200 dark:border-warm-700 shadow-2xl shadow-warm-900/10 dark:shadow-black/30">
                   <img
-                    src="/profile.png"
+                    src="/profile.webp"
                     alt={data.profile.name}
+                    width={640}
+                    height={688}
+                    fetchPriority="high"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -216,15 +221,19 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
 
           <div className="grid md:grid-cols-3 gap-6">
             {data.projects.slice(0, 3).map(project => (
-              <article key={project.id} className="group bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col">
+              <article key={project.id} className="group relative bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col">
                 <div className="h-48 overflow-hidden bg-warm-100 dark:bg-warm-700">
-                  <img src={project.imageUrl} alt={project.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={project.imageUrl} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
                   <h3 className="font-serif text-lg font-semibold text-warm-900 dark:text-warm-50 mb-2 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
-                    {project.link ? (
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">{project.title}</a>
-                    ) : project.title}
+                    <Link
+                      to={`/projects/${project.id}`}
+                      viewTransition
+                      className="focus:outline-none after:absolute after:inset-0 after:rounded-xl focus-visible:after:ring-2 focus-visible:after:ring-accent-500"
+                    >
+                      {project.title}
+                    </Link>
                   </h3>
                   <p className="text-warm-500 dark:text-warm-400 mb-4 flex-1 line-clamp-3 text-sm leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5 mt-auto">

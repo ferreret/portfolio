@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { ArrowLeftIcon } from './Icons';
+import { usePageMeta } from '@/hooks/usePageMeta';
 
 interface BlogPostDetailProps {
   data: AppContent;
@@ -11,6 +12,7 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ data }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const post = data.blog.find(p => p.id === id);
+  usePageMeta(post?.title, post?.excerpt);
 
   if (!post) {
     return <Navigate to="/blog" replace />;
@@ -32,7 +34,7 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ data }) => {
           </div>
           <h1 className="font-serif text-3xl md:text-5xl font-bold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{post.title}</h1>
           <div className="flex items-center gap-4 text-warm-400 border-b border-warm-100 dark:border-warm-800 pb-8">
-            <img src="/profile.png" alt={data.profile.name} className="w-10 h-10 rounded-full object-cover" />
+            <img src="/favicon.png" alt={data.profile.name} width={40} height={40} className="w-10 h-10 rounded-full object-cover" />
             <div>
               <div className="font-medium text-warm-900 dark:text-warm-50 text-sm">{data.profile.name}</div>
               <div className="text-xs tabular-nums">{post.date} &middot; {post.readTime}</div>

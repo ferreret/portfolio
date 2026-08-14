@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AppContent } from '@/types';
+import { usePageMeta } from '@/hooks/usePageMeta';
 
 interface ProjectsViewProps {
   data: AppContent;
 }
 
 export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
-  const navigate = useNavigate();
+  usePageMeta(data.ui.featuredProjectsTitle, data.ui.featuredProjectsSubtitle);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  // Tags are localized; a selected tag from the other language would match nothing.
+  useEffect(() => {
+    setSelectedTag(null);
+  }, [data]);
 
   const allTags = Array.from(new Set(data.projects.flatMap(p => p.tags))).sort();
   const filteredProjects = selectedTag
@@ -57,29 +63,28 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
             {filteredProjects.map(project => (
               <article
                 key={project.id}
-                onClick={() => navigate(`/projects/${project.id}`, { viewTransition: true })}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(`/projects/${project.id}`, { viewTransition: true }); } }}
-                role="link"
-                tabIndex={0}
-                className="group bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent-500"
+                className="group relative bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col"
               >
                 <div className="h-48 overflow-hidden bg-warm-100 dark:bg-warm-700">
-                  <img src={project.imageUrl} alt={project.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={project.imageUrl} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
                   <h3 className="font-serif text-lg font-semibold text-warm-900 dark:text-warm-50 mb-2 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
-                    {project.title}
+                    <Link
+                      to={`/projects/${project.id}`}
+                      viewTransition
+                      className="focus:outline-none after:absolute after:inset-0 after:rounded-xl focus-visible:after:ring-2 focus-visible:after:ring-accent-500"
+                    >
+                      {project.title}
+                    </Link>
                   </h3>
                   <p className="text-warm-500 dark:text-warm-400 mb-4 flex-1 line-clamp-3 text-sm leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5 mt-auto">
                     {project.tags.map(tag => (
                       <button
                         key={tag}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedTag(tag === selectedTag ? null : tag);
-                        }}
-                        className={`text-xs px-2.5 py-1 rounded-full transition-colors ${
+                        onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
+                        className={`relative z-10 text-xs px-2.5 py-1 rounded-full transition-colors ${
                           selectedTag === tag
                             ? 'bg-accent-600 text-white'
                             : 'bg-warm-100 dark:bg-warm-700 text-warm-500 dark:text-warm-400 hover:bg-accent-100 dark:hover:bg-accent-900/30 hover:text-accent-700 dark:hover:text-accent-400'

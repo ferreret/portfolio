@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { cvContent } from '@/data/cv';
 import { ArrowLeftIcon, DownloadIcon, MailIcon, LinkedinIcon, GitHubIcon } from './Icons';
+import { usePageMeta } from '@/hooks/usePageMeta';
 
 interface CVViewProps {
   language: 'en' | 'es';
@@ -12,6 +13,7 @@ interface CVViewProps {
 const PORTFOLIO_URL = 'portfolio.nicolasbarcelo.dev';
 
 export const CVView: React.FC<CVViewProps> = ({ language, data }) => {
+  usePageMeta('CV');
   const cv = cvContent[language];
   const { profile } = data;
 

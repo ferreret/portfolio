@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppContent } from '@/types';
 import { MailIcon, LinkedinIcon, GitHubIcon, ArrowRightIcon } from './Icons';
+import { usePageMeta } from '@/hooks/usePageMeta';
 
 interface ContactSectionProps {
   data: AppContent;
@@ -17,6 +18,7 @@ interface Channel {
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
+  usePageMeta(data.ui.contactTitle, data.ui.contactSubtitle);
   const { profile, ui } = data;
   const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(ui.contactEmailSubject)}`;
 

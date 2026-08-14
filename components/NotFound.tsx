@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AppContent } from '@/types';
+import { usePageMeta } from '@/hooks/usePageMeta';
 
 interface NotFoundProps {
   data: AppContent;
 }
 
 export const NotFound: React.FC<NotFoundProps> = ({ data }) => {
+  usePageMeta(data.ui.notFoundTitle, data.ui.notFoundDescription);
   return (
     <div className="pt-24 pb-20 animate-fade-in min-h-screen bg-white dark:bg-warm-900 transition-colors duration-300 flex items-center">
       <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">

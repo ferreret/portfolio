@@ -170,6 +170,7 @@ export interface AppContent {
     scrollIndicator: string;
     allTags: string;
     noProjectsFound: string;
+    noPostsFound: string;
     noProjectsFoundPrefix: string;
     clearFilter: string;
     builtWith: string;

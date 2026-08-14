@@ -103,7 +103,11 @@ Añade `__VAR_NAME__.en` al array correspondiente (`projects` o `blog`), respeta
 
 Localiza el bloque `const esContent: AppContent` (alrededor de la línea 138 actualmente) y haz lo mismo con `__VAR_NAME__.es`.
 
-### 6. Verificación
+### 6. Actualizar `public/sitemap.xml`
+
+Añade una entrada `<url>` para la nueva ruta (`/projects/<id>` o `/blog/<id>`) con `<lastmod>` a la fecha de hoy. El sitemap es estático; si no se actualiza, la nueva página no será descubierta por los buscadores.
+
+### 7. Verificación
 
 Después de las ediciones, el hook `tsc-on-edit` se disparará automáticamente. Si tsc reporta errores (campos faltantes, imports rotos, etc.), corrígelos antes de dar la tarea por terminada.
 

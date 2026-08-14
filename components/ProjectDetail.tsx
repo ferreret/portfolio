@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import { AppContent, ProjectStatus } from '@/types';
 import { ArrowLeftIcon } from './Icons';
+import { usePageMeta } from '@/hooks/usePageMeta';
 
 interface ProjectDetailProps {
   data: AppContent;
@@ -18,6 +19,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const project = data.projects.find(p => p.id === id);
+  usePageMeta(project?.title, project?.description);
 
   if (!project) {
     return <Navigate to="/projects" replace />;
