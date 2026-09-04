@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T20:36:50.810Z",
+  "generatedAt": "2026-09-04T03:19:19.171Z",
   "user": "ferreret",
   "items": [
     {
@@ -46,15 +46,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/376bc7aca3d7df3561520566754783df87e6b2fe",
       "pushCount": 2,
       "latestAt": "2026-08-05T15:45:39Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progreso 2026-08-04 — contexto y herramientas portables entre equipos",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/f36264f903682a5ac3ae1419e8e89ea628a70100",
-      "pushCount": 3,
-      "latestAt": "2026-08-04T14:27:27Z"
     }
   ],
   "languages": [
