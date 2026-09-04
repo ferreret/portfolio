@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T15:53:29.013Z",
+  "generatedAt": "2026-09-04T20:22:58.528Z",
   "user": "ferreret",
   "items": [
     {
@@ -44,7 +44,7 @@
       "repoUrl": "https://github.com/ferreret/docscan",
       "latestMessage": "chore(claude): registra el bug de migraciones destructivas y el entorno Windows",
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/376bc7aca3d7df3561520566754783df87e6b2fe",
-      "pushCount": 2,
+      "pushCount": 1,
       "latestAt": "2026-08-05T15:45:39Z"
     }
   ],
