@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T20:35:51.262Z",
+  "generatedAt": "2026-09-12T03:32:20.358Z",
   "user": "ferreret",
   "items": [
     {
@@ -28,15 +28,6 @@
       "latestCommitUrl": "https://github.com/ferreret/cavernas/commit/ebb2190d95231f23a1ad9ae7fa2d71142ed7579f",
       "pushCount": 2,
       "latestAt": "2026-08-13T13:52:47Z"
-    },
-    {
-      "repo": "ferreret/cavernas",
-      "repoShort": "cavernas",
-      "repoUrl": "https://github.com/ferreret/cavernas",
-      "latestMessage": "Validador de specs: las 6 validaciones sin LLM, fixtures y tests",
-      "latestCommitUrl": "https://github.com/ferreret/cavernas/commit/335b74b51e4c14043cd3a591e7294319a30c03b1",
-      "pushCount": 1,
-      "latestAt": "2026-08-12T14:15:49Z"
     }
   ],
   "languages": [
