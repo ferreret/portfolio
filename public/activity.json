@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T20:16:35.325Z",
+  "generatedAt": "2026-09-13T03:38:41.211Z",
   "user": "ferreret",
   "items": [
     {
@@ -19,15 +19,6 @@
       "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/2388d75a5aef9dae93809db97dfc436d8fe43bda",
       "pushCount": 5,
       "latestAt": "2026-08-14T10:58:41Z"
-    },
-    {
-      "repo": "ferreret/cavernas",
-      "repoShort": "cavernas",
-      "repoUrl": "https://github.com/ferreret/cavernas",
-      "latestMessage": "Formato v0: documentar las decisiones bendecidas del validador",
-      "latestCommitUrl": "https://github.com/ferreret/cavernas/commit/ebb2190d95231f23a1ad9ae7fa2d71142ed7579f",
-      "pushCount": 2,
-      "latestAt": "2026-08-13T13:52:47Z"
     }
   ],
   "languages": [
