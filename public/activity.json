@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T15:44:36.410Z",
+  "generatedAt": "2026-09-13T20:26:02.595Z",
   "user": "ferreret",
   "items": [
     {
@@ -10,15 +10,6 @@
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/2e230c5efb73466dab9133c4b6b61a997dbd70e8",
       "pushCount": 1,
       "latestAt": "2026-09-09T14:29:27Z"
-    },
-    {
-      "repo": "ferreret/batch-reactor-reprocess-classifier",
-      "repoShort": "batch-reactor-reprocess-classifier",
-      "repoUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier",
-      "latestMessage": "docs: README de portfolio renovado y LICENSE MIT",
-      "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/2388d75a5aef9dae93809db97dfc436d8fe43bda",
-      "pushCount": 5,
-      "latestAt": "2026-08-14T10:58:41Z"
     }
   ],
   "languages": [
