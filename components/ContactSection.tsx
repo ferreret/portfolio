@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppContent } from '@/types';
-import { MailIcon, LinkedinIcon, GitHubIcon, ArrowRightIcon } from './Icons';
+import { MailIcon, LinkedinIcon, GitHubIcon, XIcon, ArrowRightIcon } from './Icons';
 import { usePageMeta } from '@/hooks/usePageMeta';
 
 interface ContactSectionProps {
@@ -48,6 +48,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
       icon: <GitHubIcon className="w-4 h-4" />,
       external: true,
     },
+    {
+      title: ui.contactXTitle,
+      description: ui.contactXDesc,
+      cta: ui.contactXCta,
+      href: profile.x,
+      icon: <XIcon />,
+      external: true,
+    },
   ];
 
   return (
@@ -62,7 +70,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 gap-5">
           {channels.map((channel, i) => (
             <a
               key={channel.title}

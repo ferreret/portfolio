@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppContent } from '@/types';
-import { MailIcon, LinkedinIcon } from './Icons';
+import { MailIcon, LinkedinIcon, XIcon } from './Icons';
 
 interface FooterProps {
   data: AppContent;
@@ -42,6 +42,15 @@ export const Footer: React.FC<FooterProps> = ({ data, emailCopied, onCopyEmail }
             className="w-10 h-10 flex items-center justify-center rounded-lg bg-warm-800 hover:bg-warm-700 border border-warm-700 hover:border-warm-600 transition-colors"
           >
             <LinkedinIcon />
+          </a>
+          <a
+            href={data.profile.x}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="X profile"
+            className="w-10 h-10 flex items-center justify-center rounded-lg bg-warm-800 hover:bg-warm-700 border border-warm-700 hover:border-warm-600 transition-colors"
+          >
+            <XIcon />
           </a>
         </div>
       </div>

@@ -58,6 +58,9 @@ const enContent: AppContent = {
     contactGithubTitle: "GitHub",
     contactGithubDesc: "Browse my public projects and recent activity. The portfolio itself lives here too.",
     contactGithubCta: "Open GitHub",
+    contactXTitle: "X",
+    contactXDesc: "Where I post technical notes and share what I'm working on in machine learning and on Kaggle. For professional inquiries, email or LinkedIn work best.",
+    contactXCta: "Open X",
     notFoundTitle: "Page not found",
     notFoundDescription: "The page you're looking for doesn't exist or has been moved.",
     notFoundCta: "Back to home",
@@ -91,6 +94,7 @@ const enContent: AppContent = {
     email: "nicolas.barcelo.lozano@gmail.com",
     linkedin: "https://www.linkedin.com/in/ferreret/",
     github: "https://github.com/ferreret",
+    x: "https://x.com/nickpage100",
     summary: `Senior Data Scientist & Software Engineer with 25+ years of experience designing and implementing high-impact solutions across enterprise systems, document management, and process automation. Currently focused on AI Agents, LLM orchestration, and intelligent automation, combining a strong foundation in .NET development with expertise in Python, NLP, and Generative AI. Passionate about rapidly prototyping, testing, and scaling AI systems that enhance decision-making, optimize workflows, and deliver measurable business impact.`,
     education: [
       {
@@ -231,6 +235,9 @@ const esContent: AppContent = {
     contactGithubTitle: "GitHub",
     contactGithubDesc: "Explora mis proyectos públicos y actividad reciente. El propio portfolio vive aquí también.",
     contactGithubCta: "Abrir GitHub",
+    contactXTitle: "X",
+    contactXDesc: "Donde publico notas técnicas y comparto lo que voy haciendo en machine learning y en Kaggle. Para consultas profesionales, mejor por email o LinkedIn.",
+    contactXCta: "Abrir X",
     notFoundTitle: "Página no encontrada",
     notFoundDescription: "La página que buscas no existe o ha sido movida.",
     notFoundCta: "Volver al inicio",
@@ -264,6 +271,7 @@ const esContent: AppContent = {
     email: "nicolas.barcelo.lozano@gmail.com",
     linkedin: "https://www.linkedin.com/in/ferreret/",
     github: "https://github.com/ferreret",
+    x: "https://x.com/nickpage100",
     summary: `Senior Data Scientist & Software Engineer con más de 25 años de experiencia diseñando e implementando soluciones de alto impacto en sistemas empresariales, gestión documental y automatización de procesos. Actualmente enfocado en Agentes de IA, orquestación de LLMs y automatización inteligente, combinando una sólida base en desarrollo .NET con experiencia en Python, NLP e IA Generativa. Apasionado por prototipar, probar y escalar rápidamente sistemas de IA que mejoren la toma de decisiones, optimicen flujos de trabajo y entreguen valor comercial medible.`,
     education: [
       {

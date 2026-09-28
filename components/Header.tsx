@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppContent } from '@/types';
-import { MenuIcon, XIcon, SunIcon, MoonIcon } from './Icons';
+import { MenuIcon, CloseIcon, SunIcon, MoonIcon } from './Icons';
 
 type Language = 'en' | 'es';
 type Theme = 'light' | 'dark';
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({
             aria-label={mobileMenuOpen ? data.ui.ariaCloseMenu : data.ui.ariaOpenMenu}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <XIcon /> : <MenuIcon />}
+            {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
       </div>

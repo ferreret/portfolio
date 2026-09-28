@@ -59,6 +59,7 @@ export interface ProfileData {
   email: string;
   linkedin: string;
   github: string;
+  x: string;
   summary: string;
   education: {
     degree: string;
@@ -191,6 +192,9 @@ export interface AppContent {
     contactGithubTitle: string;
     contactGithubDesc: string;
     contactGithubCta: string;
+    contactXTitle: string;
+    contactXDesc: string;
+    contactXCta: string;
     notFoundTitle: string;
     notFoundDescription: string;
     notFoundCta: string;
