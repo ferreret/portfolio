@@ -8,7 +8,7 @@ interface NotFoundProps {
 }
 
 export const NotFound: React.FC<NotFoundProps> = ({ data }) => {
-  usePageMeta(data.ui.notFoundTitle, data.ui.notFoundDescription);
+  usePageMeta(data.ui.notFoundTitle, data.ui.notFoundDescription, { noindex: true });
   return (
     <div className="pt-24 pb-20 animate-fade-in min-h-screen bg-white dark:bg-warm-900 transition-colors duration-300 flex items-center">
       <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">

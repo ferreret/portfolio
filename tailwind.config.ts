@@ -41,15 +41,6 @@ const config: Config = {
           950: '#0c0a09',
         },
       },
-      animation: {
-        'fade-in': 'fadeIn 0.4s ease-in-out',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-      },
     },
   },
   // Typography is registered once via @plugin in styles.css.

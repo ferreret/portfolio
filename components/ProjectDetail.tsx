@@ -1,7 +1,8 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { AppContent, ProjectStatus } from '@/types';
-import { ArrowLeftIcon } from './Icons';
+import { ExternalLinkIcon, GitHubIcon } from './Icons';
+import { BackLink } from './BackLink';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { NotFound } from './NotFound';
 
@@ -18,7 +19,6 @@ const statusStyles: Record<ProjectStatus, string> = {
 
 export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const project = data.projects.find(p => p.id === id);
   usePageMeta(project?.title, project?.description, { skip: !project });
 
@@ -37,14 +37,14 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
     : null;
 
   const hasMeta = Boolean(project.status || project.role || project.timeline);
+  const linkIsRepo = project.link?.includes('github.com') ?? false;
+  const demoUrl = project.demoUrl ?? (project.link && !linkIsRepo ? project.link : undefined);
+  const repoUrl = project.repoUrl ?? (linkIsRepo ? project.link : undefined);
 
   return (
     <div className="pt-24 pb-20 animate-fade-in min-h-screen bg-white dark:bg-warm-900 transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        <button onClick={() => navigate('/projects', { viewTransition: true })} className="mt-8 mb-8 flex items-center gap-2 text-warm-500 dark:text-warm-400 hover:text-accent-700 dark:hover:text-accent-400 transition-colors text-sm">
-          <ArrowLeftIcon />
-          {data.ui.backToProjects}
-        </button>
+        <BackLink to="/projects" label={data.ui.backToProjects} />
 
         {project.imageUrl && (
           <div className="rounded-xl overflow-hidden border border-warm-200 dark:border-warm-800 mb-10">
@@ -60,6 +60,33 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
           </div>
           <h1 className="font-serif text-3xl md:text-5xl font-bold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{project.title}</h1>
           <p className="text-lg text-warm-500 dark:text-warm-400 leading-relaxed pb-8">{project.description}</p>
+
+          {(demoUrl || repoUrl) && (
+            <div className="flex flex-wrap gap-3 pb-8">
+              {demoUrl && (
+                <a
+                  href={demoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-warm-900 dark:bg-warm-50 text-white dark:text-warm-900 text-sm font-medium hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors"
+                >
+                  {cs.liveDemo}
+                  <ExternalLinkIcon />
+                </a>
+              )}
+              {repoUrl && (
+                <a
+                  href={repoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-warm-300 dark:border-warm-700 text-warm-700 dark:text-warm-200 text-sm font-medium hover:bg-warm-100 dark:hover:bg-warm-800 transition-colors"
+                >
+                  <GitHubIcon className="w-4 h-4" />
+                  {cs.viewCode}
+                </a>
+              )}
+            </div>
+          )}
 
           {hasMeta && (
             <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-warm-100 dark:border-warm-800 pt-6">
@@ -121,7 +148,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
           <section className="mb-10">
             <h2 className="font-serif text-2xl font-bold text-warm-900 dark:text-warm-50 mb-3">{cs.architectureTitle}</h2>
             <div className="rounded-xl overflow-hidden border border-warm-200 dark:border-warm-800">
-              <img src={project.architectureDiagram} alt={`${project.title} architecture`} className="w-full h-auto" />
+              <img src={project.architectureDiagram} alt={`${cs.architectureTitle}: ${project.title}`} className="w-full h-auto" />
             </div>
           </section>
         )}
@@ -157,7 +184,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
 
         {project.content && (
           <div
-            className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-a:text-accent-700 dark:prose-a:text-accent-400 prose-custom"
+            className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-a:text-accent-700 dark:prose-a:text-accent-400 prose-code:[overflow-wrap:anywhere] prose-custom"
             dangerouslySetInnerHTML={{ __html: project.content }}
           />
         )}

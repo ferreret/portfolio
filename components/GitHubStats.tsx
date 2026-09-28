@@ -1,43 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
-import { ActivityFeed, LanguageStat } from '@/types';
+import { useActivityFeed } from '@/hooks/useActivityFeed';
+import { AppContent } from '@/types';
 import { GitHubIcon } from './Icons';
 
 const LANG_COLORS: Record<string, string> = {
   Python: '#3572A5', 'C#': '#178600', 'Jupyter Notebook': '#DA5B0B',
   TypeScript: '#3178C6', JavaScript: '#F1E05A', Dart: '#00B4AB',
-  HTML: '#E34C26', Lua: '#000080', Shell: '#89E051', CSS: '#563D7C',
+  HTML: '#E34C26', Lua: '#6e6eff', Shell: '#89E051', CSS: '#563D7C',
 };
 
 interface GitHubStatsProps {
   githubUrl: string;
+  ui: AppContent['ui'];
 }
 
-export const GitHubStats: React.FC<GitHubStatsProps> = ({ githubUrl }) => {
-  const githubRef = useFadeInOnScroll();
-  const [languages, setLanguages] = useState<LanguageStat[] | null>(null);
+export const GitHubStats: React.FC<GitHubStatsProps> = ({ githubUrl, ui }) => {
+  const reveal = useFadeInOnScroll();
+  const [chartFailed, setChartFailed] = useState(false);
   const username = githubUrl.split('/').filter(Boolean).pop() ?? '';
 
   // Language stats are precomputed by the activity workflow into activity.json —
   // the visitor's browser never hits api.github.com (rate limit: 60 req/h/IP).
-  useEffect(() => {
-    const controller = new AbortController();
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/activity.json', { signal: controller.signal });
-        if (!res.ok) throw new Error(`activity.json ${res.status}`);
-        const feed: ActivityFeed = await res.json();
-        if (feed.languages && feed.languages.length > 0) {
-          setLanguages(feed.languages);
-        }
-      } catch { /* section renders without languages */ }
-    };
-    fetchData();
-    return () => controller.abort();
-  }, []);
+  const { feed } = useActivityFeed();
+  const languages = feed?.languages?.length ? feed.languages : null;
 
   return (
-    <section ref={githubRef} data-reveal className="py-20 bg-white dark:bg-warm-900 transition-colors duration-300">
+    <section {...reveal("py-20 bg-white dark:bg-warm-900 transition-colors duration-300")}>
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2 mb-3">
@@ -46,19 +35,24 @@ export const GitHubStats: React.FC<GitHubStatsProps> = ({ githubUrl }) => {
           </div>
           <a href={githubUrl} target="_blank" rel="noreferrer" className="text-sm text-accent-700 dark:text-accent-400 hover:underline">@{username}</a>
         </div>
-        {/* Contribution graph */}
-        <div className="mb-6 p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-200 dark:border-warm-700">
-          <img
-            src={`https://ghchart.rshah.org/${username}`}
-            alt={`GitHub contribution graph for ${username}`}
-            loading="lazy"
-            className="w-full h-auto"
-          />
-        </div>
+        {/* Contribution graph (third-party image: hidden if the service is down) */}
+        {!chartFailed && (
+          <div className="mb-6 p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-200 dark:border-warm-700">
+            <img
+              src={`https://ghchart.rshah.org/${username}`}
+              alt={ui.githubGraphAlt}
+              width={663}
+              height={104}
+              loading="lazy"
+              onError={() => setChartFailed(true)}
+              className="w-full h-auto"
+            />
+          </div>
+        )}
         {/* Languages */}
         {languages && (
           <div className="p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-200 dark:border-warm-700">
-            <h3 className="text-sm font-semibold text-warm-900 dark:text-warm-50 uppercase tracking-wider mb-5">Top Languages</h3>
+            <h3 className="text-sm font-semibold text-warm-900 dark:text-warm-50 uppercase tracking-wider mb-5">{ui.githubLanguagesTitle}</h3>
             <div className="h-3 rounded-full overflow-hidden flex mb-4">
               {languages.map(l => (
                 <div key={l.name} style={{ width: `${l.pct}%`, backgroundColor: LANG_COLORS[l.name] || '#8b8680' }} title={`${l.name} ${l.pct}%`} />

@@ -7,6 +7,8 @@ import { Footer } from './components/Footer';
 import { HomeView } from './components/HomeView';
 import { ScrollProgress } from './components/ScrollProgress';
 import { NotFound } from './components/NotFound';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { useCopyToClipboard } from './hooks/useCopyToClipboard';
 
 // Route-level code splitting: only the landing view ships in the main chunk.
 const ProjectsView = React.lazy(() => import('./components/ProjectsView').then(m => ({ default: m.ProjectsView })));
@@ -24,11 +26,14 @@ const getSystemTheme = (): Theme =>
     ? 'dark'
     : 'light';
 
-const getStoredTheme = (): Theme => {
-  if (typeof window === 'undefined') return 'light';
-  const stored = window.localStorage?.getItem('theme');
-  if (stored === 'light' || stored === 'dark') return stored;
-  return getSystemTheme();
+const readStoredTheme = (): Theme | null => {
+  if (typeof window === 'undefined') return null;
+  try {
+    const stored = window.localStorage?.getItem('theme');
+    return stored === 'light' || stored === 'dark' ? stored : null;
+  } catch {
+    return null;
+  }
 };
 
 const getStoredLanguage = (): Language => {
@@ -63,19 +68,24 @@ const ScrollToTop: React.FC = () => {
 const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<Language>(getStoredLanguage);
-  const [theme, setTheme] = useState<Theme>(getStoredTheme);
-  const [emailCopied, setEmailCopied] = useState(false);
+  // An explicit choice is persisted; without one the site follows the OS setting live.
+  const [storedTheme, setStoredTheme] = useState<Theme | null>(readStoredTheme);
+  const [systemTheme, setSystemTheme] = useState<Theme>(getSystemTheme);
+  const theme: Theme = storedTheme ?? systemTheme;
 
   const data: AppContent = content[language];
 
-  // Sync theme to DOM + persist (the inline script in index.html applies it pre-paint)
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    window.localStorage?.setItem('theme', theme);
+    const media = window.matchMedia?.('(prefers-color-scheme: dark)');
+    if (!media) return;
+    const onChange = (e: MediaQueryListEvent) => setSystemTheme(e.matches ? 'dark' : 'light');
+    media.addEventListener('change', onChange);
+    return () => media.removeEventListener('change', onChange);
+  }, []);
+
+  // Sync theme to DOM (the inline script in index.html applies it pre-paint)
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
   // Sync language to html lang attribute + persist
@@ -90,20 +100,17 @@ const App: React.FC = () => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const toggleTheme = useCallback(() => setTheme(prev => prev === 'light' ? 'dark' : 'light'), []);
+  const toggleTheme = useCallback(() => {
+    const next: Theme = theme === 'light' ? 'dark' : 'light';
+    setStoredTheme(next);
+    try { window.localStorage?.setItem('theme', next); } catch { /* storage blocked */ }
+  }, [theme]);
   const toggleLanguage = useCallback(() => setLanguage(prev => prev === 'en' ? 'es' : 'en'), []);
   const toggleMobileMenu = useCallback(() => setMobileMenuOpen(prev => !prev), []);
+  const closeMobileMenu = useCallback(() => setMobileMenuOpen(false), []);
 
-  const copyEmailTimeout = useRef<number | undefined>(undefined);
-  const copyEmail = useCallback(() => {
-    navigator.clipboard.writeText(data.profile.email)
-      .then(() => {
-        setEmailCopied(true);
-        window.clearTimeout(copyEmailTimeout.current);
-        copyEmailTimeout.current = window.setTimeout(() => setEmailCopied(false), 2000);
-      })
-      .catch(() => { /* clipboard unavailable (permissions, insecure context) */ });
-  }, [data.profile.email]);
+  const { state: emailCopyState, copy } = useCopyToClipboard();
+  const copyEmail = useCallback(() => copy(data.profile.email), [copy, data.profile.email]);
 
   const isCV = location.pathname.startsWith('/cv');
 
@@ -126,10 +133,13 @@ const App: React.FC = () => {
           onToggleLanguage={toggleLanguage}
           onToggleTheme={toggleTheme}
           onToggleMobileMenu={toggleMobileMenu}
+          onCloseMobileMenu={closeMobileMenu}
         />
       )}
       <main id="main-content" tabIndex={-1} className="focus:outline-none">
-        <Suspense fallback={null}>
+        <ErrorBoundary ui={data.ui} resetKey={location.pathname}>
+        {/* min-h-screen keeps the footer from jumping up while a lazy route loads */}
+        <Suspense fallback={<div className="min-h-screen" />}>
           <Routes>
             <Route path="/" element={<HomeView data={data} language={language} />} />
             <Route path="/projects" element={<ProjectsView data={data} />} />
@@ -141,8 +151,9 @@ const App: React.FC = () => {
             <Route path="*" element={<NotFound data={data} />} />
           </Routes>
         </Suspense>
+        </ErrorBoundary>
       </main>
-      {!isCV && <Footer data={data} emailCopied={emailCopied} onCopyEmail={copyEmail} />}
+      {!isCV && <Footer data={data} emailCopyState={emailCopyState} onCopyEmail={copyEmail} />}
     </div>
   );
 };

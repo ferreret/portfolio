@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
 import { usePageMeta } from '@/hooks/usePageMeta';
@@ -14,19 +14,18 @@ interface HomeViewProps {
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
-  usePageMeta();
-  const navigate = useNavigate();
-  const aboutRef = useFadeInOnScroll();
-  const skillsRef = useFadeInOnScroll();
-  const experienceRef = useFadeInOnScroll();
-  const educationRef = useFadeInOnScroll();
-  const featuredRef = useFadeInOnScroll();
+  usePageMeta(undefined, data.ui.metaDescription);
+  const revealAbout = useFadeInOnScroll();
+  const revealSkills = useFadeInOnScroll();
+  const revealExperience = useFadeInOnScroll();
+  const revealEducation = useFadeInOnScroll();
+  const revealFeatured = useFadeInOnScroll();
 
   return (
     <div className="animate-fade-in">
       {/* Hero */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-6">
-        <div className="max-w-6xl mx-auto lg:px-2">
+      <section className="pt-24 pb-16 md:pt-32 md:pb-24">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div className="lg:w-3/5 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-50 dark:bg-accent-900/20 text-accent-700 dark:text-accent-400 text-xs font-semibold tracking-wide border border-accent-200 dark:border-accent-800/50">
@@ -48,13 +47,14 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <button
-                  onClick={() => navigate('/projects', { viewTransition: true })}
+                <Link
+                  to="/projects"
+                  viewTransition
                   className="group px-6 py-3 bg-warm-900 dark:bg-warm-50 text-white dark:text-warm-900 font-medium rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors flex items-center gap-2"
                 >
                   {data.ui.viewProjects}
                   <ArrowRightIcon />
-                </button>
+                </Link>
                 <a
                   href={`/cv-${language}.pdf`}
                   download
@@ -85,7 +85,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       </section>
 
       {/* About / Summary */}
-      <section ref={aboutRef} data-reveal className="py-20 bg-white dark:bg-warm-900 transition-colors duration-300">
+      <section {...revealAbout("py-20 bg-white dark:bg-warm-900 transition-colors duration-300")}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto mb-16">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-6 text-center">{data.ui.experienceTitle}</h2>
@@ -108,7 +108,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       </section>
 
       {/* Core Technologies */}
-      <section ref={skillsRef} data-reveal className="py-20 transition-colors duration-300">
+      <section {...revealSkills("py-20 transition-colors duration-300")}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-3">{data.ui.coreTechTitle}</h2>
@@ -136,10 +136,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       <ActivityTicker ui={data.ui} language={language} />
 
       {/* GitHub Stats */}
-      <GitHubStats githubUrl={data.profile.github} />
+      <GitHubStats githubUrl={data.profile.github} ui={data.ui} />
 
       {/* Experience */}
-      <section ref={experienceRef} data-reveal className="py-20 bg-white dark:bg-warm-900 transition-colors duration-300">
+      <section {...revealExperience("py-20 bg-white dark:bg-warm-900 transition-colors duration-300")}>
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-3">{data.ui.journeyTitle}</h2>
@@ -176,7 +176,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       </section>
 
       {/* Education & Certifications */}
-      <section ref={educationRef} data-reveal className="py-20 bg-warm-900 dark:bg-black text-warm-300 transition-colors duration-300">
+      <section {...revealEducation("py-20 bg-warm-900 dark:bg-black text-warm-300 transition-colors duration-300")}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             <div>
@@ -186,7 +186,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
                   <div key={i} className="p-5 rounded-xl bg-warm-800/60 border border-warm-700/50 hover:border-accent-600/40 transition-colors">
                     <div className="font-semibold text-warm-50">{edu.degree}</div>
                     <div className="text-warm-400 text-sm mt-1">{edu.institution}</div>
-                    <div className="text-warm-500 text-xs mt-1 tabular-nums">{edu.period}</div>
+                    <div className="text-warm-400 text-xs mt-1 tabular-nums">{edu.period}</div>
                   </div>
                 ))}
               </div>
@@ -212,7 +212,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       </section>
 
       {/* Featured Projects */}
-      <section ref={featuredRef} data-reveal className="py-20 bg-white dark:bg-warm-900 transition-colors duration-300">
+      <section {...revealFeatured("py-20 bg-white dark:bg-warm-900 transition-colors duration-300")}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-3">{data.ui.featuredProjectsTitle}</h2>
@@ -223,7 +223,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
             {data.projects.slice(0, 3).map(project => (
               <article key={project.id} className="group relative bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col">
                 <div className="h-48 overflow-hidden bg-warm-100 dark:bg-warm-700">
-                  <img src={project.imageUrl} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={project.imageUrl} alt="" loading="lazy" className="w-full h-full object-cover motion-safe:group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
                   <h3 className="font-serif text-lg font-semibold text-warm-900 dark:text-warm-50 mb-2 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
@@ -238,7 +238,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
                   <p className="text-warm-500 dark:text-warm-400 mb-4 flex-1 line-clamp-3 text-sm leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5 mt-auto">
                     {project.tags.map(tag => (
-                      <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-warm-100 dark:bg-warm-700 text-warm-500 dark:text-warm-400">
+                      <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-warm-100 dark:bg-warm-700 text-warm-600 dark:text-warm-300">
                         {tag}
                       </span>
                     ))}
@@ -249,12 +249,13 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
           </div>
 
           <div className="text-center mt-12">
-            <button
-              onClick={() => navigate('/projects', { viewTransition: true })}
+            <Link
+              to="/projects"
+              viewTransition
               className="px-6 py-3 bg-warm-900 dark:bg-warm-50 text-white dark:text-warm-900 font-medium rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors inline-flex items-center gap-2"
             >
               {data.ui.viewProjects} <ArrowRightIcon />
-            </button>
+            </Link>
           </div>
         </div>
       </section>

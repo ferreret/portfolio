@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { usePageMeta } from '@/hooks/usePageMeta';
+import { useTagFilter } from '@/hooks/useTagFilter';
 
 interface ProjectsViewProps {
   data: AppContent;
@@ -9,12 +10,8 @@ interface ProjectsViewProps {
 
 export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
   usePageMeta(data.ui.featuredProjectsTitle, data.ui.featuredProjectsSubtitle);
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
-
-  // Tags are localized; a selected tag from the other language would match nothing.
-  useEffect(() => {
-    setSelectedTag(null);
-  }, [data]);
+  // Tags are localized; switching language clears the filter.
+  const { selectedTag, setSelectedTag, toggleTag } = useTagFilter(data);
 
   const allTags = Array.from(new Set(data.projects.flatMap(p => p.tags))).sort();
   const filteredProjects = selectedTag
@@ -43,6 +40,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
         <div className="mb-10 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => setSelectedTag(null)}
+            aria-pressed={selectedTag === null}
             className={tagButtonClass(selectedTag === null)}
           >
             {data.ui.allTags}
@@ -50,7 +48,8 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
           {allTags.map(tag => (
             <button
               key={tag}
-              onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
+              onClick={() => toggleTag(tag)}
+              aria-pressed={selectedTag === tag}
               className={tagButtonClass(selectedTag === tag)}
             >
               {tag}
@@ -66,28 +65,30 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
                 className="group relative bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col"
               >
                 <div className="h-48 overflow-hidden bg-warm-100 dark:bg-warm-700">
-                  <img src={project.imageUrl} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={project.imageUrl} alt="" loading="lazy" className="w-full h-full object-cover motion-safe:group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
                   <h2 className="font-serif text-lg font-semibold text-warm-900 dark:text-warm-50 mb-2 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
                     <Link
                       to={`/projects/${project.id}`}
                       viewTransition
+                      state={{ fromList: true }}
                       className="focus:outline-none after:absolute after:inset-0 after:rounded-xl focus-visible:after:ring-2 focus-visible:after:ring-accent-500"
                     >
                       {project.title}
                     </Link>
                   </h2>
                   <p className="text-warm-500 dark:text-warm-400 mb-4 flex-1 line-clamp-3 text-sm leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                  <div className="flex flex-wrap gap-2 mt-auto pt-1">
                     {project.tags.map(tag => (
                       <button
                         key={tag}
-                        onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
-                        className={`relative z-10 text-xs px-2.5 py-1 rounded-full transition-colors ${
+                        onClick={() => toggleTag(tag)}
+                        aria-pressed={selectedTag === tag}
+                        className={`relative z-10 text-xs px-3 py-1.5 rounded-full transition-colors ${
                           selectedTag === tag
                             ? 'bg-accent-700 text-white'
-                            : 'bg-warm-100 dark:bg-warm-700 text-warm-500 dark:text-warm-400 hover:bg-accent-100 dark:hover:bg-accent-900/30 hover:text-accent-700 dark:hover:text-accent-400'
+                            : 'bg-warm-100 dark:bg-warm-700 text-warm-600 dark:text-warm-300 hover:bg-accent-100 dark:hover:bg-accent-900/30 hover:text-accent-700 dark:hover:text-accent-400'
                         }`}
                       >
                         {tag}

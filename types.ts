@@ -30,6 +30,10 @@ export interface ProjectItem {
   tags: string[];
   imageUrl?: string;
   link?: string;
+  /** Live demo URL; falls back to `link` when it is not a GitHub URL. */
+  demoUrl?: string;
+  /** Source repository URL; falls back to `link` when it is a GitHub URL. */
+  repoUrl?: string;
   content?: string;
   status?: ProjectStatus;
   problem?: string;
@@ -205,6 +209,18 @@ export interface AppContent {
     ariaThemeToLight: string;
     ariaOpenMenu: string;
     ariaCloseMenu: string;
+    ariaMainNav: string;
+    ariaMobileNav: string;
+    ariaCopyEmail: string;
+    ariaLinkedinProfile: string;
+    ariaXProfile: string;
+    contactEmailCopy: string;
+    metaDescription: string;
+    githubLanguagesTitle: string;
+    githubGraphAlt: string;
+    errorTitle: string;
+    errorDescription: string;
+    errorReload: string;
     caseStudy: {
       statusLabel: string;
       statusProduction: string;
@@ -219,6 +235,8 @@ export interface AppContent {
       architectureTitle: string;
       techStackTitle: string;
       lessonsLearnedTitle: string;
+      liveDemo: string;
+      viewCode: string;
     };
   };
 }

@@ -18,13 +18,21 @@
   }
 }
 
+/* `both`: stay hidden during an animation-delay instead of flashing in first */
 .animate-fade-in-up {
-  animation: fade-in-up 0.5s ease-out forwards;
+  animation: fade-in-up 0.5s ease-out both;
 }
 
 /* Sections waiting for scroll reveal — hidden by default via CSS to prevent flash */
 [data-reveal] {
   opacity: 0;
+}
+
+/* Printing the page shouldn't leave unrevealed sections blank */
+@media print {
+  [data-reveal] {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
@@ -34,15 +42,6 @@
 
 .animate-fade-in {
   animation: fadeIn 0.4s ease-in-out;
-}
-
-/* Skill bar fill */
-@keyframes bar-fill {
-  from { width: 0%; }
-}
-
-.animate-bar {
-  animation: bar-fill 1s ease-out forwards;
 }
 
 /* Subtle pulse for availability dot */
@@ -66,13 +65,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: #a8a29e; /* warm-400 */
   border-radius: 4px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #57534e; /* warm-600 */
 }
+
+/* Native controls and scrollbars follow the theme (Firefox, form controls) */
+:root { color-scheme: light; }
+:root.dark { color-scheme: dark; }
 
 /* Print-friendly prose */
 .prose-custom h2 {
@@ -100,13 +103,6 @@
   color: #2dd4bf; /* accent-400 */
 }
 
-/* Gradient text helper */
-.text-gradient {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 /* View Transitions — SPA route change cross-fade */
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -123,7 +119,6 @@
   /* Decorative animations off; scroll-reveal content stays visible */
   .animate-fade-in-up,
   .animate-fade-in,
-  .animate-bar,
   .animate-soft-ping {
     animation: none !important;
   }
@@ -139,7 +134,7 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 11pt;
   font-weight: 700;
-  color: #0d9488;
+  color: #0f766e; /* accent-700: 5.5:1 on white (accent-600 fails AA at 11pt) */
   text-transform: uppercase;
   letter-spacing: 0.08em;
   border-bottom: 1px solid rgba(13, 148, 136, 0.35);

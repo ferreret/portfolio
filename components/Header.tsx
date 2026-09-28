@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { MenuIcon, CloseIcon, SunIcon, MoonIcon } from './Icons';
@@ -14,6 +14,7 @@ interface HeaderProps {
   onToggleLanguage: () => void;
   onToggleTheme: () => void;
   onToggleMobileMenu: () => void;
+  onCloseMobileMenu: () => void;
 }
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -32,10 +33,41 @@ const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 export const Header: React.FC<HeaderProps> = ({
   data, language, theme, mobileMenuOpen,
-  onToggleLanguage, onToggleTheme, onToggleMobileMenu,
+  onToggleLanguage, onToggleTheme, onToggleMobileMenu, onCloseMobileMenu,
 }) => {
+  const headerRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileNavRef = useRef<HTMLElement>(null);
+
+  // The button shows the language it switches TO; the accessible name starts with
+  // that same visible text (WCAG 2.5.3 Label in Name).
+  const targetLanguage = language === 'en' ? 'ES' : 'EN';
+  const langLabel = `${targetLanguage} – ${data.ui.ariaLangToggle}`;
+
+  // Mobile menu: focus the first link on open; close on Escape (returning focus to
+  // the toggle) or on a tap outside the header.
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    mobileNavRef.current?.querySelector('a')?.focus();
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onCloseMobileMenu();
+        menuButtonRef.current?.focus();
+      }
+    };
+    const onPointerDown = (e: PointerEvent) => {
+      if (!headerRef.current?.contains(e.target as Node)) onCloseMobileMenu();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('pointerdown', onPointerDown);
+    };
+  }, [mobileMenuOpen, onCloseMobileMenu]);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50">
       <div className="absolute inset-0 bg-warm-50/90 dark:bg-warm-950/90 backdrop-blur-lg border-b border-warm-200/60 dark:border-warm-800/60" />
 
       <div className="max-w-6xl relative mx-auto px-6 lg:px-8 h-16 flex justify-between items-center">
@@ -48,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({
         </NavLink>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+        <nav className="hidden md:flex items-center gap-1" aria-label={data.ui.ariaMainNav}>
           <NavLink to="/" end viewTransition className={navLinkClass}>{data.ui.home}</NavLink>
           <NavLink to="/projects" viewTransition className={navLinkClass}>{data.ui.projects}</NavLink>
           <NavLink to="/blog" viewTransition className={navLinkClass}>{data.ui.blog}</NavLink>
@@ -57,10 +89,10 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={onToggleLanguage}
-            aria-label={data.ui.ariaLangToggle}
+            aria-label={langLabel}
             className="text-xs font-semibold text-warm-500 dark:text-warm-400 hover:text-warm-900 dark:hover:text-warm-100 w-8 h-8 flex items-center justify-center rounded-md hover:bg-warm-100 dark:hover:bg-warm-800 transition-colors"
           >
-            {language.toUpperCase()}
+            {targetLanguage}
           </button>
           <button
             onClick={onToggleTheme}
@@ -76,26 +108,28 @@ export const Header: React.FC<HeaderProps> = ({
         </nav>
 
         {/* Mobile */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-1 -mr-2 md:hidden">
           <button
             onClick={onToggleLanguage}
-            aria-label={data.ui.ariaLangToggle}
-            className="text-xs font-semibold text-warm-600 dark:text-warm-300 px-2 py-1 rounded border border-warm-300 dark:border-warm-700"
+            aria-label={langLabel}
+            className="w-11 h-11 flex items-center justify-center rounded-lg text-warm-600 dark:text-warm-300"
           >
-            {language.toUpperCase()}
+            <span className="text-xs font-semibold px-2 py-1 rounded border border-warm-300 dark:border-warm-700">{targetLanguage}</span>
           </button>
           <button
             onClick={onToggleTheme}
             aria-label={theme === 'light' ? data.ui.ariaThemeToDark : data.ui.ariaThemeToLight}
-            className="text-warm-600 dark:text-warm-300 p-1.5"
+            className="w-11 h-11 flex items-center justify-center rounded-lg text-warm-600 dark:text-warm-300"
           >
             {theme === 'light' ? <MoonIcon /> : <SunIcon />}
           </button>
           <button
-            className="text-warm-600 dark:text-warm-300 p-1.5"
+            ref={menuButtonRef}
+            className="w-11 h-11 flex items-center justify-center rounded-lg text-warm-600 dark:text-warm-300"
             onClick={onToggleMobileMenu}
             aria-label={mobileMenuOpen ? data.ui.ariaCloseMenu : data.ui.ariaOpenMenu}
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
@@ -103,7 +137,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {mobileMenuOpen && (
-        <nav className="md:hidden absolute top-full left-0 right-0 bg-warm-50/95 dark:bg-warm-950/95 backdrop-blur-xl border-b border-warm-200 dark:border-warm-800 p-4 flex flex-col gap-1 animate-fade-in" aria-label="Mobile navigation">
+        <nav id="mobile-menu" ref={mobileNavRef} onClick={e => { if ((e.target as HTMLElement).closest('a')) onCloseMobileMenu(); }} className="md:hidden absolute top-full left-0 right-0 bg-warm-50/95 dark:bg-warm-950/95 backdrop-blur-xl border-b border-warm-200 dark:border-warm-800 p-4 flex flex-col gap-1 animate-fade-in" aria-label={data.ui.ariaMobileNav}>
           <NavLink to="/" end viewTransition className={mobileNavLinkClass}>{data.ui.home}</NavLink>
           <NavLink to="/projects" viewTransition className={mobileNavLinkClass}>{data.ui.projects}</NavLink>
           <NavLink to="/blog" viewTransition className={mobileNavLinkClass}>{data.ui.blog}</NavLink>

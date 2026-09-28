@@ -71,6 +71,18 @@ const enContent: AppContent = {
     ariaThemeToLight: "Switch to light mode",
     ariaOpenMenu: "Open menu",
     ariaCloseMenu: "Close menu",
+    ariaMainNav: "Main navigation",
+    ariaMobileNav: "Mobile navigation",
+    ariaCopyEmail: "Copy email",
+    ariaLinkedinProfile: "LinkedIn profile",
+    ariaXProfile: "X profile",
+    contactEmailCopy: "Copy",
+    metaDescription: "Senior Data Scientist & Software Engineer with 25+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.",
+    githubLanguagesTitle: "Top languages",
+    githubGraphAlt: "GitHub contribution graph for the last year",
+    errorTitle: "Something went wrong",
+    errorDescription: "This page couldn't load. The site may have been updated while you had it open.",
+    errorReload: "Reload page",
     caseStudy: {
       statusLabel: "Status",
       statusProduction: "In production",
@@ -84,7 +96,9 @@ const enContent: AppContent = {
       metricsTitle: "Impact",
       architectureTitle: "Architecture",
       techStackTitle: "Tech stack",
-      lessonsLearnedTitle: "Lessons learned"
+      lessonsLearnedTitle: "Lessons learned",
+      liveDemo: "Live demo",
+      viewCode: "View code"
     }
   },
   profile: {
@@ -248,6 +262,18 @@ const esContent: AppContent = {
     ariaThemeToLight: "Cambiar a modo claro",
     ariaOpenMenu: "Abrir menú",
     ariaCloseMenu: "Cerrar menú",
+    ariaMainNav: "Navegación principal",
+    ariaMobileNav: "Navegación móvil",
+    ariaCopyEmail: "Copiar email",
+    ariaLinkedinProfile: "Perfil de LinkedIn",
+    ariaXProfile: "Perfil de X",
+    contactEmailCopy: "Copiar",
+    metaDescription: "Senior Data Scientist & Software Engineer con más de 25 años de experiencia. Especializado en Agentes de IA, orquestación de LLMs y automatización inteligente.",
+    githubLanguagesTitle: "Lenguajes principales",
+    githubGraphAlt: "Gráfico de contribuciones en GitHub del último año",
+    errorTitle: "Algo ha fallado",
+    errorDescription: "No se ha podido cargar esta página. Puede que la web se haya actualizado mientras la tenías abierta.",
+    errorReload: "Recargar la página",
     caseStudy: {
       statusLabel: "Estado",
       statusProduction: "En producción",
@@ -261,7 +287,9 @@ const esContent: AppContent = {
       metricsTitle: "Impacto",
       architectureTitle: "Arquitectura",
       techStackTitle: "Stack técnico",
-      lessonsLearnedTitle: "Lecciones aprendidas"
+      lessonsLearnedTitle: "Lecciones aprendidas",
+      liveDemo: "Demo en vivo",
+      viewCode: "Ver código"
     }
   },
   profile: {
