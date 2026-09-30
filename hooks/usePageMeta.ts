@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 const SITE_URL = 'https://portfolio.nicolasbarcelo.dev';
 const BASE_TITLE = 'Nicolás Barceló | Senior Data Scientist & Engineer';
 const BASE_DESCRIPTION =
-  'Senior Data Scientist & Software Engineer with 25+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.';
+  'Senior Data Scientist & Software Engineer with 26+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.';
 
 interface PageMetaOptions {
   skip?: boolean;

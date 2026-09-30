@@ -77,7 +77,7 @@ const enContent: AppContent = {
     ariaLinkedinProfile: "LinkedIn profile",
     ariaXProfile: "X profile",
     contactEmailCopy: "Copy",
-    metaDescription: "Senior Data Scientist & Software Engineer with 25+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.",
+    metaDescription: "Senior Data Scientist & Software Engineer with 26+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.",
     githubLanguagesTitle: "Top languages",
     githubGraphAlt: "GitHub contribution graph for the last year",
     errorTitle: "Something went wrong",
@@ -109,7 +109,7 @@ const enContent: AppContent = {
     linkedin: "https://www.linkedin.com/in/ferreret/",
     github: "https://github.com/ferreret",
     x: "https://x.com/nickpage100",
-    summary: `Senior Data Scientist & Software Engineer with 25+ years of experience designing and implementing high-impact solutions across enterprise systems, document management, and process automation. Currently focused on AI Agents, LLM orchestration, and intelligent automation, combining a strong foundation in .NET development with expertise in Python, NLP, and Generative AI. Passionate about rapidly prototyping, testing, and scaling AI systems that enhance decision-making, optimize workflows, and deliver measurable business impact.`,
+    summary: `Senior Data Scientist & Software Engineer with 26+ years of experience designing and implementing high-impact solutions across enterprise systems, document management, and process automation. Currently focused on AI Agents, LLM orchestration, and intelligent automation, combining a strong foundation in .NET development with expertise in Python, NLP, and Generative AI. Passionate about rapidly prototyping, testing, and scaling AI systems that enhance decision-making, optimize workflows, and deliver measurable business impact.`,
     education: [
       {
         degree: "Master's in AI, Data Science & ML and Big Data",
@@ -123,11 +123,11 @@ const enContent: AppContent = {
       }
     ],
     certifications: [
-      "Tensorflow Developer Certificate (2024)",
+      "TensorFlow Developer Certificate (2024)",
       "AZ-900 Azure Fundamentals",
       "AI-900 Azure AI Fundamentals",
       "PCEP-30-02 – Certified Entry-Level Python Programmer",
-      "PCEP-31-03 – Certified Associate in Python"
+      "PCAP-31-03 – Certified Associate in Python"
     ]
   },
   experience: [
@@ -185,8 +185,8 @@ const enContent: AppContent = {
     }
   ],
   heroStats: [
-    { value: "25+", label: "Years in Tech" },
-    { value: "24+", label: "Years at Tecnomedia" },
+    { value: "26+", label: "Years in Tech" },
+    { value: "23+", label: "Years at Tecnomedia" },
     { value: "2023", label: "Master in AI — IEBS" }
   ],
   projects: [
@@ -268,7 +268,7 @@ const esContent: AppContent = {
     ariaLinkedinProfile: "Perfil de LinkedIn",
     ariaXProfile: "Perfil de X",
     contactEmailCopy: "Copiar",
-    metaDescription: "Senior Data Scientist & Software Engineer con más de 25 años de experiencia. Especializado en Agentes de IA, orquestación de LLMs y automatización inteligente.",
+    metaDescription: "Senior Data Scientist & Software Engineer con más de 26 años de experiencia. Especializado en Agentes de IA, orquestación de LLMs y automatización inteligente.",
     githubLanguagesTitle: "Lenguajes principales",
     githubGraphAlt: "Gráfico de contribuciones en GitHub del último año",
     errorTitle: "Algo ha fallado",
@@ -300,7 +300,7 @@ const esContent: AppContent = {
     linkedin: "https://www.linkedin.com/in/ferreret/",
     github: "https://github.com/ferreret",
     x: "https://x.com/nickpage100",
-    summary: `Senior Data Scientist & Software Engineer con más de 25 años de experiencia diseñando e implementando soluciones de alto impacto en sistemas empresariales, gestión documental y automatización de procesos. Actualmente enfocado en Agentes de IA, orquestación de LLMs y automatización inteligente, combinando una sólida base en desarrollo .NET con experiencia en Python, NLP e IA Generativa. Apasionado por prototipar, probar y escalar rápidamente sistemas de IA que mejoren la toma de decisiones, optimicen flujos de trabajo y entreguen valor comercial medible.`,
+    summary: `Senior Data Scientist & Software Engineer con más de 26 años de experiencia diseñando e implementando soluciones de alto impacto en sistemas empresariales, gestión documental y automatización de procesos. Actualmente enfocado en Agentes de IA, orquestación de LLMs y automatización inteligente, combinando una sólida base en desarrollo .NET con experiencia en Python, NLP e IA Generativa. Apasionado por prototipar, probar y escalar rápidamente sistemas de IA que mejoren la toma de decisiones, optimicen flujos de trabajo y entreguen valor comercial medible.`,
     education: [
       {
         degree: "Máster en IA, Data Science & ML y Big Data",
@@ -314,11 +314,11 @@ const esContent: AppContent = {
       }
     ],
     certifications: [
-      "Tensorflow Developer Certificate (2024)",
+      "TensorFlow Developer Certificate (2024)",
       "AZ-900 Azure Fundamentals",
       "AI-900 Azure AI Fundamentals",
       "PCEP-30-02 – Certified Entry-Level Python Programmer",
-      "PCEP-31-03 – Certified Associate in Python"
+      "PCAP-31-03 – Certified Associate in Python"
     ]
   },
   experience: [
@@ -376,8 +376,8 @@ const esContent: AppContent = {
     }
   ],
   heroStats: [
-    { value: "25+", label: "Años en Tech" },
-    { value: "24+", label: "Años en Tecnomedia" },
+    { value: "26+", label: "Años en Tech" },
+    { value: "23+", label: "Años en Tecnomedia" },
     { value: "2023", label: "Máster en IA — IEBS" }
   ],
   projects: [

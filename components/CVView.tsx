@@ -13,7 +13,8 @@ interface CVViewProps {
 const PORTFOLIO_URL = 'portfolio.nicolasbarcelo.dev';
 
 export const CVView: React.FC<CVViewProps> = ({ language, data }) => {
-  usePageMeta('CV');
+  // Print tool for the downloadable PDFs, not a public page.
+  usePageMeta('CV', undefined, { noindex: true });
   const cv = cvContent[language];
   const { profile } = data;
 
