@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-09-30T12:03:25.617Z",
+  "generatedAt": "2026-09-30T21:56:40.385Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/kaggle-playground-s6e10",
+      "repoShort": "kaggle-playground-s6e10",
+      "repoUrl": "https://github.com/ferreret/kaggle-playground-s6e10",
+      "latestMessage": "Día 0: esqueleto del notebook y estilo de gráficas",
+      "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e10/commit/1f43a29c06fe16fca2f23b979532cdc21d49c14d",
+      "pushCount": 1,
+      "latestAt": "2026-09-30T15:14:19Z"
+    },
     {
       "repo": "ferreret/kaggle-playground-s6e9",
       "repoShort": "kaggle-playground-s6e9",
@@ -15,8 +24,8 @@
   "languages": [
     {
       "name": "Python",
-      "count": 37,
-      "pct": 49
+      "count": 36,
+      "pct": 47
     },
     {
       "name": "C#",
@@ -25,8 +34,8 @@
     },
     {
       "name": "Jupyter Notebook",
-      "count": 13,
-      "pct": 17
+      "count": 14,
+      "pct": 18
     },
     {
       "name": "TypeScript",
