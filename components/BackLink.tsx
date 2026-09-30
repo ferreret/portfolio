@@ -26,7 +26,7 @@ export const BackLink: React.FC<BackLinkProps> = ({ to, label }) => {
       to={to}
       viewTransition
       onClick={handleClick}
-      className="mt-6 mb-6 -ml-2 inline-flex items-center gap-2 min-h-11 px-2 rounded-md text-warm-500 dark:text-warm-400 hover:text-accent-700 dark:hover:text-accent-400 transition-colors text-sm"
+      className="mb-6 -ml-2 inline-flex items-center gap-2 min-h-11 px-2 rounded-md text-warm-500 dark:text-warm-400 hover:text-accent-700 dark:hover:text-accent-400 transition-colors text-sm"
     >
       <ArrowLeftIcon />
       {label}

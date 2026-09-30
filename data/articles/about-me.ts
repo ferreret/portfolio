@@ -28,7 +28,7 @@ export const aboutMe: { en: BlogPost; es: BlogPost } = {
     id: "3",
     title: "Física, software y todo lo que hay entre medio",
     date: "08-04-2026",
-    readTime: "3 min lectura",
+    readTime: "3 min de lectura",
     tags: ["Personal", "Trayectoria", "Agentes IA", "Presentación"],
     excerpt: "De Mallorca a los agentes de IA: 25 años entre la Física, el software y la vida fuera de la pantalla.",
     content: `

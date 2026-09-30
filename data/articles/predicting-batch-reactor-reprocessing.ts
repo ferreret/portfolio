@@ -90,15 +90,17 @@ export const predictingBatchReactorReprocessing: { en: BlogPost; es: BlogPost } 
     readTime: "6 min read",
     tags: ["Machine Learning", "XGBoost", "Data Science", "Streamlit"],
     excerpt: "Four competing hypotheses, an XGBoost classifier with the threshold tuned for recall, and 13 business recommendations from significance tests: how to predict which batch orders will fail before running them — with a live demo.",
+    relatedProjectId: "5",
     content: contentEn
   },
   es: {
     id: "5",
     title: "Predecir reprocesados en un reactor industrial por lotes con XGBoost",
     date: "14-08-2026",
-    readTime: "6 min lectura",
+    readTime: "6 min de lectura",
     tags: ["Machine Learning", "XGBoost", "Data Science", "Streamlit"],
     excerpt: "Cuatro hipótesis compitiendo, un clasificador XGBoost con el umbral ajustado para recall y 13 recomendaciones de negocio salidas de tests de significancia: cómo predecir qué órdenes de lote fallarán antes de ejecutarlas — con demo viva.",
+    relatedProjectId: "5",
     content: contentEs
   }
 };

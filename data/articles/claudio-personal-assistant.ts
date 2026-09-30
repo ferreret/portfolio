@@ -292,7 +292,7 @@ export const claudioPersonalAssistant: { en: BlogPost; es: BlogPost } = {
     id: "4",
     title: "Claudio: mi asistente personal construido sobre Claude Code y Obsidian",
     date: "14-04-2026",
-    readTime: "7 min lectura",
+    readTime: "7 min de lectura",
     tags: ["Claude Code", "Obsidian", "Agentes IA", "Personal", "MCP"],
     excerpt: "Cómo ensamblé Claude Code, Obsidian y un puñado de MCPs en un asistente personal con memoria, contexto y capacidad de ejecutar de verdad.",
     content: contentEs

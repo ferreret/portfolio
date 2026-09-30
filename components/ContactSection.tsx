@@ -61,7 +61,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
   ];
 
   return (
-    <section className="pt-32 pb-24 px-6 lg:px-8">
+    <section className="pt-28 pb-20 px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-14 animate-fade-in-up">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-warm-900 dark:text-warm-50 mb-5 tracking-tight">

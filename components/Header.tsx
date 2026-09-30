@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import { buttonClass } from './ui/button';
 import { AppContent } from '@/types';
 import { MenuIcon, CloseIcon, SunIcon, MoonIcon } from './Icons';
 
@@ -20,7 +21,7 @@ interface HeaderProps {
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `px-3 py-1.5 text-sm font-medium transition-colors rounded-md ${
     isActive
-      ? 'text-accent-700 dark:text-accent-400'
+      ? 'text-accent-700 dark:text-accent-400 underline decoration-2 underline-offset-[10px]'
       : 'text-warm-500 dark:text-warm-400 hover:text-warm-900 dark:hover:text-warm-100'
   }`;
 
@@ -102,7 +103,7 @@ export const Header: React.FC<HeaderProps> = ({
             {theme === 'light' ? <MoonIcon /> : <SunIcon />}
           </button>
 
-          <NavLink to="/contact" viewTransition className="ml-3 px-4 py-2 text-sm font-medium text-white bg-warm-900 dark:bg-warm-100 dark:text-warm-900 rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors">
+          <NavLink to="/contact" viewTransition className={`ml-3 ${buttonClass('primary', 'sm')}`}>
             {data.ui.contact}
           </NavLink>
         </nav>

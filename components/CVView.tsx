@@ -4,6 +4,7 @@ import { AppContent } from '@/types';
 import { cvContent } from '@/data/cv';
 import { ArrowLeftIcon, DownloadIcon, MailIcon, LinkedinIcon, GitHubIcon } from './Icons';
 import { usePageMeta } from '@/hooks/usePageMeta';
+import { buttonClass } from './ui/button';
 
 interface CVViewProps {
   language: 'en' | 'es';
@@ -34,7 +35,7 @@ export const CVView: React.FC<CVViewProps> = ({ language, data }) => {
         </Link>
         <button
           onClick={handlePrint}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-warm-900 dark:bg-warm-100 text-white dark:text-warm-900 text-sm font-medium rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors"
+          className={buttonClass('primary', 'sm')}
         >
           <DownloadIcon />
           {language === 'es' ? 'Imprimir / Guardar como PDF' : 'Print / Save as PDF'}

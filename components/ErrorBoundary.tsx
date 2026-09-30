@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppContent } from '@/types';
+import { buttonClass } from './ui/button';
 
 interface ErrorBoundaryProps {
   ui: AppContent['ui'];
@@ -31,7 +32,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
     if (!this.state.hasError) return this.props.children;
     const { ui } = this.props;
     return (
-      <div role="alert" className="pt-24 pb-20 min-h-screen flex items-center">
+      <div role="alert" className="pt-28 pb-20 min-h-screen flex items-center">
         <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-4 leading-tight">
             {ui.errorTitle}
@@ -39,7 +40,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
           <p className="text-lg text-warm-600 dark:text-warm-400 leading-relaxed mb-10">{ui.errorDescription}</p>
           <button
             onClick={() => window.location.reload()}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-warm-900 dark:bg-warm-50 text-white dark:text-warm-900 font-medium hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors"
+            className={buttonClass('primary')}
           >
             {ui.errorReload}
           </button>

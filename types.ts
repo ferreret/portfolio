@@ -44,6 +44,8 @@ export interface ProjectItem {
   lessonsLearned?: string[];
   role?: string;
   timeline?: string;
+  /** id of the blog post written about this project, cross-linked from both pages. */
+  relatedPostId?: string;
 }
 
 export interface BlogPost {
@@ -54,6 +56,8 @@ export interface BlogPost {
   content: string; // HTML or Markdown string
   tags: string[];
   readTime: string;
+  /** id of the project this post is about (see ProjectItem.relatedPostId). */
+  relatedProjectId?: string;
 }
 
 export interface ProfileData {
@@ -149,6 +153,8 @@ export interface AppContent {
   blog: BlogPost[];
   heroStats: HeroStat[];
   ui: {
+    /** BCP 47 locale for Intl date formatting. */
+    locale: string;
     home: string;
     projects: string;
     blog: string;
@@ -165,6 +171,17 @@ export interface AppContent {
     certificationsTitle: string;
     featuredProjectsTitle: string;
     featuredProjectsSubtitle: string;
+    projectsPageTitle: string;
+    latestPostsTitle: string;
+    viewAllPosts: string;
+    openSourceTitle: string;
+    codeBadge: string;
+    nextProject: string;
+    nextPost: string;
+    relatedPost: string;
+    relatedProject: string;
+    ariaGithubProfile: string;
+    ariaFooterNav: string;
     blogTitle: string;
     blogSubtitle: string;
     backToBlog: string;
@@ -183,7 +200,6 @@ export interface AppContent {
     noProjectsFound: string;
     noPostsFound: string;
     clearFilter: string;
-    builtWith: string;
     contactTitle: string;
     contactSubtitle: string;
     contactEmailTitle: string;

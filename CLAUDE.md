@@ -47,6 +47,8 @@ Section labels used by `ProjectDetail` are bilingual in `AppContent.ui.caseStudy
 
 `App.tsx` is the top-level layout + router. Views live in `components/` (`HomeView`, `ProjectsView`, `ProjectDetail`, `BlogView`, `BlogPostDetail`, `Header`, `Footer`, `GitHubStats`, `Icons`). The `useFadeInOnScroll` hook lives in `hooks/`.
 
+Shared UI lives in `components/ui/` (`buttonClass` — the only button styles to use —, `SectionHeading`, `PageShell`, `CardGrid`, `TagFilter`/`CardTags`); cards are `ProjectCard`/`PostCard`, and detail pages end with `DetailFooter` (related item via `ProjectItem.relatedPostId` / `BlogPost.relatedProjectId`, next item, `ClosingCta`). Non-visual helpers are in `lib/` (`getProjectLinks`, `formatPostDate`). Listing tag filters only show from 6 items up (`TAG_FILTER_MIN_ITEMS`).
+
 ## Adding a new project or article
 
 The preferred workflow uses the project-local Claude Code skills (in `.claude/skills/`):
