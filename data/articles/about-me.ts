@@ -29,7 +29,7 @@ export const aboutMe: { en: BlogPost; es: BlogPost } = {
     title: "Física, software y todo lo que hay entre medio",
     date: "08-04-2026",
     readTime: "3 min de lectura",
-    tags: ["Personal", "Trayectoria", "Agentes IA", "Presentación"],
+    tags: ["Personal", "Trayectoria", "AI Agents", "Presentación"],
     excerpt: "De Mallorca a los agentes de IA: 25 años entre la Física, el software y la vida fuera de la pantalla.",
     content: `
       <img src="/about-me.webp" alt="Costa mediterránea al anochecer transformándose en ecuaciones matemáticas y nodos de red neuronal" width="1024" height="572" loading="lazy" class="w-full rounded-lg mb-6" />
