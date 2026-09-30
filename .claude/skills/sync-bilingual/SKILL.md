@@ -29,7 +29,7 @@ Sincroniza contenido bilingüe ES↔EN en `data/projects/*.ts` y `data/articles/
 ### Términos que **NO** se traducen (mantener en inglés en ambas versiones)
 
 - **AI / IA**: usar `AI` en inglés, `IA` en español (excepción: traducir el acrónimo)
-- **AI Agents** ↔ `AI Agents` (mantener en inglés también en español, es término establecido en la industria)
+- **AI Agents** ↔ `Agentes de IA` en prosa española (es lo que busca quien escribe en español; mejor SEO). Se mantiene `AI Agents` en tags, chips de skills y nombres propios
 - **Agentic coding** ↔ `agentic coding`
 - **LLM**, **LLMs** ↔ `LLM`, `LLMs`
 - **RAG**, **RAG Pipelines** ↔ `RAG`, `pipelines RAG`

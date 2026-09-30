@@ -59,9 +59,9 @@ Verifica que estos campos están traducidos consistentemente:
 Verifica que los términos del glosario se respetan. Lista de comprobación rápida:
 
 **Mantener literal en ambos idiomas** (no traducir):
-`AI Agents`, `LLM`, `LLMs`, `RAG`, `embedding`, `tool calling`, `prompt engineering`, `pipeline`, `agentic`, `LangChain`, `LangGraph`, `CrewAI`, `Claude Code`, `Gemini CLI`, `OpenAI`, `Anthropic`, `pgvector`, `Qdrant`, `Weaviate`, `Pinecone`, `Ragas`, `LangSmith`, `LangFuse`, `HuggingFace`, `YOLO`, `pyzbar`, `OpenCV`, `RapidOCR`, `EasyOCR`, `Tesseract`, `PySide6`, `Qt`, `SQLAlchemy`, `Docker`, `Vite`, `React`, `TypeScript`, `Tailwind`, `n8n`, `TensorFlow`, `Power BI`, `Tecnomedia`, `NexTReT`, `Datasix`, `IEBS`, `Mallorca`, `Barcelona`.
+`LLM`, `LLMs`, `RAG`, `embedding`, `tool calling`, `prompt engineering`, `pipeline`, `agentic`, `LangChain`, `LangGraph`, `CrewAI`, `Claude Code`, `Gemini CLI`, `OpenAI`, `Anthropic`, `pgvector`, `Qdrant`, `Weaviate`, `Pinecone`, `Ragas`, `LangSmith`, `LangFuse`, `HuggingFace`, `YOLO`, `pyzbar`, `OpenCV`, `RapidOCR`, `EasyOCR`, `Tesseract`, `PySide6`, `Qt`, `SQLAlchemy`, `Docker`, `Vite`, `React`, `TypeScript`, `Tailwind`, `n8n`, `TensorFlow`, `Power BI`, `Tecnomedia`, `NexTReT`, `Datasix`, `IEBS`, `Mallorca`, `Barcelona`.
 
-Si encuentras "Agentes IA" en español donde debería ser "AI Agents", **es un fallo de glosario**.
+**AI Agents**: en la prosa española se escribe `Agentes de IA` (mejor SEO en español); en tags y chips de skills se mantiene `AI Agents`. Si encuentras "AI Agents" en prosa española, o "Agentes IA" sin "de", **es un fallo de glosario**.
 
 **Sí se traduce**:
 - `software engineer` ↔ `ingeniero de software`
