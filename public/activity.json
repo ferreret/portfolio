@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-10-02T04:28:57.780Z",
+  "generatedAt": "2026-10-02T12:00:52.415Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/vet-front-desk-agent",
+      "repoShort": "vet-front-desk-agent",
+      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
+      "latestMessage": "docs: second full run, the prompt fix that backfired and what replaced it",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/73dd89b9c902dd034e1e6a31550fc524eca87d54",
+      "pushCount": 2,
+      "latestAt": "2026-10-02T09:56:47Z"
+    },
     {
       "repo": "ferreret/kaggle-playground-s6e10",
       "repoShort": "kaggle-playground-s6e10",
