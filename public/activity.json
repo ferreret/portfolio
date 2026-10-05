@@ -1,15 +1,24 @@
 {
-  "generatedAt": "2026-10-05T13:50:28.733Z",
+  "generatedAt": "2026-10-05T23:49:23.572Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/kaggle-playground-s6e10",
+      "repoShort": "kaggle-playground-s6e10",
+      "repoUrl": "https://github.com/ferreret/kaggle-playground-s6e10",
+      "latestMessage": "feat: day-5 experiments (noise floor, original rows, tuning, MLP, blend)",
+      "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e10/commit/727d470b185bc0980080ff6c9b54487a0abc996a",
+      "pushCount": 1,
+      "latestAt": "2026-10-05T16:59:49Z"
+    },
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "fix(agent): the caller's language is worked out in code, and the stock phrases follow it",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/fd286388049935735a6eeaa6c7bfd89ac1efb53c",
-      "pushCount": 16,
-      "latestAt": "2026-10-05T12:06:32Z"
+      "latestMessage": "docs: how the session was left, and what comes next",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/0581e0e448167a24d125a8d5a3c891bb0e0c1652",
+      "pushCount": 20,
+      "latestAt": "2026-10-05T15:31:56Z"
     },
     {
       "repo": "ferreret/kaggle-playground-s6e10",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/9d3b72c6a34d44e88739c1470b0468a05c42cbad",
       "pushCount": 4,
       "latestAt": "2026-10-01T16:10:28Z"
-    },
-    {
-      "repo": "ferreret/kaggle-playground-s6e10",
-      "repoShort": "kaggle-playground-s6e10",
-      "repoUrl": "https://github.com/ferreret/kaggle-playground-s6e10",
-      "latestMessage": "Día 0: esqueleto del notebook y estilo de gráficas",
-      "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e10/commit/1f43a29c06fe16fca2f23b979532cdc21d49c14d",
-      "pushCount": 1,
-      "latestAt": "2026-09-30T15:14:19Z"
     }
   ],
   "languages": [
