@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-10-05T04:31:29.654Z",
+  "generatedAt": "2026-10-05T13:50:28.733Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/vet-front-desk-agent",
+      "repoShort": "vet-front-desk-agent",
+      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
+      "latestMessage": "fix(agent): the caller's language is worked out in code, and the stock phrases follow it",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/fd286388049935735a6eeaa6c7bfd89ac1efb53c",
+      "pushCount": 16,
+      "latestAt": "2026-10-05T12:06:32Z"
+    },
     {
       "repo": "ferreret/kaggle-playground-s6e10",
       "repoShort": "kaggle-playground-s6e10",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e10/commit/1f43a29c06fe16fca2f23b979532cdc21d49c14d",
       "pushCount": 1,
       "latestAt": "2026-09-30T15:14:19Z"
-    },
-    {
-      "repo": "ferreret/kaggle-playground-s6e9",
-      "repoShort": "kaggle-playground-s6e9",
-      "repoUrl": "https://github.com/ferreret/kaggle-playground-s6e9",
-      "latestMessage": "chore: save exercise work in progress in exploratory notebooks",
-      "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e9/commit/eddd6431105e8a5d2b73f950a2deda2836328502",
-      "pushCount": 2,
-      "latestAt": "2026-09-25T16:45:24Z"
     }
   ],
   "languages": [
