@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-10-06T05:17:32.103Z",
+  "generatedAt": "2026-10-06T12:54:19.968Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/vet-front-desk-agent",
+      "repoShort": "vet-front-desk-agent",
+      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
+      "latestMessage": "docs: a real phone number for the agent",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/3e9e6f3b741f7029575bfe29f6a920cea9ae89e0",
+      "pushCount": 9,
+      "latestAt": "2026-10-06T10:48:36Z"
+    },
     {
       "repo": "ferreret/kaggle-playground-s6e10",
       "repoShort": "kaggle-playground-s6e10",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e10/commit/8c4e158e07c8b345be8efc4d98fb7688abe8a1ce",
       "pushCount": 1,
       "latestAt": "2026-10-01T16:14:10Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: plan for the next session",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/9d3b72c6a34d44e88739c1470b0468a05c42cbad",
-      "pushCount": 4,
-      "latestAt": "2026-10-01T16:10:28Z"
     }
   ],
   "languages": [
