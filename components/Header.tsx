@@ -1,19 +1,22 @@
 import React, { useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { LocaleNavLink as NavLink } from './ui/LocaleLink';
 import { buttonClass } from './ui/button';
 import { AppContent } from '@/types';
 import { MenuIcon, CloseIcon, SunIcon, MoonIcon } from './Icons';
 
-type Language = 'en' | 'es';
-type Theme = 'light' | 'dark';
+import { Language } from '@/lib/routes';
+import { useTheme } from '@/hooks/useTheme';
+import type { KeepScrollState } from '@/App';
 
 interface HeaderProps {
   data: AppContent;
   language: Language;
-  theme: Theme;
   mobileMenuOpen: boolean;
-  onToggleLanguage: () => void;
-  onToggleTheme: () => void;
+  /** This same page in the other language. */
+  otherLanguagePath: string;
+  /** Called when the visitor picks the other language, to remember the choice. */
+  onSwitchLanguage: () => void;
   onToggleMobileMenu: () => void;
   onCloseMobileMenu: () => void;
 }
@@ -33,17 +36,30 @@ const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
   }`;
 
 export const Header: React.FC<HeaderProps> = ({
-  data, language, theme, mobileMenuOpen,
-  onToggleLanguage, onToggleTheme, onToggleMobileMenu, onCloseMobileMenu,
+  data, language, mobileMenuOpen,
+  otherLanguagePath, onSwitchLanguage, onToggleMobileMenu, onCloseMobileMenu,
 }) => {
+  // Read here, not in App: the theme settles right after hydration, and that
+  // re-render should stay inside the header.
+  const { theme, toggleTheme } = useTheme();
   const headerRef = useRef<HTMLElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileNavRef = useRef<HTMLElement>(null);
 
-  // The button shows the language it switches TO; the accessible name starts with
-  // that same visible text (WCAG 2.5.3 Label in Name).
+  // The link shows the language it switches TO; the accessible name starts with
+  // that same visible text (WCAG 2.5.3 Label in Name). It is a real link to this
+  // page's counterpart, so crawlers can follow it too.
   const targetLanguage = language === 'en' ? 'ES' : 'EN';
   const langLabel = `${targetLanguage} – ${data.ui.ariaLangToggle}`;
+  const keepScroll: KeepScrollState = { keepScroll: true };
+  // The icon follows the `dark` class in CSS rather than `theme`, so it is
+  // already right in prerendered HTML, before React has hydrated.
+  const themeIcon = (
+    <>
+      <span className="dark:hidden"><MoonIcon /></span>
+      <span className="hidden dark:block"><SunIcon /></span>
+    </>
+  );
 
   // Mobile menu: focus the first link on open; close on Escape (returning focus to
   // the toggle) or on a tap outside the header.
@@ -88,19 +104,22 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="h-4 w-px bg-warm-300 dark:bg-warm-700 mx-2" aria-hidden="true" />
 
-          <button
-            onClick={onToggleLanguage}
+          <Link
+            to={otherLanguagePath}
+            state={keepScroll}
+            hrefLang={targetLanguage.toLowerCase()}
+            onClick={onSwitchLanguage}
             aria-label={langLabel}
             className="text-xs font-semibold text-warm-500 dark:text-warm-400 hover:text-warm-900 dark:hover:text-warm-100 w-8 h-8 flex items-center justify-center rounded-md hover:bg-warm-100 dark:hover:bg-warm-800 transition-colors"
           >
             {targetLanguage}
-          </button>
+          </Link>
           <button
-            onClick={onToggleTheme}
+            onClick={toggleTheme}
             aria-label={theme === 'light' ? data.ui.ariaThemeToDark : data.ui.ariaThemeToLight}
             className="text-warm-500 dark:text-warm-400 hover:text-warm-900 dark:hover:text-warm-100 w-8 h-8 flex items-center justify-center rounded-md hover:bg-warm-100 dark:hover:bg-warm-800 transition-colors"
           >
-            {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+            {themeIcon}
           </button>
 
           <NavLink to="/contact" viewTransition className={`ml-3 ${buttonClass('primary', 'sm')}`}>
@@ -110,19 +129,22 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile */}
         <div className="flex items-center gap-1 -mr-2 md:hidden">
-          <button
-            onClick={onToggleLanguage}
+          <Link
+            to={otherLanguagePath}
+            state={keepScroll}
+            hrefLang={targetLanguage.toLowerCase()}
+            onClick={onSwitchLanguage}
             aria-label={langLabel}
             className="w-11 h-11 flex items-center justify-center rounded-lg text-warm-600 dark:text-warm-300"
           >
             <span className="text-xs font-semibold px-2 py-1 rounded border border-warm-300 dark:border-warm-700">{targetLanguage}</span>
-          </button>
+          </Link>
           <button
-            onClick={onToggleTheme}
+            onClick={toggleTheme}
             aria-label={theme === 'light' ? data.ui.ariaThemeToDark : data.ui.ariaThemeToLight}
             className="w-11 h-11 flex items-center justify-center rounded-lg text-warm-600 dark:text-warm-300"
           >
-            {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+            {themeIcon}
           </button>
           <button
             ref={menuButtonRef}

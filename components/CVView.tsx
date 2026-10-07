@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { LocaleLink as Link } from './ui/LocaleLink';
 import { AppContent } from '@/types';
 import { cvContent } from '@/data/cv';
 import { ArrowLeftIcon, DownloadIcon, MailIcon, LinkedinIcon, GitHubIcon } from './Icons';

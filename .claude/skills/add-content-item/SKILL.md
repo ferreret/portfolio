@@ -51,7 +51,7 @@ Si existe, **detente** y pregunta al usuario si quiere otro slug o sobrescribir.
 
 Usa la plantilla correspondiente (ver sección **Plantillas** abajo). Sustituye:
 
-- `__SLUG__` por el slug
+- `__SLUG__` por el slug (nombre del fichero **y** valor del campo `slug`, que es la URL)
 - `__ID__` por el id calculado
 - `__TITLE_EN__` por el título en inglés
 - `__TITLE_ES__` por el título en español
@@ -103,9 +103,11 @@ Añade `__VAR_NAME__.en` al array correspondiente (`projects` o `blog`), respeta
 
 Localiza el bloque `const esContent: AppContent` (alrededor de la línea 138 actualmente) y haz lo mismo con `__VAR_NAME__.es`.
 
-### 6. Actualizar `public/sitemap.xml`
+### 6. URL y sitemap: nada que tocar
 
-Añade una entrada `<url>` para la nueva ruta (`/projects/<id>` o `/blog/<id>`) con `<lastmod>` a la fecha de hoy. El sitemap es estático; si no se actualiza, la nueva página no será descubierta por los buscadores.
+El `slug` es la URL pública del item: `/projects/<slug>` o `/blog/<slug>` en inglés y la misma ruta bajo `/es/` en español. Es el mismo en los dos idiomas y coincide con el nombre del fichero. Una vez publicado no se cambia: rompería los enlaces ya compartidos.
+
+El sitemap y las páginas estáticas de cada idioma los genera `npm run build` (`scripts/prerender.mjs`) a partir de `contentData.ts`. No hay ningún `sitemap.xml` que editar a mano.
 
 ### 7. Verificación
 
@@ -130,6 +132,7 @@ import { ProjectItem } from '../../types';
 export const __VAR_NAME__: { en: ProjectItem; es: ProjectItem } = {
   en: {
     id: "__ID__",
+    slug: "__SLUG__",
     title: "__TITLE_EN__",
     description: "[TODO: descripción corta en inglés, ~1-2 frases]",
     tags: __TAGS__,
@@ -147,6 +150,7 @@ export const __VAR_NAME__: { en: ProjectItem; es: ProjectItem } = {
   },
   es: {
     id: "__ID__",
+    slug: "__SLUG__",
     title: "__TITLE_ES__",
     description: "[TODO: descripción corta en español, ~1-2 frases]",
     tags: __TAGS__,
@@ -181,6 +185,7 @@ const contentEs = `
 export const __VAR_NAME__: { en: BlogPost; es: BlogPost } = {
   en: {
     id: "__ID__",
+    slug: "__SLUG__",
     title: "__TITLE_EN__",
     date: "[TODO: YYYY-MM-DD]",
     readTime: "[TODO: X min read]",
@@ -190,6 +195,7 @@ export const __VAR_NAME__: { en: BlogPost; es: BlogPost } = {
   },
   es: {
     id: "__ID__",
+    slug: "__SLUG__",
     title: "__TITLE_ES__",
     date: "[TODO: DD-MM-YYYY]",
     readTime: "[TODO: X min de lectura]",

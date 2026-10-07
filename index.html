@@ -3,6 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Spanish lives under /es. A Spanish-speaking visitor who lands on an English
+    // URL is taken to its Spanish counterpart before anything is painted, unless
+    // they picked English on the language switch (which stores 'lang').
+    try {
+      var path = location.pathname, lang = localStorage.getItem('lang');
+      if (!/^\/es(\/|$)/.test(path) && lang !== 'en' && (lang === 'es' || /^es\b/i.test(navigator.language || ''))) {
+        location.replace('/es' + (path === '/' ? '' : path) + location.search + location.hash);
+      }
+    } catch (e) { }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nicolás Barceló | Senior Data Scientist & AI Engineer</title>
   <meta name="description" content="Senior Data Scientist & AI Engineer with 26+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation." />
@@ -49,6 +60,8 @@
   }
   </script>
   <link rel="stylesheet" href="/styles.css">
+  <!-- Sections wait hidden for their scroll reveal; without JS nothing would reveal them. -->
+  <noscript><style>[data-reveal] { opacity: 1 !important; }</style></noscript>
   <script>
     // Apply the persisted (or system) theme before first paint to avoid a light-mode flash.
     try {

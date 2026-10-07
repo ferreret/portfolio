@@ -1,10 +1,6 @@
-import { useEffect } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
-const SITE_URL = 'https://portfolio.nicolasbarcelo.dev';
-const BASE_TITLE = 'Nicolás Barceló | Senior Data Scientist & AI Engineer';
-const BASE_DESCRIPTION =
-  'Senior Data Scientist & AI Engineer with 26+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.';
+import { PageMeta, resolveMeta } from '@/lib/seo';
 
 interface PageMetaOptions {
   skip?: boolean;
@@ -12,30 +8,54 @@ interface PageMetaOptions {
   noindex?: boolean;
 }
 
-// Per-route document.title, meta description, canonical and og:url. SPA-only
-// (crawlers that render JS, browser tabs, history); OG tags for scrapers that
-// don't run JS would need prerendering.
+// During the build-time prerender there is no document to write to: the view's
+// meta is collected here instead and baked into that page's <head>.
+export const MetaSinkContext = createContext<PageMeta | null>(null);
+
+const setContent = (selector: string, content: string) =>
+  document.querySelector(selector)?.setAttribute('content', content);
+
+// Per-route title, description, canonical, hreflang and Open Graph tags. The
+// prerendered HTML already carries them for the page it was built for; this
+// keeps them right as the visitor navigates within the SPA.
 export function usePageMeta(title?: string, description?: string, options?: PageMetaOptions) {
+  // skip lets a view yield to a child that sets its own meta (e.g. detail
+  // views rendering NotFound): child effects run before parent effects.
   const skip = options?.skip ?? false;
   const noindex = options?.noindex ?? false;
   const { pathname } = useLocation();
 
+  const sink = useContext(MetaSinkContext);
+  if (sink && !skip) Object.assign(sink, { title, description, noindex });
+
   useEffect(() => {
-    // skip lets a view yield to a child that sets its own meta (e.g. detail
-    // views rendering NotFound): child effects run before parent effects.
     if (skip) return;
-    document.title = title ? `${title} — Nicolás Barceló` : BASE_TITLE;
-    document.querySelector('meta[name="description"]')?.setAttribute('content', description ?? BASE_DESCRIPTION);
+    const meta = resolveMeta(pathname, { title, description, noindex });
 
-    const url = `${SITE_URL}${pathname === '/' ? '/' : pathname.replace(/\/$/, '')}`;
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
-    document.querySelector('meta[property="og:url"]')?.setAttribute('content', url);
+    document.title = meta.title;
+    setContent('meta[name="description"]', meta.description);
+    setContent('meta[property="og:title"]', meta.title);
+    setContent('meta[property="og:description"]', meta.description);
+    setContent('meta[property="og:url"]', meta.canonical);
+    setContent('meta[name="twitter:title"]', meta.title);
+    setContent('meta[name="twitter:description"]', meta.description);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', meta.canonical);
 
-    if (!noindex) return;
-    const robots = document.createElement('meta');
-    robots.name = 'robots';
-    robots.content = 'noindex';
-    document.head.appendChild(robots);
-    return () => robots.remove();
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(link => link.remove());
+    for (const alternate of meta.alternates) {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = alternate.hreflang;
+      link.href = alternate.href;
+      document.head.appendChild(link);
+    }
+
+    document.querySelector('meta[name="robots"]')?.remove();
+    if (meta.noindex) {
+      const robots = document.createElement('meta');
+      robots.name = 'robots';
+      robots.content = 'noindex';
+      document.head.appendChild(robots);
+    }
   }, [title, description, skip, noindex, pathname]);
 }

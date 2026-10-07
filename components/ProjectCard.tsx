@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { LocaleLink as Link } from './ui/LocaleLink';
 import { AppContent, ProjectItem } from '@/types';
 import { getProjectLinks } from '@/lib/projectLinks';
+import { projectPath } from '@/lib/routes';
 import { CardTags } from './ui/TagFilter';
 
 interface ProjectCardProps {
@@ -41,7 +42,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, ui, headingLe
         )}
         <Heading className="font-serif text-xl font-semibold text-warm-900 dark:text-warm-50 mb-2 leading-snug group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
           <Link
-            to={`/projects/${project.id}`}
+            to={projectPath(project)}
             viewTransition
             state={fromList ? { fromList: true } : undefined}
             className="focus:outline-none after:absolute after:inset-0 after:rounded-xl focus-visible:after:ring-2 focus-visible:after:ring-accent-500"

@@ -13,7 +13,7 @@ interface PageShellProps {
 // every non-home page, so they all start at the same height.
 export const PageShell: React.FC<PageShellProps> = ({ width = 'wide', surface = 'page', className = '', children }) => (
   <div
-    className={`pt-28 pb-20 min-h-screen animate-fade-in ${
+    className={`pt-28 pb-20 min-h-screen ${
       surface === 'sheet' ? 'bg-white dark:bg-warm-900 transition-colors duration-300' : ''
     } ${className}`}
   >

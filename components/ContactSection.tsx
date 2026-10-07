@@ -63,7 +63,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
   return (
     <section className="pt-28 pb-20 px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-14 animate-fade-in-up">
+        <div className="text-center mb-14">
           <h1 className="font-serif text-4xl md:text-5xl font-semibold text-warm-900 dark:text-warm-50 mb-5 tracking-tight">
             {ui.contactTitle}
           </h1>

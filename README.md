@@ -45,7 +45,7 @@
 |---|---|
 | `npm install` | Instalar dependencias |
 | `npm run dev` | Servidor de desarrollo en `http://localhost:3000` |
-| `npm run build` | Build de producción a `dist/` |
+| `npm run build` | Build de producción a `dist/`: bundle + un HTML prerenderizado por página e idioma + `sitemap.xml` |
 | `npm run preview` | Previsualizar el build de producción |
 | `npm run typecheck` | `tsc --noEmit` (mismo comando que corre el hook) |
 
@@ -81,12 +81,11 @@ flowchart LR
 
 ## 📄 CV imprimible
 
-El CV se renderiza en `/cv` desde `data/cv/{en,es}.ts` mediante `components/CVView.tsx`. Para regenerar los PDF:
+El CV se renderiza en `/cv` (inglés) y `/es/cv` (español) desde `data/cv/{en,es}.ts` mediante `components/CVView.tsx`. Para regenerar los PDF:
 
-1. Abrir `/cv` en el navegador
-2. Cambiar idioma con el toggle del header
-3. `Ctrl+P` → Save as PDF, A4, **"Background graphics" activado**
-4. Guardar como `public/cv-en.pdf` o `public/cv-es.pdf`
+1. Abrir `/cv` o `/es/cv` en el navegador
+2. `Ctrl+P` → Save as PDF, A4, **"Background graphics" activado**
+3. Guardar como `public/cv-en.pdf` o `public/cv-es.pdf`
 
 El botón "Download CV" en `HomeView` enlaza a `/cv-${language}.pdf`.
 
@@ -120,7 +119,8 @@ Dokploy detecta el push, hace build y sirve el `dist/` resultante en `portfolio.
 
 ```
 .
-├── App.tsx                  # layout + router
+├── App.tsx                  # layout + router (inglés en la raíz, español bajo /es)
+├── entry-server.tsx         # entrada del prerender (solo en build)
 ├── contentData.ts           # ensamblado bilingüe { en, es }
 ├── types.ts                 # interfaces (AppContent, ProjectItem, BlogPost, …)
 ├── components/              # vistas y UI
@@ -128,6 +128,8 @@ Dokploy detecta el push, hace build y sirve el `dist/` resultante en `portfolio.
 ├── data/articles/           # un fichero por artículo (par bilingüe)
 ├── data/cv/                 # contenido del CV por idioma
 ├── hooks/                   # custom React hooks
+├── lib/                     # rutas e idioma, SEO, fechas
+├── scripts/                 # prerender del build y ticker de actividad
 ├── public/                  # estáticos: activity.json, cv-{en,es}.pdf, profile.png
 ├── .claude/                 # hooks y skills locales del proyecto
 └── .github/workflows/       # automatizaciones (ticker de actividad)

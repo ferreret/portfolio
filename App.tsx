@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef, Suspense } from 'react';
 import { Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
+import { Language, languageOf, localePath, stripLanguage } from './lib/routes';
+import { lazyView } from './lib/lazyView';
 import { content } from './contentData';
 import { AppContent } from './types';
 import { Header } from './components/Header';
@@ -11,41 +13,33 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { useCopyToClipboard } from './hooks/useCopyToClipboard';
 
 // Route-level code splitting: only the landing view ships in the main chunk.
-const ProjectsView = React.lazy(() => import('./components/ProjectsView').then(m => ({ default: m.ProjectsView })));
-const ProjectDetail = React.lazy(() => import('./components/ProjectDetail').then(m => ({ default: m.ProjectDetail })));
-const BlogView = React.lazy(() => import('./components/BlogView').then(m => ({ default: m.BlogView })));
-const BlogPostDetail = React.lazy(() => import('./components/BlogPostDetail').then(m => ({ default: m.BlogPostDetail })));
-const ContactSection = React.lazy(() => import('./components/ContactSection').then(m => ({ default: m.ContactSection })));
-const CVView = React.lazy(() => import('./components/CVView').then(m => ({ default: m.CVView })));
+const ProjectsView = lazyView(() => import('./components/ProjectsView').then(m => m.ProjectsView));
+const ProjectDetail = lazyView(() => import('./components/ProjectDetail').then(m => m.ProjectDetail));
+const BlogView = lazyView(() => import('./components/BlogView').then(m => m.BlogView));
+const BlogPostDetail = lazyView(() => import('./components/BlogPostDetail').then(m => m.BlogPostDetail));
+const ContactSection = lazyView(() => import('./components/ContactSection').then(m => m.ContactSection));
+const CVView = lazyView(() => import('./components/CVView').then(m => m.CVView));
 
-type Language = 'en' | 'es';
-type Theme = 'light' | 'dark';
-
-const getSystemTheme = (): Theme =>
-  typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
-
-const readStoredTheme = (): Theme | null => {
-  if (typeof window === 'undefined') return null;
-  try {
-    const stored = window.localStorage?.getItem('theme');
-    return stored === 'light' || stored === 'dark' ? stored : null;
-  } catch {
-    return null;
+/** Loads the code of the view that `pathname` routes to (see index.tsx). */
+export function preloadView(pathname: string): Promise<void> {
+  const [section, item] = stripLanguage(pathname).split('/').filter(Boolean);
+  switch (section) {
+    case 'projects': return (item ? ProjectDetail : ProjectsView).preload();
+    case 'blog': return (item ? BlogPostDetail : BlogView).preload();
+    case 'contact': return ContactSection.preload();
+    case 'cv': return CVView.preload();
+    default: return Promise.resolve();
   }
-};
+}
 
-const getStoredLanguage = (): Language => {
-  if (typeof window === 'undefined') return 'en';
-  const stored = window.localStorage?.getItem('lang');
-  if (stored === 'en' || stored === 'es') return stored;
-  const browser = window.navigator?.language?.slice(0, 2);
-  return browser === 'es' ? 'es' : 'en';
-};
+/** Router state of the language switch: the visitor stays where they were on the page. */
+export interface KeepScrollState {
+  keepScroll?: boolean;
+}
 
 const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation();
+  const { pathname, state } = useLocation();
+  const keepScroll = (state as KeepScrollState | null)?.keepScroll === true;
   const navigationType = useNavigationType();
   const firstRender = useRef(true);
   useEffect(() => {
@@ -56,63 +50,49 @@ const ScrollToTop: React.FC = () => {
       return;
     }
     // On POP (Back/Forward) let the browser restore the previous scroll position.
-    if (navigationType !== 'POP') {
+    if (navigationType !== 'POP' && !keepScroll) {
       window.scrollTo({ top: 0, behavior: 'instant' });
       // Land keyboard/screen-reader users on the new page's content.
       document.getElementById('main-content')?.focus({ preventScroll: true });
     }
-  }, [pathname, navigationType]);
+  }, [pathname, navigationType, keepScroll]);
   return null;
 };
 
 const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<Language>(getStoredLanguage);
-  // An explicit choice is persisted; without one the site follows the OS setting live.
-  const [storedTheme, setStoredTheme] = useState<Theme | null>(readStoredTheme);
-  const [systemTheme, setSystemTheme] = useState<Theme>(getSystemTheme);
-  const theme: Theme = storedTheme ?? systemTheme;
 
+  // The URL is the single source of truth for the language: /es/… is Spanish.
+  const location = useLocation();
+  const language: Language = languageOf(location.pathname);
   const data: AppContent = content[language];
 
-  useEffect(() => {
-    const media = window.matchMedia?.('(prefers-color-scheme: dark)');
-    if (!media) return;
-    const onChange = (e: MediaQueryListEvent) => setSystemTheme(e.matches ? 'dark' : 'light');
-    media.addEventListener('change', onChange);
-    return () => media.removeEventListener('change', onChange);
-  }, []);
+  // This same page in the other language, for the header's language switch.
+  const otherLanguage: Language = language === 'en' ? 'es' : 'en';
+  const otherLanguagePath = `${localePath(stripLanguage(location.pathname), otherLanguage)}${location.search}${location.hash}`;
 
-  // Sync theme to DOM (the inline script in index.html applies it pre-paint)
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  }, [theme]);
-
-  // Sync language to html lang attribute + persist
+  // Prerendered pages already carry the right lang; this follows SPA navigation.
   useEffect(() => {
     document.documentElement.lang = language;
-    window.localStorage?.setItem('lang', language);
   }, [language]);
 
   // Close mobile menu on route change
-  const location = useLocation();
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const toggleTheme = useCallback(() => {
-    const next: Theme = theme === 'light' ? 'dark' : 'light';
-    setStoredTheme(next);
-    try { window.localStorage?.setItem('theme', next); } catch { /* storage blocked */ }
-  }, [theme]);
-  const toggleLanguage = useCallback(() => setLanguage(prev => prev === 'en' ? 'es' : 'en'), []);
+  // Only an explicit switch is remembered: the inline script in index.html uses
+  // it to decide whether a Spanish-speaking visitor is sent to /es on arrival.
+  const rememberLanguage = useCallback(() => {
+    try { window.localStorage?.setItem('lang', otherLanguage); } catch { /* storage blocked */ }
+  }, [otherLanguage]);
   const toggleMobileMenu = useCallback(() => setMobileMenuOpen(prev => !prev), []);
   const closeMobileMenu = useCallback(() => setMobileMenuOpen(false), []);
 
   const { state: emailCopyState, copy } = useCopyToClipboard();
   const copyEmail = useCallback(() => copy(data.profile.email), [copy, data.profile.email]);
 
-  const isCV = location.pathname.startsWith('/cv');
+  const isCV = stripLanguage(location.pathname).startsWith('/cv');
 
   return (
     <div className={`${isCV ? 'cv-route min-h-screen' : 'min-h-screen bg-warm-50 dark:bg-warm-950 transition-colors duration-300'} font-sans selection:bg-accent-100 selection:text-accent-900 dark:selection:bg-accent-900/50 dark:selection:text-accent-100`}>
@@ -128,10 +108,9 @@ const App: React.FC = () => {
         <Header
           data={data}
           language={language}
-          theme={theme}
           mobileMenuOpen={mobileMenuOpen}
-          onToggleLanguage={toggleLanguage}
-          onToggleTheme={toggleTheme}
+          otherLanguagePath={otherLanguagePath}
+          onSwitchLanguage={rememberLanguage}
           onToggleMobileMenu={toggleMobileMenu}
           onCloseMobileMenu={closeMobileMenu}
         />
@@ -141,14 +120,19 @@ const App: React.FC = () => {
         {/* min-h-screen keeps the footer from jumping up while a lazy route loads */}
         <Suspense fallback={<div className="min-h-screen" />}>
           <Routes>
-            <Route path="/" element={<HomeView data={data} language={language} />} />
-            <Route path="/projects" element={<ProjectsView data={data} />} />
-            <Route path="/projects/:id" element={<ProjectDetail data={data} />} />
-            <Route path="/blog" element={<BlogView data={data} />} />
-            <Route path="/blog/:id" element={<BlogPostDetail data={data} />} />
-            <Route path="/contact" element={<ContactSection data={data} />} />
-            <Route path="/cv" element={<CVView data={data} language={language} />} />
-            <Route path="*" element={<NotFound data={data} />} />
+            {/* The same pages under both prefixes; `data` already follows the URL. */}
+            {['/', '/es'].map(prefix => (
+              <Route key={prefix} path={prefix}>
+                <Route index element={<HomeView data={data} language={language} />} />
+                <Route path="projects" element={<ProjectsView data={data} />} />
+                <Route path="projects/:slug" element={<ProjectDetail data={data} />} />
+                <Route path="blog" element={<BlogView data={data} />} />
+                <Route path="blog/:slug" element={<BlogPostDetail data={data} />} />
+                <Route path="contact" element={<ContactSection data={data} />} />
+                <Route path="cv" element={<CVView data={data} language={language} />} />
+                <Route path="*" element={<NotFound data={data} />} />
+              </Route>
+            ))}
           </Routes>
         </Suspense>
         </ErrorBoundary>

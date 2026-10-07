@@ -53,6 +53,7 @@ const contentEs = `
 export const batchReactorReprocessClassifier: { en: ProjectItem; es: ProjectItem } = {
   en: {
     id: "5",
+    slug: "batch-reactor-reprocess-classifier",
     title: "Batch Reactor Reprocess Classifier",
     description: "Machine-learning classifier that predicts, before a batch is run, the probability that an industrial reactor production order will end out of spec and need reprocessing. Born as my Master's Thesis (IEBS, 2023) and rescued in 2026 as a live, dockerized demo.",
     tags: ["Python", "XGBoost", "Machine Learning", "Streamlit"],
@@ -80,6 +81,7 @@ export const batchReactorReprocessClassifier: { en: ProjectItem; es: ProjectItem
   },
   es: {
     id: "5",
+    slug: "batch-reactor-reprocess-classifier",
     title: "Batch Reactor Reprocess Classifier",
     description: "Clasificador de machine learning que predice, antes de lanzar un lote, la probabilidad de que una orden de producción de un reactor industrial acabe fuera de especificación y necesite reprocesado. Nació como mi Trabajo Final de Máster (IEBS, 2023) y fue rescatado en 2026 como demo viva y dockerizada.",
     tags: ["Python", "XGBoost", "Machine Learning", "Streamlit"],

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { LocaleLink as Link } from './ui/LocaleLink';
 import { ArrowLeftIcon } from './Icons';
 
 interface BackLinkProps {
