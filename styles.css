@@ -40,6 +40,9 @@
   to { opacity: 1; }
 }
 
+/* For overlays that appear on demand (the mobile menu). Not for page wrappers:
+   prerendered content that starts at opacity 0 is hidden while it animates and
+   the browser leaves it out of the Largest Contentful Paint. */
 .animate-fade-in {
   animation: fadeIn 0.4s ease-in-out;
 }

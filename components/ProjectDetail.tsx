@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { AppContent, ProjectStatus } from '@/types';
 import { ExternalLinkIcon, GitHubIcon } from './Icons';
 import { BackLink } from './BackLink';
@@ -9,6 +9,8 @@ import { DetailFooter, DetailLink, nextItem } from './DetailFooter';
 import { PageShell } from './ui/PageShell';
 import { buttonClass } from './ui/button';
 import { getProjectLinks } from '@/lib/projectLinks';
+import { postPath, projectPath } from '@/lib/routes';
+import { useLocalePath } from '@/hooks/useLanguage';
 
 interface ProjectDetailProps {
   data: AppContent;
@@ -22,9 +24,15 @@ const statusStyles: Record<ProjectStatus, string> = {
 };
 
 export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
-  const { id } = useParams<{ id: string }>();
-  const project = data.projects.find(p => p.id === id);
+  const { slug } = useParams<{ slug: string }>();
+  const toLocale = useLocalePath();
+  const project = data.projects.find(p => p.slug === slug);
   usePageMeta(project?.title, project?.description, { skip: !project });
+
+  // URLs used the numeric id before slugs (/projects/5). nginx redirects those
+  // five in production; this covers the dev server and in-app navigation.
+  const legacy = project ? undefined : data.projects.find(p => p.id === slug);
+  if (legacy) return <Navigate to={toLocale(projectPath(legacy))} replace />;
 
   if (!project) {
     return <NotFound data={data} />;
@@ -46,8 +54,8 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
   const relatedPost = project.relatedPostId ? data.blog.find(p => p.id === project.relatedPostId) : undefined;
   const next = nextItem(data.projects, project.id);
   const endLinks: DetailLink[] = [
-    ...(relatedPost ? [{ to: `/blog/${relatedPost.id}`, eyebrow: data.ui.relatedPost, title: relatedPost.title }] : []),
-    ...(next ? [{ to: `/projects/${next.id}`, eyebrow: data.ui.nextProject, title: next.title }] : []),
+    ...(relatedPost ? [{ to: postPath(relatedPost), eyebrow: data.ui.relatedPost, title: relatedPost.title }] : []),
+    ...(next ? [{ to: projectPath(next), eyebrow: data.ui.nextProject, title: next.title }] : []),
   ];
 
   return (

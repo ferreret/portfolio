@@ -52,6 +52,7 @@ Verifica que estos campos están traducidos consistentemente:
 - `readTime` (artículos) — formato traducido (`"3 min read"` ↔ `"3 min de lectura"`)
 - `date` — comprueba que el formato es coherente con otros artículos del repo
 - `id` — debe ser **idéntico** en `en` y `es` (es el mismo item, sólo cambia el idioma)
+- `slug` — **idéntico** en `en` y `es` y igual al nombre del fichero: es la URL (`/projects/<slug>`, `/es/projects/<slug>`); si difiere, el build falla
 - `imageUrl`, `link` — idénticos en ambas versiones
 
 ### 5. Glosario

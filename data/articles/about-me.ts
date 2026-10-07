@@ -3,6 +3,7 @@ import { BlogPost } from '../../types';
 export const aboutMe: { en: BlogPost; es: BlogPost } = {
   en: {
     id: "3",
+    slug: "about-me",
     title: "Physics, Software, and Everything in Between",
     date: "2026-04-08",
     readTime: "3 min read",
@@ -26,6 +27,7 @@ export const aboutMe: { en: BlogPost; es: BlogPost } = {
   },
   es: {
     id: "3",
+    slug: "about-me",
     title: "Física, software y todo lo que hay entre medio",
     date: "08-04-2026",
     readTime: "3 min de lectura",

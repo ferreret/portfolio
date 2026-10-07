@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { LocaleLink as Link } from './ui/LocaleLink';
 import { AppContent } from '@/types';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
 import { usePageMeta } from '@/hooks/usePageMeta';
@@ -38,7 +38,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
   const latestPosts = data.blog.slice(0, 3);
 
   return (
-    <div className="animate-fade-in">
+    <div>
       {/* Hero: the og-image made page. Follows the theme — its night palette in dark,
           the page surface in light. mt-16 keeps it clear of the fixed header. */}
       <section className="mt-16 py-16 md:py-28 dark:bg-night-950 overflow-hidden transition-colors duration-300">

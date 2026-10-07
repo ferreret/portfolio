@@ -49,6 +49,7 @@ const techStackEs = [
 export const docscanStudio: { en: ProjectItem; es: ProjectItem } = {
   en: {
     id: "4",
+    slug: "docscan-studio",
     title: "DocScan Studio",
     description: "Cross-platform desktop application for batch document capture, OCR, barcode reading, and AI-powered field extraction with a no-code configurable pipeline.",
     tags: ["Python", "PySide6", "OCR", "Generative AI"],
@@ -73,6 +74,7 @@ export const docscanStudio: { en: ProjectItem; es: ProjectItem } = {
   },
   es: {
     id: "4",
+    slug: "docscan-studio",
     title: "DocScan Studio",
     description: "Aplicación de escritorio multiplataforma para captura masiva de documentos, OCR, lectura de códigos de barras y extracción de campos con IA, mediante pipeline configurable sin código.",
     tags: ["Python", "PySide6", "OCR", "IA Generativa"],

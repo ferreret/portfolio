@@ -52,7 +52,9 @@ const prefersReducedMotion = () =>
 
 export const AnimatedNumber: React.FC<AnimatedNumberProps> = ({ value, duration = 1400, className }) => {
   const { prefix, number, suffix, separator } = parseValue(value);
-  const [display, setDisplay] = useState<number>(0);
+  // Starts at the real value so prerendered HTML (and no-JS readers) show it;
+  // the count-up restarts from zero when the number scrolls into view.
+  const [display, setDisplay] = useState<number>(number ?? 0);
   const ref = useRef<HTMLSpanElement>(null);
   const animated = useRef(false);
 

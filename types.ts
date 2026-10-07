@@ -25,6 +25,8 @@ export interface TechStackGroup {
 
 export interface ProjectItem {
   id: string;
+  /** URL segment: /projects/<slug>. Same in both languages; matches the data file's name. */
+  slug: string;
   title: string;
   description: string;
   tags: string[];
@@ -50,6 +52,8 @@ export interface ProjectItem {
 
 export interface BlogPost {
   id: string;
+  /** URL segment: /blog/<slug>. Same in both languages; matches the data file's name. */
+  slug: string;
   title: string;
   date: string;
   excerpt: string;

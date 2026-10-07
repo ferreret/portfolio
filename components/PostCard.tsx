@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { LocaleLink as Link } from './ui/LocaleLink';
 import { AppContent, BlogPost } from '@/types';
 import { formatPostDate } from '@/lib/formatDate';
+import { postPath } from '@/lib/routes';
 import { ArrowRightIcon } from './Icons';
 import { CardTags } from './ui/TagFilter';
 
@@ -27,7 +28,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, ui, headingLevel: Head
         </div>
         <Heading className="font-serif text-xl font-semibold text-warm-900 dark:text-warm-50 mb-3 leading-snug group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
           <Link
-            to={`/blog/${post.id}`}
+            to={postPath(post)}
             viewTransition
             state={fromList ? { fromList: true } : undefined}
             className="focus:outline-none after:absolute after:inset-0 after:rounded-xl focus-visible:after:ring-2 focus-visible:after:ring-accent-500"

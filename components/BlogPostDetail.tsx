@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { BackLink } from './BackLink';
 import { usePageMeta } from '@/hooks/usePageMeta';
@@ -7,15 +7,22 @@ import { NotFound } from './NotFound';
 import { DetailFooter, DetailLink, nextItem } from './DetailFooter';
 import { PageShell } from './ui/PageShell';
 import { formatPostDate } from '@/lib/formatDate';
+import { postPath, projectPath } from '@/lib/routes';
+import { useLocalePath } from '@/hooks/useLanguage';
 
 interface BlogPostDetailProps {
   data: AppContent;
 }
 
 export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ data }) => {
-  const { id } = useParams<{ id: string }>();
-  const post = data.blog.find(p => p.id === id);
+  const { slug } = useParams<{ slug: string }>();
+  const toLocale = useLocalePath();
+  const post = data.blog.find(p => p.slug === slug);
   usePageMeta(post?.title, post?.excerpt, { skip: !post });
+
+  // Numeric ids were the URL before slugs (/blog/5); see ProjectDetail.
+  const legacy = post ? undefined : data.blog.find(p => p.id === slug);
+  if (legacy) return <Navigate to={toLocale(postPath(legacy))} replace />;
 
   if (!post) {
     return <NotFound data={data} />;
@@ -25,8 +32,8 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ data }) => {
   const relatedProject = post.relatedProjectId ? data.projects.find(p => p.id === post.relatedProjectId) : undefined;
   const next = nextItem(data.blog, post.id);
   const endLinks: DetailLink[] = [
-    ...(relatedProject ? [{ to: `/projects/${relatedProject.id}`, eyebrow: data.ui.relatedProject, title: relatedProject.title }] : []),
-    ...(next ? [{ to: `/blog/${next.id}`, eyebrow: data.ui.nextPost, title: next.title }] : []),
+    ...(relatedProject ? [{ to: projectPath(relatedProject), eyebrow: data.ui.relatedProject, title: relatedProject.title }] : []),
+    ...(next ? [{ to: postPath(next), eyebrow: data.ui.nextPost, title: next.title }] : []),
   ];
 
   return (

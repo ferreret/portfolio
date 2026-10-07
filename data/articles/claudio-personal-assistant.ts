@@ -281,6 +281,7 @@ const contentEs = `
 export const claudioPersonalAssistant: { en: BlogPost; es: BlogPost } = {
   en: {
     id: "4",
+    slug: "claudio-personal-assistant",
     title: "Meet Claudio: my personal assistant built on Claude Code and Obsidian",
     date: "2026-04-14",
     readTime: "7 min read",
@@ -290,6 +291,7 @@ export const claudioPersonalAssistant: { en: BlogPost; es: BlogPost } = {
   },
   es: {
     id: "4",
+    slug: "claudio-personal-assistant",
     title: "Claudio: mi asistente personal construido sobre Claude Code y Obsidian",
     date: "14-04-2026",
     readTime: "7 min de lectura",

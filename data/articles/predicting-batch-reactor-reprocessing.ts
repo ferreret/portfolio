@@ -85,6 +85,7 @@ const contentEs = `
 export const predictingBatchReactorReprocessing: { en: BlogPost; es: BlogPost } = {
   en: {
     id: "5",
+    slug: "predicting-batch-reactor-reprocessing",
     title: "Predicting Reprocessing in an Industrial Batch Reactor with XGBoost",
     date: "2026-08-14",
     readTime: "6 min read",
@@ -95,6 +96,7 @@ export const predictingBatchReactorReprocessing: { en: BlogPost; es: BlogPost } 
   },
   es: {
     id: "5",
+    slug: "predicting-batch-reactor-reprocessing",
     title: "Predecir reprocesados en un reactor industrial por lotes con XGBoost",
     date: "14-08-2026",
     readTime: "6 min de lectura",
