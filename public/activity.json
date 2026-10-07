@@ -1,14 +1,23 @@
 {
-  "generatedAt": "2026-10-07T09:14:46.544Z",
+  "generatedAt": "2026-10-07T12:48:27.300Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
+      "latestMessage": "feat(voice): the platform leaves out voices in the background",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/6199a2662d934f50ef81a5a09190c87a09574ea2",
+      "pushCount": 1,
+      "latestAt": "2026-10-07T08:21:32Z"
+    },
+    {
+      "repo": "ferreret/vet-front-desk-agent",
+      "repoShort": "vet-front-desk-agent",
+      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: where the day ended and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/395d10affc2eede0aa4a21d2d2a65e4b356c7202",
-      "pushCount": 33,
+      "pushCount": 38,
       "latestAt": "2026-10-06T18:54:08Z"
     },
     {
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/509552c4a98ce892c035dc7f757a7cd43d6b9685",
       "pushCount": 6,
       "latestAt": "2026-10-02T12:45:52Z"
-    },
-    {
-      "repo": "ferreret/kaggle-playground-s6e10",
-      "repoShort": "kaggle-playground-s6e10",
-      "repoUrl": "https://github.com/ferreret/kaggle-playground-s6e10",
-      "latestMessage": "feat: day-1 EDA and original-dataset comparison experiments",
-      "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e10/commit/8c4e158e07c8b345be8efc4d98fb7688abe8a1ce",
-      "pushCount": 1,
-      "latestAt": "2026-10-01T16:14:10Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "1214430",
       "0211011",
       "1111231",
-      "1241---"
+      "1242---"
     ]
   }
 }
