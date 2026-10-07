@@ -12,20 +12,42 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        serif: ['Newsreader', 'Georgia', 'serif'],
       },
       colors: {
+        // Amber, after the og-image. On light surfaces body-size text needs
+        // 700 or darker (600 is 3.2:1 on white: large text and fills only).
         accent: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+        },
+        // The og-image's own palette: the dark theme of the home hero and the
+        // project covers.
+        night: {
+          950: '#15110e',
+          900: '#17120e',
+          800: '#2a221c',
+          700: '#3a3027',
+          600: '#54463a',
+          500: '#6b5a4a',
+        },
+        cream: {
+          50: '#fdf3d7',
+          100: '#f6ecd0',
+          300: '#cfc3a8',
+          400: '#b9ad94',
+        },
+        gold: {
+          400: '#f0a63a',
+          500: '#e0a85a',
         },
         warm: {
           50: '#fafaf9',

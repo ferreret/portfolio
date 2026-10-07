@@ -11,7 +11,7 @@ export const cvEn: CVContent = {
     portfolio: "Portfolio",
   },
   summary: [
-    "Senior Data Scientist & Software Engineer with 26+ years of experience designing and implementing high-impact solutions across enterprise systems, document management, and process automation.",
+    "Senior Data Scientist & AI Engineer with 26+ years of experience designing and implementing high-impact solutions across enterprise systems, document management, and process automation.",
     "Currently focused on AI Agents, LLM orchestration, and intelligent automation, combining a strong foundation in .NET development with expertise in Python, NLP, and Generative AI.",
     "Passionate about rapidly prototyping, testing, and scaling AI systems that enhance decision-making, optimize workflows, and deliver measurable business impact.",
   ],

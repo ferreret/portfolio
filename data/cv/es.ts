@@ -11,7 +11,7 @@ export const cvEs: CVContent = {
     portfolio: "Portfolio",
   },
   summary: [
-    "Senior Data Scientist & Software Engineer con más de 26 años de experiencia diseñando e implementando soluciones de alto impacto en sistemas empresariales, gestión documental y automatización de procesos.",
+    "Senior Data Scientist & AI Engineer con más de 26 años de experiencia diseñando e implementando soluciones de alto impacto en sistemas empresariales, gestión documental y automatización de procesos.",
     "Actualmente enfocado en Agentes de IA, orquestación de LLMs y automatización inteligente, combinando una sólida base en desarrollo .NET con experiencia en Python, NLP e IA Generativa.",
     "Apasionado por prototipar, probar y escalar rápidamente sistemas de IA que mejoren la toma de decisiones, optimicen flujos de trabajo y entreguen valor comercial medible.",
   ],

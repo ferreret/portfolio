@@ -21,7 +21,7 @@ export const OpenSourceSection: React.FC<OpenSourceSectionProps> = ({ data, lang
     <section {...reveal(className)}>
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-3">{data.ui.openSourceTitle}</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-warm-900 dark:text-warm-50 mb-3">{data.ui.openSourceTitle}</h2>
           <a
             href={githubUrl}
             target="_blank"
@@ -32,7 +32,7 @@ export const OpenSourceSection: React.FC<OpenSourceSectionProps> = ({ data, lang
           </a>
         </div>
         <div className="mb-10">
-          <GitHubContributionChart username={username} ui={data.ui} />
+          <GitHubContributionChart ui={data.ui} />
         </div>
         <div className="grid lg:grid-cols-2 gap-10">
           <ActivityTicker ui={data.ui} language={language} />

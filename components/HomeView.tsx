@@ -5,6 +5,7 @@ import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { ArrowRightIcon, DownloadIcon } from './Icons';
 import { AnimatedNumber } from './AnimatedNumber';
+import { HeroPortrait } from './HeroPortrait';
 import { ProjectCard } from './ProjectCard';
 import { PostCard } from './PostCard';
 import { OpenSourceSection } from './OpenSourceSection';
@@ -38,61 +39,50 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
 
   return (
     <div className="animate-fade-in">
-      {/* Hero */}
-      <section className="pt-28 pb-16 md:pt-32 md:pb-24">
+      {/* Hero: the og-image made page. Follows the theme — its night palette in dark,
+          the page surface in light. mt-16 keeps it clear of the fixed header. */}
+      <section className="mt-16 py-16 md:py-28 dark:bg-night-950 overflow-hidden transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <div className="lg:w-3/5 space-y-6">
-              <p className="text-sm font-semibold tracking-wide uppercase text-warm-500 dark:text-warm-400">
+          <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-12 xl:gap-16">
+            <div className="lg:flex-1 space-y-6">
+              <p className="text-sm font-semibold tracking-wide uppercase text-warm-500 dark:text-cream-400">
                 {data.profile.name} <span aria-hidden="true">·</span> {data.profile.location}
               </p>
 
-              <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-warm-900 dark:text-warm-50">
+              <h1 className="font-serif text-[clamp(2.6rem,5.4vw,4.8rem)] font-semibold leading-[1.06] text-warm-900 dark:text-cream-100">
                 {data.ui.heroTitlePrefix}
-                <span className="text-accent-600 dark:text-accent-400">{data.ui.heroTitleHighlight}</span>
+                <span className="text-accent-600 dark:text-gold-400">{data.ui.heroTitleHighlight}</span>
                 {data.ui.heroTitleSuffix}
               </h1>
 
-              <p className="text-lg md:text-xl text-warm-500 dark:text-warm-400 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-warm-500 dark:text-cream-400 leading-relaxed max-w-xl">
                 {data.profile.title}
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <Link to="/projects" viewTransition className={`group ${buttonClass('primary')}`}>
+                <Link to="/projects" viewTransition className={`group ${buttonClass('primary', 'md', 'hero')}`}>
                   {data.ui.viewProjects}
                   <ArrowRightIcon />
                 </Link>
-                <a href={cvHref} download className={buttonClass('secondary')}>
+                <a href={cvHref} download className={buttonClass('secondary', 'md', 'hero')}>
                   <DownloadIcon /> {data.ui.downloadCv}
                 </a>
-                <Link to="/contact" viewTransition className={buttonClass('secondary')}>
+                <Link to="/contact" viewTransition className={buttonClass('secondary', 'md', 'hero')}>
                   {data.ui.contact}
                 </Link>
               </div>
 
-              <div className="inline-flex items-center gap-2 text-sm text-accent-700 dark:text-accent-400 font-medium">
+              <div className="inline-flex items-center gap-2 text-sm text-accent-700 dark:text-gold-400 font-medium">
                 <span className="relative flex h-2 w-2" aria-hidden="true">
-                  <span className="animate-soft-ping absolute inline-flex h-full w-full rounded-full bg-accent-500 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-600"></span>
+                  <span className="animate-soft-ping absolute inline-flex h-full w-full rounded-full bg-accent-500 dark:bg-gold-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-600 dark:bg-gold-400"></span>
                 </span>
                 {data.ui.available}
               </div>
             </div>
 
-            <div className="lg:w-2/5 flex justify-center">
-              <div className="relative">
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-warm-200 dark:border-warm-700 shadow-2xl shadow-warm-900/10 dark:shadow-black/30">
-                  <img
-                    src="/profile.webp"
-                    alt={data.profile.name}
-                    width={640}
-                    height={688}
-                    fetchPriority="high"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-accent-200 dark:border-accent-800 -z-10" aria-hidden="true" />
-              </div>
+            <div className="w-full lg:w-[26rem] xl:w-[30rem] lg:shrink-0 flex justify-center">
+              <HeroPortrait name={data.profile.name} />
             </div>
           </div>
         </div>
@@ -119,7 +109,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       <section {...revealAbout(PAGE_BG)}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-6 text-center">{data.ui.experienceTitle}</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-warm-900 dark:text-warm-50 mb-6 text-center">{data.ui.experienceTitle}</h2>
             <p className="drop-cap text-warm-600 dark:text-warm-400 text-lg leading-relaxed">
               {data.profile.summary}
             </p>
@@ -128,7 +118,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
           <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
             {data.heroStats.map((stat, index) => (
               <div key={index} className="text-center p-5 rounded-xl bg-white dark:bg-warm-900 border border-warm-200 dark:border-warm-800">
-                <div className="text-4xl font-serif font-bold text-accent-600 dark:text-accent-400 mb-1">
+                <div className="text-4xl font-serif font-semibold text-accent-600 dark:text-accent-400 mb-1">
                   <AnimatedNumber value={stat.value} />
                 </div>
                 <div className="text-sm text-warm-500 dark:text-warm-400 uppercase tracking-wider font-medium">{stat.label}</div>
@@ -222,33 +212,33 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       <OpenSourceSection data={data} language={language} className={PAGE_BG} />
 
       {/* Education & Certifications */}
-      <section {...revealEducation("py-20 bg-warm-900 dark:bg-black text-warm-300 transition-colors duration-300")}>
+      <section {...revealEducation(WHITE_BG)}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             <div>
-              <h2 className="font-serif text-2xl font-bold text-warm-50 mb-8">{data.ui.educationTitle}</h2>
+              <h2 className="font-serif text-2xl font-semibold text-warm-900 dark:text-warm-50 mb-8">{data.ui.educationTitle}</h2>
               <div className="space-y-5">
                 {data.profile.education.map((edu, i) => (
-                  <div key={i} className="p-5 rounded-xl bg-warm-800/60 border border-warm-700/50 hover:border-accent-600/40 transition-colors">
-                    <div className="font-semibold text-warm-50">{edu.degree}</div>
-                    <div className="text-warm-400 text-sm mt-1">{edu.institution}</div>
-                    <div className="text-warm-400 text-xs mt-1 tabular-nums">{edu.period}</div>
+                  <div key={i} className="p-5 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-colors">
+                    <div className="font-semibold text-warm-900 dark:text-warm-50">{edu.degree}</div>
+                    <div className="text-warm-600 dark:text-warm-400 text-sm mt-1">{edu.institution}</div>
+                    <div className="text-warm-500 dark:text-warm-400 text-xs mt-1 tabular-nums">{edu.period}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             <div>
-              <h2 className="font-serif text-2xl font-bold text-warm-50 mb-8">{data.ui.certificationsTitle}</h2>
+              <h2 className="font-serif text-2xl font-semibold text-warm-900 dark:text-warm-50 mb-8">{data.ui.certificationsTitle}</h2>
               <div className="space-y-3">
                 {data.profile.certifications.map((cert, i) => (
-                  <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-warm-800/60 border border-warm-700/50 hover:border-accent-600/40 transition-colors">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-md bg-accent-600/20 flex items-center justify-center" aria-hidden="true">
-                      <svg className="w-3.5 h-3.5 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
+                  <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-colors">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-md bg-accent-100 dark:bg-accent-600/20 flex items-center justify-center" aria-hidden="true">
+                      <svg className="w-3.5 h-3.5 text-accent-700 dark:text-accent-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="text-warm-300 text-sm">{cert}</span>
+                    <span className="text-warm-700 dark:text-warm-300 text-sm">{cert}</span>
                   </div>
                 ))}
               </div>
@@ -258,7 +248,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       </section>
 
       {/* Closing call to action */}
-      <section {...revealClosing(WHITE_BG)}>
+      <section {...revealClosing(PAGE_BG)}>
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <ClosingCta ui={data.ui} />
         </div>
