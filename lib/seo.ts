@@ -3,9 +3,9 @@ import { LANGUAGES, Language, SITE_URL, languageOf, localePath, stripLanguage } 
 // One description of a page's <head>, shared by the build-time prerender
 // (scripts/prerender.mjs) and the client (usePageMeta) so both always agree.
 
-export const BASE_TITLE = 'Nicolás Barceló | Senior Data Scientist & AI Engineer';
+export const BASE_TITLE = 'Nicolás Barceló | AI & Software Engineer';
 export const BASE_DESCRIPTION =
-  'Senior Data Scientist & AI Engineer with 26+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.';
+  'AI & Software Engineer with 26+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.';
 
 /** What a view declares about itself. */
 export interface PageMeta {

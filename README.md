@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/og-image.png" alt="Nicolás Barceló — Senior Data Scientist & AI Engineer" width="720" />
+<img src="public/og-image-v2.png" alt="Nicolás Barceló — AI & Software Engineer" width="720" />
 
 # Portfolio personal
 
