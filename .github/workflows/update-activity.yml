@@ -13,6 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          # Full history: the last step fast-forwards `production`, and git can
+          # only tell it is a fast-forward if it has the commit `production`
+          # points at. With the default shallow clone that is only true when
+          # `production` already equals `main`; any commit pushed to `main`
+          # alone made the push fail with "fetch first".
+          fetch-depth: 0
 
       - uses: actions/setup-node@v5
         with:
