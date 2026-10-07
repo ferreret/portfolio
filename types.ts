@@ -98,13 +98,21 @@ export interface LanguageStat {
   pct: number;
 }
 
+// One string per week, Sunday first: a digit 0-4 per day (GitHub's quartile
+// level) or '-' for a day outside the range. `from` is the first week's Sunday.
+export interface ContributionCalendar {
+  from: string;
+  weeks: string[];
+}
+
 export interface ActivityFeed {
   generatedAt: string;
   user: string;
   items: ActivityItem[];
   // Precomputed by scripts/fetch-activity.mjs; absent in feeds generated
-  // before the field existed, so consumers must treat it as optional.
+  // before each field existed, so consumers must treat them as optional.
   languages?: LanguageStat[];
+  contributions?: ContributionCalendar;
 }
 
 // CV content structure — richer than portfolio experience (categorized bullets).
@@ -234,6 +242,8 @@ export interface AppContent {
     metaDescription: string;
     githubLanguagesTitle: string;
     githubGraphAlt: string;
+    githubLess: string;
+    githubMore: string;
     errorTitle: string;
     errorDescription: string;
     errorReload: string;

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -92,6 +92,54 @@ async function fetchLanguages() {
     .map(([name, count]) => ({ name, count, pct: Math.round((count / total) * 100) }));
 }
 
+// Contribution calendar for the last year, as one string per week (Sunday
+// first): a digit 0-4 per day (GitHub's quartile level), '-' for days outside
+// the range. The site draws its own heatmap from it. GraphQL needs a token.
+const LEVELS = { NONE: 0, FIRST_QUARTILE: 1, SECOND_QUARTILE: 2, THIRD_QUARTILE: 3, FOURTH_QUARTILE: 4 };
+
+async function fetchContributions() {
+  if (!process.env.GITHUB_TOKEN) throw new Error('no GITHUB_TOKEN');
+  const query = `query($login: String!) {
+    user(login: $login) {
+      contributionsCollection {
+        contributionCalendar { weeks { contributionDays { date weekday contributionLevel } } }
+      }
+    }
+  }`;
+  const res = await fetch('https://api.github.com/graphql', {
+    method: 'POST',
+    headers: { ...headers, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query, variables: { login: USER } }),
+  });
+  if (!res.ok) throw new Error(`GitHub GraphQL ${res.status} ${res.statusText}`);
+  const body = await res.json();
+  if (body.errors?.length) throw new Error(`GitHub GraphQL: ${body.errors[0].message}`);
+
+  const weeks = body.data.user.contributionsCollection.contributionCalendar.weeks;
+  if (!weeks.length) throw new Error('empty contribution calendar');
+  // `from` is the Sunday of the first week, even when that week starts mid-range.
+  const first = weeks[0].contributionDays[0];
+  const from = new Date(`${first.date}T00:00:00Z`);
+  from.setUTCDate(from.getUTCDate() - first.weekday);
+  return {
+    from: from.toISOString().slice(0, 10),
+    weeks: weeks.map((week) => {
+      const days = Array(7).fill('-');
+      for (const day of week.contributionDays) days[day.weekday] = LEVELS[day.contributionLevel] ?? 0;
+      return days.join('');
+    }),
+  };
+}
+
+// A failed refresh must not blank a section of the site: fall back to what is published.
+function previousPayload() {
+  try {
+    return JSON.parse(readFileSync(OUT_PATH, 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
 async function main() {
   const events = await ghJson(`https://api.github.com/users/${USER}/events/public?per_page=100`);
   const groups = buildGroups(events);
@@ -111,11 +159,19 @@ async function main() {
     console.warn(`Language stats failed (ticker still written): ${err.message}`);
   }
 
+  let contributions = previousPayload().contributions;
+  try {
+    contributions = await fetchContributions();
+  } catch (err) {
+    console.warn(`Contribution calendar failed (keeping the previous one): ${err.message}`);
+  }
+
   const payload = {
     generatedAt: new Date().toISOString(),
     user: USER,
     items,
     languages,
+    ...(contributions ? { contributions } : {}),
   };
   mkdirSync(dirname(OUT_PATH), { recursive: true });
   writeFileSync(OUT_PATH, JSON.stringify(payload, null, 2) + '\n');

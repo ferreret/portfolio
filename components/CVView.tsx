@@ -48,7 +48,7 @@ export const CVView: React.FC<CVViewProps> = ({ language, data }) => {
       >
         {/* Header */}
         <header className="pb-4 mb-5 border-b border-warm-300">
-          <h1 className="font-serif text-[28pt] font-bold leading-none tracking-tight text-warm-900">
+          <h1 className="font-serif text-[28pt] font-semibold leading-none tracking-tight text-warm-900">
             {profile.name}
           </h1>
           <p className="font-serif italic text-accent-700 text-[12pt] mt-1">

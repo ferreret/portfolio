@@ -64,7 +64,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     <section className="pt-28 pb-20 px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-14 animate-fade-in-up">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-warm-900 dark:text-warm-50 mb-5 tracking-tight">
+          <h1 className="font-serif text-4xl md:text-5xl font-semibold text-warm-900 dark:text-warm-50 mb-5 tracking-tight">
             {ui.contactTitle}
           </h1>
           <p className="text-lg text-warm-600 dark:text-warm-300 max-w-2xl mx-auto leading-relaxed">
@@ -73,19 +73,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-5">
-          {/* Email: visible and copyable too, since mailto: does nothing without a mail client */}
-          <div className="flex flex-col p-6 rounded-xl border bg-warm-900 dark:bg-warm-100 border-warm-900 dark:border-warm-100 animate-fade-in-up">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-white/10 text-white dark:bg-warm-900/10 dark:text-warm-900">
+          {/* Email, the primary channel: an accent tint sets it apart. Visible and copyable
+              too, since mailto: does nothing without a mail client */}
+          <div className="flex flex-col p-6 rounded-xl border bg-accent-50 dark:bg-accent-900/20 border-accent-300 dark:border-accent-800 animate-fade-in-up">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-accent-100 dark:bg-accent-900/40 text-accent-800 dark:text-accent-300">
               <MailIcon />
             </div>
-            <h2 className="font-serif text-xl font-bold mb-2 text-white dark:text-warm-900">{ui.contactEmailTitle}</h2>
-            <p className="text-sm leading-relaxed mb-4 text-warm-200 dark:text-warm-700">{ui.contactEmailDesc}</p>
-            <p ref={emailRef} className="text-sm font-medium mb-5 flex-1 text-white dark:text-warm-900 select-all break-all">{profile.email}</p>
+            <h2 className="font-serif text-xl font-semibold mb-2 text-warm-900 dark:text-warm-50">{ui.contactEmailTitle}</h2>
+            <p className="text-sm leading-relaxed mb-4 text-warm-600 dark:text-warm-400">{ui.contactEmailDesc}</p>
+            <p ref={emailRef} className="text-sm font-medium mb-5 flex-1 text-warm-900 dark:text-warm-50 select-all break-all">{profile.email}</p>
             {/* -mb-3 offsets the 44px touch targets so the CTA lines up with the other cards */}
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 -mb-3">
               <a
                 href={mailto}
-                className="group inline-flex items-center gap-2 min-h-11 text-sm font-medium text-white dark:text-warm-900 hover:underline"
+                className="group inline-flex items-center gap-2 min-h-11 text-sm font-medium text-accent-700 dark:text-accent-400 hover:underline"
               >
                 {ui.contactEmailCta}
                 <span className="transition-transform group-hover:translate-x-1">
@@ -94,11 +95,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
               </a>
               <button
                 onClick={() => copy(profile.email)}
-                className="inline-flex items-center min-h-11 px-3 -mx-3 rounded-md text-sm font-medium text-warm-200 dark:text-warm-700 hover:text-white dark:hover:text-warm-900 transition-colors"
+                className="inline-flex items-center min-h-11 px-3 -mx-3 rounded-md text-sm font-medium text-warm-600 dark:text-warm-300 hover:text-warm-900 dark:hover:text-warm-50 transition-colors"
               >
                 {ui.contactEmailCopy}
               </button>
-              <span role="status" aria-live="polite" className="text-sm text-accent-300 dark:text-accent-800">
+              <span role="status" aria-live="polite" className="text-sm text-accent-800 dark:text-accent-300">
                 {copyState === 'copied' ? ui.emailCopiedLabel : ''}
               </span>
             </div>
@@ -116,7 +117,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-warm-100 dark:bg-warm-800 text-warm-700 dark:text-warm-200">
                 {channel.icon}
               </div>
-              <h2 className="font-serif text-xl font-bold mb-2 text-warm-900 dark:text-warm-50">
+              <h2 className="font-serif text-xl font-semibold mb-2 text-warm-900 dark:text-warm-50">
                 {channel.title}
               </h2>
               <p className="text-sm leading-relaxed mb-5 flex-1 text-warm-600 dark:text-warm-400">

@@ -75,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({
         <NavLink
           to="/"
           viewTransition
-          className="text-lg font-serif font-bold text-warm-900 dark:text-warm-50 tracking-tight"
+          className="text-xl font-serif font-semibold text-warm-900 dark:text-warm-50 tracking-tight"
         >
           Nicol&aacute;s Barcel&oacute;
         </NavLink>

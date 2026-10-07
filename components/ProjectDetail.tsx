@@ -66,7 +66,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
             <span key={tag} className="text-xs font-semibold tracking-wider uppercase text-accent-700 dark:text-accent-400">{tag}</span>
           ))}
         </div>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{project.title}</h1>
+        <h1 className="font-serif text-3xl md:text-5xl font-semibold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{project.title}</h1>
         <p className="text-lg text-warm-500 dark:text-warm-400 leading-relaxed pb-8">{project.description}</p>
 
         {(demoUrl || repoUrl) && (
@@ -126,11 +126,11 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
 
       {project.businessMetrics && project.businessMetrics.length > 0 && (
         <section className="mb-12">
-          <h2 className="font-serif text-2xl font-bold text-warm-900 dark:text-warm-50 mb-4">{cs.metricsTitle}</h2>
+          <h2 className="font-serif text-2xl font-semibold text-warm-900 dark:text-warm-50 mb-4">{cs.metricsTitle}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {project.businessMetrics.map(m => (
               <div key={m.label} className="rounded-xl border border-warm-200 dark:border-warm-800 bg-warm-50/50 dark:bg-warm-800/40 p-5">
-                <div className="font-serif text-3xl font-bold text-accent-600 dark:text-accent-400 mb-1">{m.value}</div>
+                <div className="font-serif text-3xl font-semibold text-accent-600 dark:text-accent-400 mb-1">{m.value}</div>
                 <div className="text-xs uppercase tracking-wider text-warm-500 dark:text-warm-400">{m.label}</div>
               </div>
             ))}
@@ -140,21 +140,21 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
 
       {project.problem && (
         <section className="mb-10">
-          <h2 className="font-serif text-2xl font-bold text-warm-900 dark:text-warm-50 mb-3">{cs.problemTitle}</h2>
+          <h2 className="font-serif text-2xl font-semibold text-warm-900 dark:text-warm-50 mb-3">{cs.problemTitle}</h2>
           <p className="text-lg text-warm-600 dark:text-warm-300 leading-relaxed whitespace-pre-line">{project.problem}</p>
         </section>
       )}
 
       {project.solution && (
         <section className="mb-10">
-          <h2 className="font-serif text-2xl font-bold text-warm-900 dark:text-warm-50 mb-3">{cs.solutionTitle}</h2>
+          <h2 className="font-serif text-2xl font-semibold text-warm-900 dark:text-warm-50 mb-3">{cs.solutionTitle}</h2>
           <p className="text-lg text-warm-600 dark:text-warm-300 leading-relaxed whitespace-pre-line">{project.solution}</p>
         </section>
       )}
 
       {project.architectureDiagram && (
         <section className="mb-10">
-          <h2 className="font-serif text-2xl font-bold text-warm-900 dark:text-warm-50 mb-3">{cs.architectureTitle}</h2>
+          <h2 className="font-serif text-2xl font-semibold text-warm-900 dark:text-warm-50 mb-3">{cs.architectureTitle}</h2>
           <div className="rounded-xl overflow-hidden border border-warm-200 dark:border-warm-800">
             <img src={project.architectureDiagram} alt={`${cs.architectureTitle}: ${project.title}`} className="w-full h-auto" />
           </div>
@@ -163,7 +163,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
 
       {project.techStack && project.techStack.length > 0 && (
         <section className="mb-10">
-          <h2 className="font-serif text-2xl font-bold text-warm-900 dark:text-warm-50 mb-4">{cs.techStackTitle}</h2>
+          <h2 className="font-serif text-2xl font-semibold text-warm-900 dark:text-warm-50 mb-4">{cs.techStackTitle}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {project.techStack.map(group => (
               <div key={group.category} className="rounded-lg border border-warm-200 dark:border-warm-800 p-4">
@@ -181,7 +181,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
 
       {project.lessonsLearned && project.lessonsLearned.length > 0 && (
         <section className="mb-10">
-          <h2 className="font-serif text-2xl font-bold text-warm-900 dark:text-warm-50 mb-3">{cs.lessonsLearnedTitle}</h2>
+          <h2 className="font-serif text-2xl font-semibold text-warm-900 dark:text-warm-50 mb-3">{cs.lessonsLearnedTitle}</h2>
           <ul className="list-disc pl-6 space-y-2 text-lg text-warm-600 dark:text-warm-300 leading-relaxed">
             {project.lessonsLearned.map((l, i) => (
               <li key={i}>{l}</li>
@@ -192,7 +192,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
 
       {project.content && (
         <div
-          className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-a:text-accent-700 dark:prose-a:text-accent-400 prose-code:[overflow-wrap:anywhere] prose-custom"
+          className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-semibold prose-a:text-accent-700 dark:prose-a:text-accent-400 prose-code:[overflow-wrap:anywhere] prose-custom"
           dangerouslySetInnerHTML={{ __html: project.content }}
         />
       )}

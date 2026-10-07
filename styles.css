@@ -78,29 +78,87 @@
 :root.dark { color-scheme: dark; }
 
 /* Print-friendly prose */
-.prose-custom h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
+.prose-custom h2,
+.prose-custom h3 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-.prose-custom h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
+/* Display face: slightly tight. In the base layer so tracking-* utilities still win. */
+@layer base {
+  .font-serif {
+    letter-spacing: -0.01em;
+  }
 }
 
 /* Editorial drop cap — first-letter treatment for About summary */
 .drop-cap::first-letter {
   float: left;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 600;
   font-size: 3.6em;
   line-height: 0.85;
   padding: 0.08em 0.12em 0 0;
-  color: #0d9488; /* accent-600 */
+  color: #d97706; /* accent-600 */
 }
 
 .dark .drop-cap::first-letter {
-  color: #2dd4bf; /* accent-400 */
+  color: #fbbf24; /* accent-400 */
+}
+
+/* Home hero: the portrait is the central node of the og-image's graph.
+   Tight crop on the face, warm monochrome, and a vignette so the garden recedes. */
+.hero-portrait {
+  box-shadow: 0 0 0 10px rgba(217, 119, 6, 0.1), 0 0 60px rgba(217, 119, 6, 0.28);
+}
+
+.dark .hero-portrait {
+  box-shadow: 0 0 0 10px rgba(224, 168, 90, 0.1), 0 0 70px rgba(217, 119, 6, 0.35);
+}
+
+.hero-portrait img {
+  transform: scale(1.5);
+  transform-origin: 49% 20%;
+  filter: grayscale(1) sepia(0.42) contrast(1.08) brightness(0.96);
+}
+
+.hero-portrait::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, transparent 46%, rgba(21, 17, 14, 0.62) 100%);
+}
+
+/* Project covers: one frame for every screenshot, whatever the app looks like —
+   a panel with an amber glow and the capture tilted in perspective. The panel
+   follows the theme: warm paper in light, the og-image's night in dark. */
+.project-cover {
+  background: radial-gradient(22rem 14rem at 88% 6%, rgba(251, 191, 36, 0.5), transparent 66%), #f3ede2;
+}
+
+.dark .project-cover {
+  background: radial-gradient(22rem 14rem at 88% 6%, rgba(217, 119, 6, 0.34), transparent 66%), #17120e; /* night-900 */
+}
+
+.project-shot {
+  transform: perspective(1100px) rotateY(-17deg) rotateX(8deg);
+  transform-origin: 0 0;
+  box-shadow: -18px 26px 44px rgba(68, 44, 16, 0.3);
+  outline: 1px solid rgba(28, 25, 23, 0.12);
+  transition: transform 0.5s ease;
+}
+
+.dark .project-shot {
+  box-shadow: -18px 26px 50px rgba(0, 0, 0, 0.6);
+  outline-color: rgba(246, 236, 208, 0.14);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .group:hover .project-shot {
+    transform: perspective(1100px) rotateY(-11deg) rotateX(5deg);
+  }
 }
 
 /* View Transitions — SPA route change cross-fade */
@@ -131,13 +189,13 @@
 
 /* CV route: section heading */
 .cv-heading {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Newsreader', Georgia, serif;
   font-size: 11pt;
   font-weight: 700;
-  color: #0f766e; /* accent-700: 5.5:1 on white (accent-600 fails AA at 11pt) */
+  color: #b45309; /* accent-700: 5:1 on white (accent-600 fails AA at 11pt) */
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border-bottom: 1px solid rgba(13, 148, 136, 0.35);
+  border-bottom: 1px solid rgba(217, 119, 6, 0.35);
   padding-bottom: 3px;
   margin-bottom: 8px;
 }

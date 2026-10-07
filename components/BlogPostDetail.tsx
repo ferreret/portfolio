@@ -39,7 +39,7 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ data }) => {
             <span key={tag} className="text-xs font-semibold tracking-wider uppercase text-accent-700 dark:text-accent-400">{tag}</span>
           ))}
         </div>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{post.title}</h1>
+        <h1 className="font-serif text-3xl md:text-5xl font-semibold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{post.title}</h1>
         <div className="flex items-center gap-4 text-warm-500 dark:text-warm-400 border-b border-warm-100 dark:border-warm-800 pb-8">
           <img src="/profile.webp" alt="" width={40} height={40} className="w-10 h-10 rounded-full object-cover" />
           <div>
@@ -50,7 +50,7 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ data }) => {
       </header>
 
       <div
-        className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-a:text-accent-700 dark:prose-a:text-accent-400 prose-code:[overflow-wrap:anywhere] prose-custom"
+        className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-semibold prose-a:text-accent-700 dark:prose-a:text-accent-400 prose-code:[overflow-wrap:anywhere] prose-custom"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 

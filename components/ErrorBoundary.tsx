@@ -34,7 +34,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
     return (
       <div role="alert" className="pt-28 pb-20 min-h-screen flex items-center">
         <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-4 leading-tight">
+          <h1 className="font-serif text-3xl md:text-4xl font-semibold text-warm-900 dark:text-warm-50 mb-4 leading-tight">
             {ui.errorTitle}
           </h1>
           <p className="text-lg text-warm-600 dark:text-warm-400 leading-relaxed mb-10">{ui.errorDescription}</p>
