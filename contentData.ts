@@ -88,7 +88,7 @@ const enContent: AppContent = {
     ariaLinkedinProfile: "LinkedIn profile",
     ariaXProfile: "X profile",
     contactEmailCopy: "Copy",
-    metaDescription: "Senior Data Scientist & Software Engineer with 26+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.",
+    metaDescription: "Senior Data Scientist & AI Engineer with 26+ years of experience. Specialized in AI Agents, LLM orchestration, and intelligent automation.",
     githubLanguagesTitle: "Top languages",
     githubGraphAlt: "GitHub contribution graph for the last year",
     githubLess: "Less",
@@ -116,13 +116,13 @@ const enContent: AppContent = {
   },
   profile: {
     name: "Nicolás Barceló Lozano",
-    title: "Senior Data Scientist & Software Engineer",
+    title: "Senior Data Scientist & AI Engineer",
     location: "Barcelona, Spain",
     email: "nicolas.barcelo.lozano@gmail.com",
     linkedin: "https://www.linkedin.com/in/ferreret/",
     github: "https://github.com/ferreret",
     x: "https://x.com/nickpage100",
-    summary: `Senior Data Scientist & Software Engineer with 26+ years of experience designing and implementing high-impact solutions across enterprise systems, document management, and process automation. Currently focused on AI Agents, LLM orchestration, and intelligent automation, combining a strong foundation in .NET development with expertise in Python, NLP, and Generative AI. Passionate about rapidly prototyping, testing, and scaling AI systems that enhance decision-making, optimize workflows, and deliver measurable business impact.`,
+    summary: `Senior Data Scientist & AI Engineer with 26+ years of experience designing and implementing high-impact solutions across enterprise systems, document management, and process automation. Currently focused on AI Agents, LLM orchestration, and intelligent automation, combining a strong foundation in .NET development with expertise in Python, NLP, and Generative AI. Passionate about rapidly prototyping, testing, and scaling AI systems that enhance decision-making, optimize workflows, and deliver measurable business impact.`,
     education: [
       {
         degree: "Master's in AI, Data Science & ML and Big Data",
@@ -292,7 +292,7 @@ const esContent: AppContent = {
     ariaLinkedinProfile: "Perfil de LinkedIn",
     ariaXProfile: "Perfil de X",
     contactEmailCopy: "Copiar",
-    metaDescription: "Senior Data Scientist & Software Engineer con más de 26 años de experiencia. Especializado en Agentes de IA, orquestación de LLMs y automatización inteligente.",
+    metaDescription: "Senior Data Scientist & AI Engineer con más de 26 años de experiencia. Especializado en Agentes de IA, orquestación de LLMs y automatización inteligente.",
     githubLanguagesTitle: "Lenguajes principales",
     githubGraphAlt: "Gráfico de contribuciones en GitHub del último año",
     githubLess: "Menos",
@@ -320,13 +320,13 @@ const esContent: AppContent = {
   },
   profile: {
     name: "Nicolás Barceló Lozano",
-    title: "Senior Data Scientist & Software Engineer",
+    title: "Senior Data Scientist & AI Engineer",
     location: "Barcelona, España",
     email: "nicolas.barcelo.lozano@gmail.com",
     linkedin: "https://www.linkedin.com/in/ferreret/",
     github: "https://github.com/ferreret",
     x: "https://x.com/nickpage100",
-    summary: `Senior Data Scientist & Software Engineer con más de 26 años de experiencia diseñando e implementando soluciones de alto impacto en sistemas empresariales, gestión documental y automatización de procesos. Actualmente enfocado en Agentes de IA, orquestación de LLMs y automatización inteligente, combinando una sólida base en desarrollo .NET con experiencia en Python, NLP e IA Generativa. Apasionado por prototipar, probar y escalar rápidamente sistemas de IA que mejoren la toma de decisiones, optimicen flujos de trabajo y entreguen valor comercial medible.`,
+    summary: `Senior Data Scientist & AI Engineer con más de 26 años de experiencia diseñando e implementando soluciones de alto impacto en sistemas empresariales, gestión documental y automatización de procesos. Actualmente enfocado en Agentes de IA, orquestación de LLMs y automatización inteligente, combinando una sólida base en desarrollo .NET con experiencia en Python, NLP e IA Generativa. Apasionado por prototipar, probar y escalar rápidamente sistemas de IA que mejoren la toma de decisiones, optimicen flujos de trabajo y entreguen valor comercial medible.`,
     education: [
       {
         degree: "Máster en IA, Data Science & ML y Big Data",
