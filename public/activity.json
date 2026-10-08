@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-08T12:57:03.279Z",
+  "generatedAt": "2026-10-08T23:01:40.834Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: the first calls of the demo, what they showed and what was done about it",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/d06828eb018244463138cf825c0e27a811a7231a",
-      "pushCount": 1,
-      "latestAt": "2026-10-08T10:36:22Z"
+      "latestMessage": "docs: the second round of calls by voice, and a name said again that needed no spelling",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/327c013cf4ac7372ecf307732375d775998dd4b0",
+      "pushCount": 2,
+      "latestAt": "2026-10-08T14:12:38Z"
     },
     {
       "repo": "ferreret/vet-front-desk-agent",
@@ -17,7 +17,7 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: where the day ended and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/13c66cd1363096b2736e6ab6acc0264b0eae1b49",
-      "pushCount": 29,
+      "pushCount": 35,
       "latestAt": "2026-10-07T16:45:29Z"
     },
     {
@@ -26,26 +26,17 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: where the day ended and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/395d10affc2eede0aa4a21d2d2a65e4b356c7202",
-      "pushCount": 43,
+      "pushCount": 37,
       "latestAt": "2026-10-06T18:54:08Z"
-    },
-    {
-      "repo": "ferreret/kaggle-playground-s6e10",
-      "repoShort": "kaggle-playground-s6e10",
-      "repoUrl": "https://github.com/ferreret/kaggle-playground-s6e10",
-      "latestMessage": "feat: day-5 experiments (noise floor, original rows, tuning, MLP, blend)",
-      "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e10/commit/727d470b185bc0980080ff6c9b54487a0abc996a",
-      "pushCount": 1,
-      "latestAt": "2026-10-05T16:59:49Z"
     },
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: how the session was left, and what comes next",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/0581e0e448167a24d125a8d5a3c891bb0e0c1652",
-      "pushCount": 17,
-      "latestAt": "2026-10-05T15:31:56Z"
+      "latestMessage": "fix(agent): who is calling is asked as soon as it matters, not at the end",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/7cf5c27c86d4186801f1a3073e5c83046a5cd991",
+      "pushCount": 8,
+      "latestAt": "2026-10-05T14:43:06Z"
     }
   ],
   "languages": [
@@ -135,7 +126,7 @@
       "1214430",
       "0211011",
       "1111231",
-      "12431--"
+      "12432--"
     ]
   }
 }
