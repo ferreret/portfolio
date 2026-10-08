@@ -4,6 +4,7 @@ import { AppContent, ProjectItem } from '@/types';
 import { getProjectLinks } from '@/lib/projectLinks';
 import { projectPath } from '@/lib/routes';
 import { CardTags } from './ui/TagFilter';
+import { ProjectShot } from './ui/ProjectShot';
 
 interface ProjectCardProps {
   project: ProjectItem;
@@ -22,17 +23,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, ui, headingLe
   const { demoUrl, repoUrl } = getProjectLinks(project);
   return (
     <article className="group relative bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col">
-      {/* One frame for every capture (see .project-cover / .project-shot in styles.css) */}
-      <div className="project-cover relative aspect-[16/10] overflow-hidden">
-        <div className="project-shot absolute left-[13%] top-[15%] w-[88%] rounded-lg overflow-hidden bg-white">
-          <div className="flex items-center gap-[5px] h-5 px-[9px] bg-warm-200 dark:bg-night-800" aria-hidden="true">
-            <span className="w-1.5 h-1.5 rounded-full bg-warm-400 dark:bg-night-500" />
-            <span className="w-1.5 h-1.5 rounded-full bg-warm-400 dark:bg-night-500" />
-            <span className="w-1.5 h-1.5 rounded-full bg-warm-400 dark:bg-night-500" />
-          </div>
-          <img src={project.imageUrl} alt="" loading="lazy" className="block w-full" />
-        </div>
-      </div>
+      <ProjectShot variant="card" src={project.imageUrl} />
       <div className="p-6 flex-1 flex flex-col">
         {(demoUrl || repoUrl) && (
           <div className="flex gap-2 mb-3">

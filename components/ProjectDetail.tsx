@@ -7,6 +7,7 @@ import { usePageMeta } from '@/hooks/usePageMeta';
 import { NotFound } from './NotFound';
 import { DetailFooter, DetailLink, nextItem } from './DetailFooter';
 import { PageShell } from './ui/PageShell';
+import { ProjectShot } from './ui/ProjectShot';
 import { buttonClass } from './ui/button';
 import { getProjectLinks } from '@/lib/projectLinks';
 import { postPath, projectPath } from '@/lib/routes';
@@ -62,11 +63,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
     <PageShell width="narrow" surface="sheet">
       <BackLink to="/projects" label={data.ui.backToProjects} />
 
-      {project.imageUrl && (
-        <div className="rounded-xl overflow-hidden border border-warm-200 dark:border-warm-800 mb-10">
-          <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-cover" />
-        </div>
-      )}
+      {project.imageUrl && <ProjectShot variant="page" src={project.imageUrl} alt={project.title} className="mb-10" />}
 
       <header className="mb-10">
         <div className="flex flex-wrap gap-2 mb-4">
