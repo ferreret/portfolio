@@ -1,14 +1,23 @@
 {
-  "generatedAt": "2026-10-08T04:56:27.712Z",
+  "generatedAt": "2026-10-08T12:57:03.279Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
+      "latestMessage": "docs: the first calls of the demo, what they showed and what was done about it",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/d06828eb018244463138cf825c0e27a811a7231a",
+      "pushCount": 1,
+      "latestAt": "2026-10-08T10:36:22Z"
+    },
+    {
+      "repo": "ferreret/vet-front-desk-agent",
+      "repoShort": "vet-front-desk-agent",
+      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: where the day ended and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/13c66cd1363096b2736e6ab6acc0264b0eae1b49",
-      "pushCount": 22,
+      "pushCount": 29,
       "latestAt": "2026-10-07T16:45:29Z"
     },
     {
@@ -35,7 +44,7 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: how the session was left, and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/0581e0e448167a24d125a8d5a3c891bb0e0c1652",
-      "pushCount": 26,
+      "pushCount": 17,
       "latestAt": "2026-10-05T15:31:56Z"
     }
   ],
@@ -126,7 +135,7 @@
       "1214430",
       "0211011",
       "1111231",
-      "12430--"
+      "12431--"
     ]
   }
 }
