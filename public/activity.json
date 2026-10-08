@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T22:49:59.537Z",
+  "generatedAt": "2026-10-08T04:56:27.712Z",
   "user": "ferreret",
   "items": [
     {
@@ -8,7 +8,7 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: where the day ended and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/13c66cd1363096b2736e6ab6acc0264b0eae1b49",
-      "pushCount": 16,
+      "pushCount": 22,
       "latestAt": "2026-10-07T16:45:29Z"
     },
     {
@@ -35,26 +35,8 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: how the session was left, and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/0581e0e448167a24d125a8d5a3c891bb0e0c1652",
-      "pushCount": 28,
+      "pushCount": 26,
       "latestAt": "2026-10-05T15:31:56Z"
-    },
-    {
-      "repo": "ferreret/kaggle-playground-s6e10",
-      "repoShort": "kaggle-playground-s6e10",
-      "repoUrl": "https://github.com/ferreret/kaggle-playground-s6e10",
-      "latestMessage": "docs: link the published Kaggle notebook from the README",
-      "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e10/commit/c5267430a3aad486305d274b709b62234f4e92fe",
-      "pushCount": 2,
-      "latestAt": "2026-10-02T18:02:05Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: how the session was left, and the VPS deployment as the next step",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/509552c4a98ce892c035dc7f757a7cd43d6b9685",
-      "pushCount": 2,
-      "latestAt": "2026-10-02T12:45:52Z"
     }
   ],
   "languages": [
@@ -144,7 +126,7 @@
       "1214430",
       "0211011",
       "1111231",
-      "1243---"
+      "12430--"
     ]
   }
 }
