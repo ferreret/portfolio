@@ -49,7 +49,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
                 {data.profile.name} <span aria-hidden="true">·</span> {data.profile.location}
               </p>
 
-              <h1 className="font-serif text-[clamp(2.6rem,5.4vw,4.8rem)] font-semibold leading-[1.06] text-warm-900 dark:text-cream-100">
+              <h1 className="font-serif serif-hero text-[clamp(2.6rem,5.4vw,4.8rem)] font-semibold leading-[1.06] text-warm-900 dark:text-cream-100">
                 {data.ui.heroTitlePrefix}
                 <span className="text-accent-600 dark:text-gold-400">{data.ui.heroTitleHighlight}</span>
                 {data.ui.heroTitleSuffix}

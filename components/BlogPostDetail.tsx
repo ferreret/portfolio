@@ -46,7 +46,7 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ data }) => {
             <span key={tag} className="text-xs font-semibold tracking-wider uppercase text-accent-700 dark:text-accent-400">{tag}</span>
           ))}
         </div>
-        <h1 className="font-serif text-3xl md:text-5xl font-semibold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{post.title}</h1>
+        <h1 className="font-serif serif-title text-3xl md:text-5xl font-semibold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{post.title}</h1>
         <div className="flex items-center gap-4 text-warm-500 dark:text-warm-400 border-b border-warm-100 dark:border-warm-800 pb-8">
           <img src="/profile.webp" alt="" width={40} height={40} className="w-10 h-10 rounded-full object-cover" />
           <div>
