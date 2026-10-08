@@ -63,6 +63,177 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* Stand-ins for the moment before the web fonts arrive (font-display: swap).
+   A system font left as it is sets the same text wider or narrower, lines
+   break elsewhere and everything below jumps when the real font lands: the
+   hero's h1 alone moved the page 44px on a phone (CLS 0.17). Each face below
+   is a system font scaled (size-adjust) to take up the room of ours, and given
+   our ascent and descent so the text does not hop inside its line either.
+
+   The numbers were measured in Chrome, as the width of the site's own text in
+   our font over its width in the stand-in. Times New Roman and Arial were
+   measured through Liberation Serif and Sans, which share their widths; Noto
+   Serif is what Android has. Newsreader gets wider as it grows (optical size),
+   about 12% from 18px to 72px, so one figure cannot serve card titles and the
+   hero: page titles and the hero have their own faces, switched by breakpoint
+   as their font size is. Every serif text on the site is semibold or bold,
+   hence a single bold source per face. Android has no Arial; there Inter
+   still swaps from the system font. */
+
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('ArialMT'), local('Liberation Sans'), local('LiberationSans');
+  font-weight: 100 400;
+  size-adjust: 106.6%;
+  ascent-override: 90.88%;
+  descent-override: 22.63%;
+  line-gap-override: 0%;
+}
+
+/* Medium (buttons, nav) runs a little wider than regular in Inter. */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('ArialMT'), local('Liberation Sans'), local('LiberationSans');
+  font-weight: 500;
+  size-adjust: 107%;
+  ascent-override: 90.54%;
+  descent-override: 22.54%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('LiberationSans-Bold');
+  font-weight: 600 900;
+  size-adjust: 99%;
+  ascent-override: 97.85%;
+  descent-override: 24.36%;
+  line-gap-override: 0%;
+}
+
+/* Serif text up to 36px: card and section titles, prose headings. */
+
+@font-face {
+  font-family: 'Newsreader Fallback';
+  src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'), local('Liberation Serif Bold'), local('LiberationSerif-Bold');
+  font-weight: 100 900;
+  size-adjust: 98.5%;
+  ascent-override: 74.62%;
+  descent-override: 26.90%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Newsreader Fallback Noto';
+  src: local('Noto Serif Bold'), local('NotoSerif-Bold');
+  font-weight: 100 900;
+  size-adjust: 83.5%;
+  ascent-override: 88.02%;
+  descent-override: 31.74%;
+  line-gap-override: 0%;
+}
+
+/* .serif-title — page titles: 30-36px, 48px from md. */
+
+@font-face {
+  font-family: 'Newsreader Fallback Title';
+  src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'), local('Liberation Serif Bold'), local('LiberationSerif-Bold');
+  font-weight: 100 900;
+  size-adjust: 102%;
+  ascent-override: 72.06%;
+  descent-override: 25.98%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Newsreader Fallback Title Noto';
+  src: local('Noto Serif Bold'), local('NotoSerif-Bold');
+  font-weight: 100 900;
+  size-adjust: 86%;
+  ascent-override: 85.47%;
+  descent-override: 30.81%;
+  line-gap-override: 0%;
+}
+
+@media (min-width: 768px) {
+  @font-face {
+    font-family: 'Newsreader Fallback Title';
+    src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'), local('Liberation Serif Bold'), local('LiberationSerif-Bold');
+    font-weight: 100 900;
+    size-adjust: 105%;
+    ascent-override: 70.00%;
+    descent-override: 25.24%;
+    line-gap-override: 0%;
+  }
+
+  @font-face {
+    font-family: 'Newsreader Fallback Title Noto';
+    src: local('Noto Serif Bold'), local('NotoSerif-Bold');
+    font-weight: 100 900;
+    size-adjust: 88.7%;
+    ascent-override: 82.86%;
+    descent-override: 29.88%;
+    line-gap-override: 0%;
+  }
+}
+
+/* .serif-hero — the home h1: 41.6px, then 5.4vw up to 76.8px. Tuned on its
+   own two sentences (en, es), which run wider than the average title. */
+
+@font-face {
+  font-family: 'Newsreader Fallback Hero';
+  src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'), local('Liberation Serif Bold'), local('LiberationSerif-Bold');
+  font-weight: 100 900;
+  size-adjust: 105%;
+  ascent-override: 70.00%;
+  descent-override: 25.24%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Newsreader Fallback Hero Noto';
+  src: local('Noto Serif Bold'), local('NotoSerif-Bold');
+  font-weight: 100 900;
+  size-adjust: 88%;
+  ascent-override: 83.52%;
+  descent-override: 30.11%;
+  line-gap-override: 0%;
+}
+
+@media (min-width: 1024px) {
+  @font-face {
+    font-family: 'Newsreader Fallback Hero';
+    src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'), local('Liberation Serif Bold'), local('LiberationSerif-Bold');
+    font-weight: 100 900;
+    size-adjust: 110.5%;
+    ascent-override: 66.52%;
+    descent-override: 23.98%;
+    line-gap-override: 0%;
+  }
+
+  @font-face {
+    font-family: 'Newsreader Fallback Hero Noto';
+    src: local('Noto Serif Bold'), local('NotoSerif-Bold');
+    font-weight: 100 900;
+    size-adjust: 91.5%;
+    ascent-override: 80.33%;
+    descent-override: 28.96%;
+    line-gap-override: 0%;
+  }
+}
+
+:root {
+  --serif-fallback: 'Newsreader Fallback', 'Newsreader Fallback Noto';
+}
+
+.serif-title {
+  --serif-fallback: 'Newsreader Fallback Title', 'Newsreader Fallback Title Noto';
+}
+
+.serif-hero {
+  --serif-fallback: 'Newsreader Fallback Hero', 'Newsreader Fallback Hero Noto';
+}
+
 /* ===================================
    Portfolio — Editorial / Professional
    =================================== */
@@ -144,7 +315,7 @@
 /* Print-friendly prose */
 .prose-custom h2,
 .prose-custom h3 {
-  font-family: 'Newsreader', Georgia, serif;
+  font-family: 'Newsreader', var(--serif-fallback), Georgia, serif;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -159,7 +330,7 @@
 /* Editorial drop cap — first-letter treatment for About summary */
 .drop-cap::first-letter {
   float: left;
-  font-family: 'Newsreader', Georgia, serif;
+  font-family: 'Newsreader', var(--serif-fallback), Georgia, serif;
   font-weight: 600;
   font-size: 3.6em;
   line-height: 0.85;
@@ -253,7 +424,7 @@
 
 /* CV route: section heading */
 .cv-heading {
-  font-family: 'Newsreader', Georgia, serif;
+  font-family: 'Newsreader', var(--serif-fallback), Georgia, serif;
   font-size: 11pt;
   font-weight: 700;
   color: #b45309; /* accent-700: 5:1 on white (accent-600 fails AA at 11pt) */

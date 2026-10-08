@@ -11,8 +11,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Newsreader', 'Georgia', 'serif'],
+        sans: ['Inter', '"Inter Fallback"', 'system-ui', 'sans-serif'],
+        // --serif-fallback: the stand-in faces in styles.css, by text size.
+        serif: ['Newsreader', 'var(--serif-fallback)', 'Georgia', 'serif'],
       },
       colors: {
         // Amber, after the og-image. On light surfaces body-size text needs

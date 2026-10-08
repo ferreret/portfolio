@@ -74,7 +74,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
             <span key={tag} className="text-xs font-semibold tracking-wider uppercase text-accent-700 dark:text-accent-400">{tag}</span>
           ))}
         </div>
-        <h1 className="font-serif text-3xl md:text-5xl font-semibold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{project.title}</h1>
+        <h1 className="font-serif serif-title text-3xl md:text-5xl font-semibold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{project.title}</h1>
         <p className="text-lg text-warm-500 dark:text-warm-400 leading-relaxed pb-8">{project.description}</p>
 
         {(demoUrl || repoUrl) && (

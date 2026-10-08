@@ -12,7 +12,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({ title, subtitle,
   <div className={`text-center ${className}`}>
     <Tag
       className={`font-serif font-semibold text-warm-900 dark:text-warm-50 ${
-        Tag === 'h1' ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'
+        Tag === 'h1' ? 'serif-title text-4xl md:text-5xl' : 'text-3xl md:text-4xl'
       } ${subtitle ? 'mb-3' : ''}`}
     >
       {title}
