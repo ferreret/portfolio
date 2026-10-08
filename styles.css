@@ -390,6 +390,18 @@
   outline-color: rgba(246, 236, 208, 0.14);
 }
 
+/* The same window on the project's own page, where the capture is content:
+   facing the reader and whole. */
+.project-shot-flat {
+  box-shadow: 0 22px 44px -16px rgba(68, 44, 16, 0.4);
+  outline: 1px solid rgba(28, 25, 23, 0.12);
+}
+
+.dark .project-shot-flat {
+  box-shadow: 0 22px 50px -16px rgba(0, 0, 0, 0.75);
+  outline-color: rgba(246, 236, 208, 0.14);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .group:hover .project-shot {
     transform: perspective(1100px) rotateY(-11deg) rotateX(5deg);
