@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-10-09T12:43:18.592Z",
+  "generatedAt": "2026-10-09T22:22:05.488Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: a LiveKit call on speakers at their usual volume: it did not stand still",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/91b3ab1f203b1444cc27d0cc9419fb6c04db5581",
-      "pushCount": 4,
-      "latestAt": "2026-10-09T11:01:50Z"
+      "latestMessage": "docs: where the day ended, with the phone on LiveKit, and what comes next",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/9bb041010b864637c78f476b6ada67a8b3964f44",
+      "pushCount": 13,
+      "latestAt": "2026-10-09T15:32:18Z"
     },
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: a first call that hung up as it should, Vapi begun, and a key handed over by mistake",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/54532f4449a768f1994881fb97d688346440a3e7",
-      "pushCount": 4,
-      "latestAt": "2026-10-08T16:01:29Z"
+      "latestMessage": "feat(voice): how the second platform's key came, kept without the key",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/6a36555f2a6349a9fec5e9f8e2d5287363bbb645",
+      "pushCount": 6,
+      "latestAt": "2026-10-08T16:14:04Z"
     },
     {
       "repo": "ferreret/vet-front-desk-agent",
@@ -35,17 +35,17 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: where the day ended and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/395d10affc2eede0aa4a21d2d2a65e4b356c7202",
-      "pushCount": 30,
+      "pushCount": 21,
       "latestAt": "2026-10-06T18:54:08Z"
     },
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "fix(agent): who is calling is asked as soon as it matters, not at the end",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/7cf5c27c86d4186801f1a3073e5c83046a5cd991",
-      "pushCount": 8,
-      "latestAt": "2026-10-05T14:43:06Z"
+      "latestMessage": "docs: the day's calls by voice, timed",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/911f82eb45e61f13a5c073dfa34ab402c3ba61a9",
+      "pushCount": 4,
+      "latestAt": "2026-10-05T14:37:36Z"
     }
   ],
   "languages": [
