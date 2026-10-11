@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T21:15:57.332Z",
+  "generatedAt": "2026-10-11T04:30:16.638Z",
   "user": "ferreret",
   "items": [
     {
@@ -8,7 +8,7 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: where the day ended, with the phone on LiveKit, and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/9bb041010b864637c78f476b6ada67a8b3964f44",
-      "pushCount": 19,
+      "pushCount": 24,
       "latestAt": "2026-10-09T15:32:18Z"
     },
     {
@@ -35,17 +35,8 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: a word put right in the session notes",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/f03f029939da13f06414080b4544071ddfec9208",
-      "pushCount": 16,
+      "pushCount": 12,
       "latestAt": "2026-10-06T16:25:31Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: the day's calls by voice, timed",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/911f82eb45e61f13a5c073dfa34ab402c3ba61a9",
-      "pushCount": 1,
-      "latestAt": "2026-10-05T14:37:36Z"
     }
   ],
   "languages": [
@@ -81,9 +72,8 @@
     }
   ],
   "contributions": {
-    "from": "2025-10-05",
+    "from": "2025-10-12",
     "weeks": [
-      "0000000",
       "0000000",
       "0010101",
       "0100000",
@@ -135,7 +125,8 @@
       "1214430",
       "0211011",
       "1111231",
-      "1243220"
+      "1243220",
+      "0------"
     ]
   }
 }
