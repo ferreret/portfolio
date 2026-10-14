@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-10-14T03:52:46.540Z",
+  "generatedAt": "2026-10-14T11:21:17.871Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/vet-front-desk-agent",
+      "repoShort": "vet-front-desk-agent",
+      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
+      "latestMessage": "docs: the phone goes by ElevenLabs Agents again, after the same call by both",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/fbbea4640ffc514a8a272c3c6cf45b11981169a4",
+      "pushCount": 1,
+      "latestAt": "2026-10-14T11:18:14Z"
+    },
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
@@ -35,7 +44,7 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: a word put right in the session notes",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/f03f029939da13f06414080b4544071ddfec9208",
-      "pushCount": 10,
+      "pushCount": 9,
       "latestAt": "2026-10-06T16:25:31Z"
     }
   ],
@@ -126,7 +135,7 @@
       "0211011",
       "1111231",
       "1243220",
-      "1110---"
+      "1111---"
     ]
   }
 }
