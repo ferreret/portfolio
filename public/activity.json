@@ -1,15 +1,24 @@
 {
-  "generatedAt": "2026-10-15T16:27:33.235Z",
+  "generatedAt": "2026-10-15T21:00:49.034Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "fix(agent): the symptom a caller rang about is the reason for the visit",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/e4d1d2d5345a635224da24d8ac5631a36ebb446f",
-      "pushCount": 5,
-      "latestAt": "2026-10-14T15:05:06Z"
+      "latestMessage": "docs: the emergency number only to whoever asks for it, measured",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/54ab8947d0772f7a941e46a754bfe82c9987b63a",
+      "pushCount": 1,
+      "latestAt": "2026-10-15T10:33:31Z"
+    },
+    {
+      "repo": "ferreret/vet-front-desk-agent",
+      "repoShort": "vet-front-desk-agent",
+      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
+      "latestMessage": "docs: session close, 2026-10-14",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/d778283835883d4b68a9f1588da5bbf764e9040b",
+      "pushCount": 7,
+      "latestAt": "2026-10-14T15:20:27Z"
     },
     {
       "repo": "ferreret/vet-front-desk-agent",
@@ -44,17 +53,8 @@
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: where the day ended and what comes next",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/13c66cd1363096b2736e6ab6acc0264b0eae1b49",
-      "pushCount": 34,
+      "pushCount": 32,
       "latestAt": "2026-10-07T16:45:29Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: a word put right in the session notes",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/f03f029939da13f06414080b4544071ddfec9208",
-      "pushCount": 4,
-      "latestAt": "2026-10-06T16:25:31Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "0211011",
       "1111231",
       "1243220",
-      "11111--"
+      "11113--"
     ]
   }
 }
