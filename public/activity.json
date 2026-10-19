@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-10-19T12:23:22.257Z",
+  "generatedAt": "2026-10-19T22:04:01.245Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/vet-front-desk-agent",
+      "repoShort": "vet-front-desk-agent",
+      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
+      "latestMessage": "docs: the README says the demo runs on free tiers, and where to ask for it",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/a03a438ae6c83af50b9df3d78f3a87ae0db4114b",
+      "pushCount": 2,
+      "latestAt": "2026-10-19T14:47:40Z"
+    },
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/6a36555f2a6349a9fec5e9f8e2d5287363bbb645",
       "pushCount": 7,
       "latestAt": "2026-10-08T16:14:04Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: where the day ended and what comes next",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/13c66cd1363096b2736e6ab6acc0264b0eae1b49",
-      "pushCount": 28,
-      "latestAt": "2026-10-07T16:45:29Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "1111231",
       "1243220",
       "1111444",
-      "31-----"
+      "32-----"
     ]
   }
 }
