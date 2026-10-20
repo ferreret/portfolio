@@ -3,6 +3,7 @@ import { AppContent } from './types';
 // Projects
 import { docscanStudio } from './data/projects/docscan-studio';
 import { batchReactorReprocessClassifier } from './data/projects/batch-reactor-reprocess-classifier';
+import { vetFrontDeskAgent } from './data/projects/vet-front-desk-agent';
 
 // Articles
 import { aboutMe } from './data/articles/about-me';
@@ -204,7 +205,8 @@ const enContent: AppContent = {
   ],
   projects: [
     docscanStudio.en,
-    batchReactorReprocessClassifier.en
+    batchReactorReprocessClassifier.en,
+    vetFrontDeskAgent.en
   ],
   blog: [
     predictingBatchReactorReprocessing.en,
@@ -408,7 +410,8 @@ const esContent: AppContent = {
   ],
   projects: [
     docscanStudio.es,
-    batchReactorReprocessClassifier.es
+    batchReactorReprocessClassifier.es,
+    vetFrontDeskAgent.es
   ],
   blog: [
     predictingBatchReactorReprocessing.es,
