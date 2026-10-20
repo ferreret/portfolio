@@ -1,14 +1,23 @@
 {
-  "generatedAt": "2026-10-20T11:01:39.482Z",
+  "generatedAt": "2026-10-20T16:28:04.644Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
+      "latestMessage": "docs: session notes, what is left of the Spanish-only setup",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/271bd7e8865f3f6fc90af5e30b48d206e9fbc8bd",
+      "pushCount": 1,
+      "latestAt": "2026-10-20T15:37:02Z"
+    },
+    {
+      "repo": "ferreret/vet-front-desk-agent",
+      "repoShort": "vet-front-desk-agent",
+      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
       "latestMessage": "docs: what the next session starts from, 2026-10-19",
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/5f0c7688bb3a71b020212d9f69a47955d7e319b8",
-      "pushCount": 3,
+      "pushCount": 4,
       "latestAt": "2026-10-19T15:23:39Z"
     },
     {
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/9bb041010b864637c78f476b6ada67a8b3964f44",
       "pushCount": 26,
       "latestAt": "2026-10-09T15:32:18Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "feat(voice): how the second platform's key came, kept without the key",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/6a36555f2a6349a9fec5e9f8e2d5287363bbb645",
-      "pushCount": 7,
-      "latestAt": "2026-10-08T16:14:04Z"
     }
   ],
   "languages": [
