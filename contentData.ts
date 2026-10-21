@@ -9,6 +9,7 @@ import { vetFrontDeskAgent } from './data/projects/vet-front-desk-agent';
 import { aboutMe } from './data/articles/about-me';
 import { claudioPersonalAssistant } from './data/articles/claudio-personal-assistant';
 import { predictingBatchReactorReprocessing } from './data/articles/predicting-batch-reactor-reprocessing';
+import { verifyWithoutAnLlm } from './data/articles/verify-without-an-llm';
 
 const enContent: AppContent = {
   ui: {
@@ -209,6 +210,7 @@ const enContent: AppContent = {
     vetFrontDeskAgent.en
   ],
   blog: [
+    verifyWithoutAnLlm.en,
     predictingBatchReactorReprocessing.en,
     claudioPersonalAssistant.en,
     aboutMe.en
@@ -414,6 +416,7 @@ const esContent: AppContent = {
     vetFrontDeskAgent.es
   ],
   blog: [
+    verifyWithoutAnLlm.es,
     predictingBatchReactorReprocessing.es,
     claudioPersonalAssistant.es,
     aboutMe.es
