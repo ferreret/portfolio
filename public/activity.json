@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-10-22T11:18:01.220Z",
+  "generatedAt": "2026-10-22T16:45:40.476Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/clinical-intake-verifier",
+      "repoShort": "clinical-intake-verifier",
+      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
+      "latestMessage": "feat(extractor): flag values that contain control characters",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/27241e7d2825dcc6227b38afe98fc1f8145f7e0c",
+      "pushCount": 2,
+      "latestAt": "2026-10-22T15:51:17Z"
+    },
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/ea9d7073139bc0ee999568bd0856ba494707701c",
       "pushCount": 2,
       "latestAt": "2026-10-13T09:36:10Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: where the day ended, with the phone on LiveKit, and what comes next",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/9bb041010b864637c78f476b6ada67a8b3964f44",
-      "pushCount": 26,
-      "latestAt": "2026-10-09T15:32:18Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "1111231",
       "1243220",
       "1111444",
-      "32211--"
+      "32212--"
     ]
   }
 }
