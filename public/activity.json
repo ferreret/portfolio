@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-22T16:45:40.476Z",
+  "generatedAt": "2026-10-22T21:16:02.187Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "feat(extractor): flag values that contain control characters",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/27241e7d2825dcc6227b38afe98fc1f8145f7e0c",
-      "pushCount": 2,
-      "latestAt": "2026-10-22T15:51:17Z"
+      "latestMessage": "docs: record the run that measures the widened detector",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/e51f442e0118b2e7ee4fc16c616b59da563203dc",
+      "pushCount": 3,
+      "latestAt": "2026-10-22T18:46:15Z"
     },
     {
       "repo": "ferreret/vet-front-desk-agent",
