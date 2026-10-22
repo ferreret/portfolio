@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-22T03:38:45.319Z",
+  "generatedAt": "2026-10-22T11:18:01.220Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/vet-front-desk-agent",
       "repoShort": "vet-front-desk-agent",
       "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: session notes, what is left of the Spanish-only setup",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/271bd7e8865f3f6fc90af5e30b48d206e9fbc8bd",
-      "pushCount": 2,
-      "latestAt": "2026-10-20T15:37:02Z"
+      "latestMessage": "docs: session notes, the LiveKit credit check left for later",
+      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/75f00f3a5d68ac8d9c4b3c9379c45f1ee45eb9e9",
+      "pushCount": 5,
+      "latestAt": "2026-10-20T15:39:41Z"
     },
     {
       "repo": "ferreret/vet-front-desk-agent",
@@ -144,7 +144,7 @@
       "1111231",
       "1243220",
       "1111444",
-      "32210--"
+      "32211--"
     ]
   }
 }
