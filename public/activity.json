@@ -1,14 +1,23 @@
 {
-  "generatedAt": "2026-10-23T11:08:46.853Z",
+  "generatedAt": "2026-10-23T16:36:36.340Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
+      "latestMessage": "docs: record the Catalan forms and the regenerated dataset",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/93ce53c1dcb9935b0d2447ef76074c883f0c8e97",
+      "pushCount": 2,
+      "latestAt": "2026-10-23T12:50:42Z"
+    },
+    {
+      "repo": "ferreret/clinical-intake-verifier",
+      "repoShort": "clinical-intake-verifier",
+      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
       "latestMessage": "docs: record the run that measures the widened detector",
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/e51f442e0118b2e7ee4fc16c616b59da563203dc",
-      "pushCount": 7,
+      "pushCount": 9,
       "latestAt": "2026-10-22T18:46:15Z"
     },
     {
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/d778283835883d4b68a9f1588da5bbf764e9040b",
       "pushCount": 10,
       "latestAt": "2026-10-14T15:20:27Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: deployed, and the model's prepaid credit ran out: the phone answers nobody",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/ea9d7073139bc0ee999568bd0856ba494707701c",
-      "pushCount": 2,
-      "latestAt": "2026-10-13T09:36:10Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "1111231",
       "1243220",
       "1111444",
-      "322121-"
+      "322122-"
     ]
   }
 }
