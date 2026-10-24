@@ -1,15 +1,24 @@
 {
-  "generatedAt": "2026-10-23T21:05:14.450Z",
+  "generatedAt": "2026-10-24T03:37:45.937Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/kaggle-playground-s6e10",
+      "repoShort": "kaggle-playground-s6e10",
+      "repoUrl": "https://github.com/ferreret/kaggle-playground-s6e10",
+      "latestMessage": "docs: outreach pack for the S6E10 notebook (X thread, charts, LinkedIn, case study)",
+      "latestCommitUrl": "https://github.com/ferreret/kaggle-playground-s6e10/commit/554ed57edb1335dd47bf038e6c0025c6add1a28d",
+      "pushCount": 1,
+      "latestAt": "2026-10-23T19:09:13Z"
+    },
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "docs: record the model-layer measurement and the red-lines-only policy",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/fa4ca7b0c70046a60e93d6056f20b23531b47c2b",
-      "pushCount": 4,
-      "latestAt": "2026-10-23T16:44:07Z"
+      "latestMessage": "feat(mapping): local Qwen is the default model provider",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/046d80d836033504376dee96be091baea787a876",
+      "pushCount": 7,
+      "latestAt": "2026-10-23T16:45:10Z"
     },
     {
       "repo": "ferreret/clinical-intake-verifier",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/5568e52650f386d9a7d13bb225de0d868bf290ec",
       "pushCount": 2,
       "latestAt": "2026-10-15T10:41:51Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: session close, 2026-10-14",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/d778283835883d4b68a9f1588da5bbf764e9040b",
-      "pushCount": 10,
-      "latestAt": "2026-10-14T15:20:27Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "1111231",
       "1243220",
       "1111444",
-      "322123-"
+      "3221230"
     ]
   }
 }
