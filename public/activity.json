@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-10-26T12:24:26.515Z",
+  "generatedAt": "2026-10-26T22:22:27.098Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/clinical-intake-verifier",
+      "repoShort": "clinical-intake-verifier",
+      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
+      "latestMessage": "docs: record the first full run of the extractor with local Qwen",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/e93d7896059fe8861cc2c54ea0264539be1be964",
+      "pushCount": 2,
+      "latestAt": "2026-10-26T15:19:31Z"
+    },
     {
       "repo": "ferreret/kaggle-playground-s6e10",
       "repoShort": "kaggle-playground-s6e10",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/5f0c7688bb3a71b020212d9f69a47955d7e319b8",
       "pushCount": 4,
       "latestAt": "2026-10-19T15:23:39Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: session close, 2026-10-15",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/5568e52650f386d9a7d13bb225de0d868bf290ec",
-      "pushCount": 2,
-      "latestAt": "2026-10-15T10:41:51Z"
     }
   ],
   "languages": [
