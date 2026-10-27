@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-10-27T11:43:25.238Z",
+  "generatedAt": "2026-10-27T17:36:12.014Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "chore(claude): registra la release v0.1.7 y el punto de retoma",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/62bc369c69601e042360636f406d51e6bcccee38",
+      "pushCount": 3,
+      "latestAt": "2026-10-27T07:36:31Z"
+    },
+    {
+      "repo": "ferreret/clinical-intake-verifier",
+      "repoShort": "clinical-intake-verifier",
+      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
+      "latestMessage": "feat(extractor): place the local model's values with the page's OCR",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/a362e0cc00093642b8d66f3117ba039148d52359",
+      "pushCount": 1,
+      "latestAt": "2026-10-27T07:25:00Z"
+    },
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
@@ -37,31 +55,13 @@
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/e51f442e0118b2e7ee4fc16c616b59da563203dc",
       "pushCount": 9,
       "latestAt": "2026-10-22T18:46:15Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: session notes, the LiveKit credit check left for later",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/75f00f3a5d68ac8d9c4b3c9379c45f1ee45eb9e9",
-      "pushCount": 5,
-      "latestAt": "2026-10-20T15:39:41Z"
-    },
-    {
-      "repo": "ferreret/vet-front-desk-agent",
-      "repoShort": "vet-front-desk-agent",
-      "repoUrl": "https://github.com/ferreret/vet-front-desk-agent",
-      "latestMessage": "docs: what the next session starts from, 2026-10-19",
-      "latestCommitUrl": "https://github.com/ferreret/vet-front-desk-agent/commit/5f0c7688bb3a71b020212d9f69a47955d7e319b8",
-      "pushCount": 4,
-      "latestAt": "2026-10-19T15:23:39Z"
     }
   ],
   "languages": [
     {
       "name": "Python",
-      "count": 36,
-      "pct": 47
+      "count": 35,
+      "pct": 46
     },
     {
       "name": "C#",
@@ -75,8 +75,8 @@
     },
     {
       "name": "TypeScript",
-      "count": 2,
-      "pct": 3
+      "count": 3,
+      "pct": 4
     },
     {
       "name": "Lua",
@@ -144,7 +144,7 @@
       "1243220",
       "1111444",
       "3221231",
-      "132----"
+      "134----"
     ]
   }
 }
