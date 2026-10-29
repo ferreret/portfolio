@@ -1,14 +1,23 @@
 {
-  "generatedAt": "2026-10-28T22:17:05.412Z",
+  "generatedAt": "2026-10-29T04:45:08.183Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
+      "latestMessage": "perf(verify): a batch's pages are ready before they are opened",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/c8e068c0e49e94bfd5c51453cda4ce6441f8ebc1",
+      "pushCount": 2,
+      "latestAt": "2026-10-28T10:36:48Z"
+    },
+    {
+      "repo": "ferreret/clinical-intake-verifier",
+      "repoShort": "clinical-intake-verifier",
+      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
       "latestMessage": "docs(roadmap): the company demo is deployed",
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/39ce27ce520bfba73cf062cfa45c1a52d5b41a41",
-      "pushCount": 7,
+      "pushCount": 8,
       "latestAt": "2026-10-27T20:35:59Z"
     },
     {
@@ -17,7 +26,7 @@
       "repoUrl": "https://github.com/ferreret/docscan",
       "latestMessage": "docs: progress report y memoria — release v0.1.9 (2026-10-27)",
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/bf97e7174b318a93a528e734bf0587d45803f164",
-      "pushCount": 24,
+      "pushCount": 28,
       "latestAt": "2026-10-27T17:39:32Z"
     },
     {
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/046d80d836033504376dee96be091baea787a876",
       "pushCount": 7,
       "latestAt": "2026-10-23T16:45:10Z"
-    },
-    {
-      "repo": "ferreret/clinical-intake-verifier",
-      "repoShort": "clinical-intake-verifier",
-      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "docs: record the run that measures the widened detector",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/e51f442e0118b2e7ee4fc16c616b59da563203dc",
-      "pushCount": 9,
-      "latestAt": "2026-10-22T18:46:15Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "1243220",
       "1111444",
       "3221231",
-      "1343---"
+      "13430--"
     ]
   }
 }
