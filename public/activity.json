@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-10-29T12:25:40.048Z",
+  "generatedAt": "2026-10-29T16:40:58.041Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "feat(mapping): measure what telling the model \"Spanish\" costs on Catalan forms",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/7f24923fa202415cca4568441be07ec8505ce04f",
-      "pushCount": 9,
-      "latestAt": "2026-10-28T14:59:19Z"
+      "latestMessage": "feat(verify): a lock runs out when its page is gone",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/2c1f9e63c1ccf9977c31699228dcbc1329e02be6",
+      "pushCount": 11,
+      "latestAt": "2026-10-28T15:52:30Z"
     },
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "docs(roadmap): the company demo is deployed",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/39ce27ce520bfba73cf062cfa45c1a52d5b41a41",
-      "pushCount": 10,
-      "latestAt": "2026-10-27T20:35:59Z"
+      "latestMessage": "fix(verify): the record search leaves the document readable",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/9e5867c990c4e00d86bbeed2c8ab54eca1c2e903",
+      "pushCount": 11,
+      "latestAt": "2026-10-27T22:00:53Z"
     },
     {
       "repo": "ferreret/docscan",
@@ -144,7 +144,7 @@
       "1243220",
       "1111444",
       "3221231",
-      "13432--"
+      "13433--"
     ]
   }
 }
