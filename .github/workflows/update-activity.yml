@@ -29,6 +29,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USER: ferreret
+          # Comma- or newline-separated; see HIDDEN_TERMS in the script.
+          ACTIVITY_HIDDEN_TERMS: ${{ secrets.ACTIVITY_HIDDEN_TERMS }}
         run: node scripts/fetch-activity.mjs
 
       - name: Commit if changed

@@ -10,6 +10,19 @@ const USER = process.env.GITHUB_USER ?? 'ferreret';
 const EXCLUDED_REPOS = new Set([`${USER}/portfolio`, `${USER}/${USER}`]);
 const MAX_ITEMS = 6;
 
+// Commits whose message mentions any of these terms are left out of the ticker.
+// The list comes from a repository secret, not from this file: the repo is
+// public, and the terms are exactly what must not be published.
+const HIDDEN_TERMS = (process.env.ACTIVITY_HIDDEN_TERMS ?? '')
+  .split(/[\n,]/)
+  .map((term) => term.trim().toLowerCase())
+  .filter(Boolean);
+
+function isHidden(message) {
+  const text = message.toLowerCase();
+  return HIDDEN_TERMS.some((term) => text.includes(term));
+}
+
 const headers = { Accept: 'application/vnd.github+json' };
 if (process.env.GITHUB_TOKEN) {
   headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
@@ -146,7 +159,13 @@ async function main() {
   const items = [];
   for (const group of groups) {
     try {
-      items.push(await enrich(group));
+      const item = await enrich(group);
+      // The log is public too: say which commit was left out, never why.
+      if (isHidden(item.latestMessage)) {
+        console.log(`Leaving out ${group.repo}@${group.latestHead.slice(0, 7)}: hidden term`);
+        continue;
+      }
+      items.push(item);
     } catch (err) {
       console.warn(`Skipping ${group.repo}@${group.latestHead}: ${err.message}`);
     }
