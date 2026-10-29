@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-29T04:45:08.183Z",
+  "generatedAt": "2026-10-29T12:25:40.048Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "perf(verify): a batch's pages are ready before they are opened",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/c8e068c0e49e94bfd5c51453cda4ce6441f8ebc1",
-      "pushCount": 2,
-      "latestAt": "2026-10-28T10:36:48Z"
+      "latestMessage": "feat(mapping): measure what telling the model \"Spanish\" costs on Catalan forms",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/7f24923fa202415cca4568441be07ec8505ce04f",
+      "pushCount": 9,
+      "latestAt": "2026-10-28T14:59:19Z"
     },
     {
       "repo": "ferreret/clinical-intake-verifier",
@@ -17,7 +17,7 @@
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
       "latestMessage": "docs(roadmap): the company demo is deployed",
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/39ce27ce520bfba73cf062cfa45c1a52d5b41a41",
-      "pushCount": 8,
+      "pushCount": 10,
       "latestAt": "2026-10-27T20:35:59Z"
     },
     {
@@ -26,7 +26,7 @@
       "repoUrl": "https://github.com/ferreret/docscan",
       "latestMessage": "docs: progress report y memoria — release v0.1.9 (2026-10-27)",
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/bf97e7174b318a93a528e734bf0587d45803f164",
-      "pushCount": 28,
+      "pushCount": 30,
       "latestAt": "2026-10-27T17:39:32Z"
     },
     {
@@ -144,7 +144,7 @@
       "1243220",
       "1111444",
       "3221231",
-      "13430--"
+      "13432--"
     ]
   }
 }
