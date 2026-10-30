@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-10-30T12:16:54.140Z",
+  "generatedAt": "2026-10-30T21:59:26.584Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "fix(batches): documents completed at once no longer lock the database",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/9ab8efeb7a6f293cb44b6f05ca60a5eabb2b64cb",
-      "pushCount": 1,
-      "latestAt": "2026-10-29T07:27:06Z"
+      "latestMessage": "docs(roadmap): the SQLITE_BUSY incident and the audit that followed",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/0a15ad70f88e40418f4676242b82951bc5533cdd",
+      "pushCount": 5,
+      "latestAt": "2026-10-29T11:53:43Z"
     },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
       "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "Merge PR #10: el actualizador de Linux sustituye el AppImage",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/44b8b9ba011cd7828f1147e402a4b1f9428facf6",
-      "pushCount": 1,
-      "latestAt": "2026-10-28T16:50:04Z"
+      "latestMessage": "docs: progress report y memoria — validación de la v0.1.9 y actualizador (2026-10-28)",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/7d24343575cde95cf91b136bde1e927755bc60a3",
+      "pushCount": 2,
+      "latestAt": "2026-10-28T16:53:24Z"
     },
     {
       "repo": "ferreret/clinical-intake-verifier",
@@ -46,15 +46,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/bf97e7174b318a93a528e734bf0587d45803f164",
       "pushCount": 30,
       "latestAt": "2026-10-27T17:39:32Z"
-    },
-    {
-      "repo": "ferreret/clinical-intake-verifier",
-      "repoShort": "clinical-intake-verifier",
-      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "docs: record the first full run of the extractor with local Qwen",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/e93d7896059fe8861cc2c54ea0264539be1be964",
-      "pushCount": 2,
-      "latestAt": "2026-10-26T15:19:31Z"
     }
   ],
   "languages": [
