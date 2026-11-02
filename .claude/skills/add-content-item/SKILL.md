@@ -90,12 +90,12 @@ const enContent: AppContent = {
 };
 ```
 
-Añade `__VAR_NAME__.en` al array correspondiente (`projects` o `blog`), respetando comas. Por ejemplo:
+Añade `__VAR_NAME__.en` **al principio** del array correspondiente (`projects` o `blog`), respetando comas: los dos arrays van del más reciente al más antiguo, y la portada muestra los tres primeros proyectos como «proyectos seleccionados». Por ejemplo:
 
 ```ts
   projects: [
-    docscanStudio.en,
-    healthcareSchedulingAgent.en
+    healthcareSchedulingAgent.en,
+    docscanStudio.en
   ],
 ```
 

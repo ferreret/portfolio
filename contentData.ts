@@ -4,6 +4,7 @@ import { AppContent } from './types';
 import { docscanStudio } from './data/projects/docscan-studio';
 import { batchReactorReprocessClassifier } from './data/projects/batch-reactor-reprocess-classifier';
 import { vetFrontDeskAgent } from './data/projects/vet-front-desk-agent';
+import { clinicalIntakeVerifier } from './data/projects/clinical-intake-verifier';
 
 // Articles
 import { aboutMe } from './data/articles/about-me';
@@ -204,10 +205,12 @@ const enContent: AppContent = {
     { value: "23+", label: "Years at Tecnomedia" },
     { value: "2023", label: "Master in AI — IEBS" }
   ],
+  // Newest first: the home page shows the first three as selected projects.
   projects: [
+    clinicalIntakeVerifier.en,
     docscanStudio.en,
-    batchReactorReprocessClassifier.en,
-    vetFrontDeskAgent.en
+    vetFrontDeskAgent.en,
+    batchReactorReprocessClassifier.en
   ],
   blog: [
     verifyWithoutAnLlm.en,
@@ -410,10 +413,12 @@ const esContent: AppContent = {
     { value: "23+", label: "Años en Tecnomedia" },
     { value: "2023", label: "Máster en IA — IEBS" }
   ],
+  // Newest first: the home page shows the first three as selected projects.
   projects: [
+    clinicalIntakeVerifier.es,
     docscanStudio.es,
-    batchReactorReprocessClassifier.es,
-    vetFrontDeskAgent.es
+    vetFrontDeskAgent.es,
+    batchReactorReprocessClassifier.es
   ],
   blog: [
     verifyWithoutAnLlm.es,
