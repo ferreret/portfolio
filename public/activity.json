@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-11-03T22:58:00.584Z",
+  "generatedAt": "2026-11-04T05:11:16.702Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/clinical-intake-verifier",
+      "repoShort": "clinical-intake-verifier",
+      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
+      "latestMessage": "Merge branch 'main' into dependabot/github_actions/actions/upload-artifact-7.0.2",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/a475f32171602c894458990381be3d393e021111",
+      "pushCount": 6,
+      "latestAt": "2026-11-02T14:06:01Z"
+    },
+    {
+      "repo": "Tecnomedia/SF_DocImporter",
+      "repoShort": "SF_DocImporter",
+      "repoUrl": "https://github.com/Tecnomedia/SF_DocImporter",
+      "latestMessage": "Botón para borrar los filtros de texto en apps WPF",
+      "latestCommitUrl": "https://github.com/Tecnomedia/SF_DocImporter/commit/5c25541aa7456c411786869654cf517d84acc842",
+      "pushCount": 1,
+      "latestAt": "2026-11-02T10:27:53Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -37,24 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/2c1f9e63c1ccf9977c31699228dcbc1329e02be6",
       "pushCount": 11,
       "latestAt": "2026-10-28T15:52:30Z"
-    },
-    {
-      "repo": "ferreret/clinical-intake-verifier",
-      "repoShort": "clinical-intake-verifier",
-      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "fix(verify): the record search leaves the document readable",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/9e5867c990c4e00d86bbeed2c8ab54eca1c2e903",
-      "pushCount": 11,
-      "latestAt": "2026-10-27T22:00:53Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report y memoria — release v0.1.9 (2026-10-27)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/bf97e7174b318a93a528e734bf0587d45803f164",
-      "pushCount": 28,
-      "latestAt": "2026-10-27T17:39:32Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "1111444",
       "3221231",
       "1343300",
-      "122----"
+      "1221---"
     ]
   }
 }
