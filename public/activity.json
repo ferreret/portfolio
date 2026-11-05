@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-11-04T23:17:41.102Z",
+  "generatedAt": "2026-11-05T05:31:51.784Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs(memoria): PR #12 mergeado",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/6111e30b0db6ba4d334a7395ce5a1235a0c4a6ad",
+      "pushCount": 1,
+      "latestAt": "2026-11-04T09:47:57Z"
+    },
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/7d24343575cde95cf91b136bde1e927755bc60a3",
       "pushCount": 2,
       "latestAt": "2026-10-28T16:53:24Z"
-    },
-    {
-      "repo": "ferreret/clinical-intake-verifier",
-      "repoShort": "clinical-intake-verifier",
-      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "feat(verify): a lock runs out when its page is gone",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/2c1f9e63c1ccf9977c31699228dcbc1329e02be6",
-      "pushCount": 11,
-      "latestAt": "2026-10-28T15:52:30Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "1111444",
       "3221231",
       "1343300",
-      "1223---"
+      "12231--"
     ]
   }
 }
