@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-11-06T22:46:45.445Z",
+  "generatedAt": "2026-11-07T04:58:21.102Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/clinical-intake-verifier",
+      "repoShort": "clinical-intake-verifier",
+      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
+      "latestMessage": "docs(roadmap): the OCR-text pipeline, measured on 2026-11-06",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/516be32d2eed50e368d16fa5b3ed6b62da834366",
+      "pushCount": 1,
+      "latestAt": "2026-11-06T15:40:07Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/0a15ad70f88e40418f4676242b82951bc5533cdd",
       "pushCount": 6,
       "latestAt": "2026-10-29T11:53:43Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report y memoria — validación de la v0.1.9 y actualizador (2026-10-28)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/7d24343575cde95cf91b136bde1e927755bc60a3",
-      "pushCount": 2,
-      "latestAt": "2026-10-28T16:53:24Z"
     }
   ],
   "languages": [
@@ -144,7 +144,7 @@
       "1111444",
       "3221231",
       "1343300",
-      "122322-"
+      "1223221"
     ]
   }
 }
