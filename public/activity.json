@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-11-09T15:26:35.250Z",
+  "generatedAt": "2026-11-10T01:14:58.564Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/clinical-intake-verifier",
+      "repoShort": "clinical-intake-verifier",
+      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
+      "latestMessage": "docs(roadmap): the model box served on the local network, 2026-11-09",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/9bc3d6753500d2fb9c7bd1707e31054816a3ea3e",
+      "pushCount": 1,
+      "latestAt": "2026-11-09T11:26:50Z"
+    },
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/7c9aa7fab9a3b7a41c8b9c2c6c126397147e405d",
       "pushCount": 2,
       "latestAt": "2026-10-29T16:41:59Z"
-    },
-    {
-      "repo": "ferreret/clinical-intake-verifier",
-      "repoShort": "clinical-intake-verifier",
-      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "docs(roadmap): the SQLITE_BUSY incident and the audit that followed",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/0a15ad70f88e40418f4676242b82951bc5533cdd",
-      "pushCount": 6,
-      "latestAt": "2026-10-29T11:53:43Z"
     }
   ],
   "languages": [
@@ -113,38 +113,38 @@
       "0110010",
       "0111210",
       "0110000",
-      "0121221",
-      "1211110",
-      "0234331",
-      "0213221",
-      "0232100",
-      "0212411",
-      "1413221",
-      "1122110",
-      "0112310",
+      "0111221",
+      "1111110",
+      "0223321",
+      "0213121",
+      "0221100",
+      "0112311",
+      "1312211",
+      "1112110",
+      "0111210",
       "0112110",
-      "0232130",
-      "1210311",
+      "0222120",
+      "1110211",
       "0000000",
-      "0321141",
-      "0333220",
-      "0333221",
-      "1222221",
+      "0321131",
+      "0322220",
+      "0322221",
+      "1222211",
       "1211111",
       "0211120",
       "1101010",
       "1000010",
       "0011101",
       "1112110",
-      "1214430",
+      "1114420",
       "0211011",
       "1111221",
-      "1232220",
+      "1232120",
       "1111333",
       "2221221",
-      "1342300",
-      "1223221",
-      "14-----"
+      "1342200",
+      "1122221",
+      "140----"
     ]
   }
 }
