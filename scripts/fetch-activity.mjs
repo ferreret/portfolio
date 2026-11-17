@@ -178,20 +178,30 @@ async function main() {
     console.warn(`Language stats failed (ticker still written): ${err.message}`);
   }
 
-  let contributions = previousPayload().contributions;
+  const { generatedAt: _previousGeneratedAt, ...previousData } = previousPayload();
+
+  let contributions = previousData.contributions;
   try {
     contributions = await fetchContributions();
   } catch (err) {
     console.warn(`Contribution calendar failed (keeping the previous one): ${err.message}`);
   }
 
-  const payload = {
-    generatedAt: new Date().toISOString(),
+  const data = {
     user: USER,
     items,
     languages,
     ...(contributions ? { contributions } : {}),
   };
+
+  // The workflow commits, and production redeploys, whenever this file differs
+  // from the published one. A new `generatedAt` on its own is not a change.
+  if (JSON.stringify(data) === JSON.stringify(previousData)) {
+    console.log('Nothing new since the last refresh: activity.json left as it is.');
+    return;
+  }
+
+  const payload = { generatedAt: new Date().toISOString(), ...data };
   mkdirSync(dirname(OUT_PATH), { recursive: true });
   writeFileSync(OUT_PATH, JSON.stringify(payload, null, 2) + '\n');
   console.log(`Wrote ${items.length} items to ${OUT_PATH}`);
