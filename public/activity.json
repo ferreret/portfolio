@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T06:03:29.160Z",
+  "generatedAt": "2026-11-20T19:40:57.762Z",
   "user": "ferreret",
   "items": [
     {
@@ -37,24 +37,6 @@
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/516be32d2eed50e368d16fa5b3ed6b62da834366",
       "pushCount": 1,
       "latestAt": "2026-11-06T15:40:07Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs(memoria): PR #12 mergeado",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/6111e30b0db6ba4d334a7395ce5a1235a0c4a6ad",
-      "pushCount": 1,
-      "latestAt": "2026-11-04T09:47:57Z"
-    },
-    {
-      "repo": "ferreret/clinical-intake-verifier",
-      "repoShort": "clinical-intake-verifier",
-      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "build(deps): Bump actions/upload-artifact from 4.6.2 to 7.0.2 (#4)",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/3a78d35028fc905d5d5393e8928057f7d3ec79d1",
-      "pushCount": 1,
-      "latestAt": "2026-11-02T14:09:55Z"
     }
   ],
   "languages": [
@@ -144,7 +126,7 @@
       "1342200",
       "1122221",
       "1444311",
-      "123421-"
+      "123433-"
     ]
   }
 }
