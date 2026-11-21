@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T05:56:40.717Z",
+  "generatedAt": "2026-11-21T14:26:59.173Z",
   "user": "ferreret",
   "items": [
     {
@@ -8,7 +8,7 @@
       "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
       "latestMessage": "feat(extractor): medium thinking for Gemini by default",
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/b0ce6a5a2a028681a0477c81204c596c8a55b8a5",
-      "pushCount": 3,
+      "pushCount": 4,
       "latestAt": "2026-11-19T12:08:20Z"
     },
     {
