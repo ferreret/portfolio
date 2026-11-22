@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-11-21T14:26:59.173Z",
+  "generatedAt": "2026-11-22T05:31:04.215Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/clinical-intake-verifier",
+      "repoShort": "clinical-intake-verifier",
+      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
+      "latestMessage": "fix(mapping): ask about a long form in parts",
+      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/8b0bc2dabd4dfef7abc2780c2782a55966dc7534",
+      "pushCount": 1,
+      "latestAt": "2026-11-20T08:55:00Z"
+    },
     {
       "repo": "ferreret/clinical-intake-verifier",
       "repoShort": "clinical-intake-verifier",
@@ -72,9 +81,8 @@
     }
   ],
   "contributions": {
-    "from": "2025-11-16",
+    "from": "2025-11-23",
     "weeks": [
-      "0001110",
       "0011110",
       "0101110",
       "0000000",
@@ -126,7 +134,8 @@
       "1342200",
       "1122221",
       "1444311",
-      "1234331"
+      "1234331",
+      "1------"
     ]
   }
 }
