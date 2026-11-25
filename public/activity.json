@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T07:23:16.745Z",
+  "generatedAt": "2026-11-25T21:12:07.901Z",
   "user": "ferreret",
   "items": [
     {
@@ -28,15 +28,6 @@
       "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/7675f42e2e8fa7acc2dca0959f45fa7c1dc55131",
       "pushCount": 2,
       "latestAt": "2026-11-18T15:15:58Z"
-    },
-    {
-      "repo": "ferreret/clinical-intake-verifier",
-      "repoShort": "clinical-intake-verifier",
-      "repoUrl": "https://github.com/ferreret/clinical-intake-verifier",
-      "latestMessage": "feat(local-model): send LOCAL_LLM_TOKEN to a server that requires one",
-      "latestCommitUrl": "https://github.com/ferreret/clinical-intake-verifier/commit/06346376d2454f529f5d8af6624ff5c0f860ba06",
-      "pushCount": 1,
-      "latestAt": "2026-11-09T11:40:59Z"
     }
   ],
   "languages": [
@@ -126,7 +117,7 @@
       "1122221",
       "1444311",
       "1234331",
-      "1441---"
+      "1444---"
     ]
   }
 }
